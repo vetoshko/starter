@@ -1,9 +1,10 @@
 
 // core rulsets
 @import 'core/variables';
-@import 'core/mixins';
 @import 'core/reset';
 @import 'core/defaults';
+@import 'core/fonts';
+@import 'mixins/mixins';
 // end core rulsets
 
 // ==== components rulsets =====
@@ -13,3 +14,7 @@
 // ===== utilites =====
 @import 'utilites/utilites';
 // ===== end utilites =====
+
+.list {
+	.InlineList(5, 2);
+}
