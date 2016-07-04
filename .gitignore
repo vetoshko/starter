@@ -6,5 +6,3 @@ node_modules/*
 *.sublime-project
 *.sublime-workspace
 export/*
-public/stylesheets/style.css
-public/javascripts/app.min.js

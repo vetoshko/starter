@@ -128,7 +128,7 @@ gulp.task('exportHTML', function() {
   });
 
 
-  gulp.src(['views/*.html', '!views/__*.html'])
+  gulp.src([ '!views/layout.html', '!views/error.html', 'views/*.html', '!views/__*.html'])
     .pipe(nunjucksRender({
       isExport: true,
       ctx: siteDB
@@ -141,5 +141,10 @@ gulp.task('exportHTML', function() {
 });
 
 
-gulp.task('publish', ['export', 'compress', 'less:prod']);
+gulp.task('copyStatic', ['less:prod', 'compress'], function() {
+  gulp.src(['public/**/*', 'public/*'])
+    .pipe(gulp.dest('export'));
+});
+
+gulp.task('publish', ['exportHTML', 'compress', 'less:prod', 'copyStatic']);
 gulp.task('publishDPE', ['exportDPE', 'compress', 'less:prod']);
