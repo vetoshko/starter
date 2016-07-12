@@ -1,0 +1,59 @@
+{
+	"origin": "production name",
+	"meta": {
+		"title": "test meta title",
+		"desc": "Some text",
+		"keywords": "some keywords",
+		"pic": "path to image for share"
+	},
+	"team": [
+		{
+			"name": "Антон",
+			"lastName": "Русецкий",
+			"img": "rusetsky.jpg",
+			"post": "Арт-директор"
+		},
+		{
+			"name": "Яна",
+			"lastName": "Позднякова",
+			"img": "pozdnyakova.jpg",
+			"post": "Продюсер"
+		},
+		{
+			"name": "Алексей",
+			"lastName": "Маркин",
+			"img": "markin.jpg",
+			"post": "Пилот истребителя"
+		},
+		{
+			"name": "Ляйсан",
+			"lastName": "Байбулова",
+			"img": "baybulova.jpg",
+			"post": "Видеодизайнер"
+		},
+		{
+			"name": "Александр",
+			"lastName": "Плесовских",
+			"img": "plesovskich.jpg",
+			"post": "Программист"
+		},
+		{
+			"name": "Алина",
+			"lastName": "Экизашвили",
+			"img": "Ekizashvili.jpg",
+			"post": "Дизайнер"
+		},
+		{
+			"name": "Мила",
+			"lastName": "Балбашова",
+			"img": "Balbashova.jpg",
+			"post": "Дизайнер"
+		},
+		{
+			"name": "Владимир",
+			"lastName": "Садчиков",
+			"img": "sadchikov.jpg",
+			"post": "Верстальщик"
+		}
+	]
+}

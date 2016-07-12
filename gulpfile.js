@@ -17,20 +17,35 @@ var LessPluginCleanCSS = require('less-plugin-clean-css');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
 
+gulp.task('jet-less', function() {
+    var autoprefix = new LessPluginAutoPrefix({
+      browsers: ["last 10 versions", "IE 8", "IE 9", "IE 10"]
+    });
+
+    var cleancss = new LessPluginCleanCSS({});
+
+  return gulp.src('public/jet-less/jet-style.less')
+    .pipe(less({
+      plugins: [autoprefix, cleancss]
+    }).on('error', function(err) {
+      gutil.log(err);
+      this.emit('end');
+    }))
+    .pipe(gulp.dest('public/stylesheets/'));
+});
+
 gulp.task('less:dev', function() {
     var autoprefix = new LessPluginAutoPrefix({
       browsers: ["last 2 versions"]
     });
 
   return gulp.src('public/less/style.less')
-  	//.pipe(sourcemaps.init())
     .pipe(less({
       plugins: [autoprefix]
     }).on('error', function(err) {
       gutil.log(err);
       this.emit('end');
     }))
-    //.pipe(sourcemaps.write('.', {includeContent: false, mapSources: 'public/less/**'}))
     .pipe(gulp.dest('public/stylesheets/'));
 });
 
@@ -39,25 +54,23 @@ gulp.task('less:prod', function() {
       advanced: true
     }),
     autoprefix = new LessPluginAutoPrefix({
-      browsers: ["last 30 versions", "IE 8", "IE 9"]
+      browsers: ["last 20 versions", "IE 8", "IE 9"]
     });
 
   return gulp.src('public/less/style.less')
-    //.pipe(sourcemaps.init())
     .pipe(less({
       plugins: [autoprefix, cleancss]
     }).on('error', function(err) {
       gutil.log(err);
       this.emit('end');
     }))
-    //.pipe(sourcemaps.write('.', {includeContent: false, mapSources: 'public/less/**'}))
     .pipe(gulp.dest('public/stylesheets/'));
 });
 
 gulp.task('compress', function() {
-  return gulp.src(['public/javascripts/dist/*.js', 'public/javascripts/app.js'])
+  return gulp.src(['public/jet-js/*.js'])
     .pipe(uglify())
-    .pipe(concat('app.min.js'))
+    .pipe(concat('jet.min.js'))
     .pipe(gulp.dest('public/javascripts/'));
 });
 
@@ -87,46 +100,19 @@ gulp.task('default', function() {
       server.start.bind(server)();
       server.notify.apply(server, [file]);
   });
-
+  gulp.watch(['public/javascripts/jet-js/*.js'], ['compress']);
   gulp.watch(['public/less/*.less', 'public/less/**/*.less'], ['less:dev']);
+  gulp.watch(['public/jet-less/*.less', 'public/jet-less/**/*.less'], ['jet-less']);
   gulp.watch(['public/__icons/*.png'], ['sprites']);
-  
 });
 
 
-gulp.task('exportDPE', function() {
+gulp.task('export', function() {
   var images, scripts, styles;
   
   nunjucksRender.nunjucks.configure(['views/'], {
     watch: false
   });
-  
-  images = new RegExp('src=+([\'\"])\/images\/(.[^\'\"]+)', 'g');
-  scripts = new RegExp('src=+([\'\"])\/javascripts\/(.[^\'\"]+)', 'g');
-  styles = new RegExp('src=+([\'\"])\/stylesheets\/(.[^\'\"]+)', 'g');
-
-  gulp.src(['views/*.html', '!views/__*.html'])
-    .pipe(nunjucksRender({
-      isExport: true,
-      ctx: siteDB
-    }))
-    .pipe(prettify({
-      indent_char: ' ',
-      indent_size: 2
-    }))
-    .pipe(replace(images, 'src=$1@File("/files/images/$2")'))
-    .pipe(replace(scripts, 'src=$1@File("/files/js/$2")'))
-    .pipe(replace(styles, 'src=$1@File("/files/css/$2")'))
-    .pipe(gulp.dest('export'));
-});
-
-gulp.task('exportHTML', function() {
-  var images, scripts, styles;
-  
-  nunjucksRender.nunjucks.configure(['views/'], {
-    watch: false
-  });
-
 
   gulp.src([ '!views/layout.html', '!views/error.html', 'views/*.html', '!views/__*.html'])
     .pipe(nunjucksRender({
@@ -146,5 +132,4 @@ gulp.task('copyStatic', ['less:prod', 'compress'], function() {
     .pipe(gulp.dest('export'));
 });
 
-gulp.task('publish', ['exportHTML', 'compress', 'less:prod', 'copyStatic']);
-gulp.task('publishDPE', ['exportDPE', 'compress', 'less:prod']);
+gulp.task('publish', ['export', 'compress', 'less:prod', 'copyStatic']);

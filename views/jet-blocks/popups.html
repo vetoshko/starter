@@ -1,0 +1,44 @@
+<div class="popup__wrp order-popup">
+    <div class="popup__content">
+        <i class="popup__close popup-close"></i>
+        <h3 class="popup__title">Заявка</h3>
+        <p class="popup__text">Оставьте телефон или почту,<br>
+            и мы свяжемся с вами! </p>
+        <form class="popup__form" method="post" action="http://jetnew.jetstyle.ru/feedback/feedback/send">
+            <div class="popup__input-wrp">
+                <input class="popup__phone" type="text" name="Feedback[name]" placeholder="Ваше имя">
+            </div>
+            <div class="popup__input-wrp">
+                <input class="popup__phone" type="tel" name="Feedback[phone]" placeholder="Телефон">
+            </div>
+            <div class="popup__input-wrp">
+                <input class="popup__mail" type="email" placeholder="Email" name="Feedback[email]">
+            </div>
+            <p class="popup-error" style="display: none">Пожалуйста, оставьте ваше имя и телефон или email</p>
+            <textarea class="popup__textarea" name="Feedback[body]" placeholder="Ваш комментарий"></textarea>
+            <button class="popup__submit">Отправить</button>
+        </form>
+    </div>
+    <div class="popup__thank-content">
+        <i class="popup__close popup-close"></i>
+        <div class="popup__text-wrp">
+            <img src="/skin/popup__thank-image.png" alt="" class="popup__thank-image">
+            <h3 class="popup__title">Ура! Заявка<br>отправлена!</h3>
+            <div class="popup__text_thanks">
+                <p>Мы свяжемся с&nbsp;вами в&nbsp;ближайшее время!</p>
+                <p>А пока посмотрите<br>
+                    наши <a href="http://www.jetstyle.ru/" class="popup__link">свежие работы</a><br>
+                    и почитайте <a href="http://www.jetstyle.ru/novosti" class="popup__link">блог</a>.
+            </p></div>
+
+        </div>
+    </div>
+    <div class="popup__subscr-content">
+        <i class="popup__close popup-close"></i>
+        <h3 class="popup__title">Спасибо!</h3>
+        <p class="popup__text_thanks">
+            Подписка оформлена!
+        </p>
+        <img src="/skin/popup__subscr-thanks.png" alt="" class="popup__subscr-thank-image">
+    </div>
+</div>

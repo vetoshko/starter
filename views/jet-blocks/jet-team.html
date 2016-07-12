@@ -1,0 +1,19 @@
+<section class="jet-team">
+	<div class="jet-team__container">
+		<h2 class="jet-team__header">Команда</h2>
+		<div class="jet-team__list">
+			{%- for person in team %}
+				<div class="jet-team__person">
+					<div class="jet-team__imgbox">
+						<img src="/images/{{ person.img }}" alt="{{ person.name }} {{ person.lastName }}">
+					</div>
+					<div class="jet-team__name">
+						<span>{{ person.name }}</span><span>{{ person.lastName }}</span>
+					</div>
+					<div class="jet-team__post">{{ person.post }}</div>
+				</div>
+			{% endfor -%}
+		</div>
+		<div class="jet-team__adds"></div>
+	</div>
+</section>

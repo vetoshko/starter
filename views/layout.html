@@ -1,38 +1,37 @@
-<!doctype html>
-<!--[if IE 7]>
-<html class="ie7 lt-ie10 lt-ie9 lt-ie8 no-js" lang="ru"><![endif]-->
-<!--[if IE 8]>
-<html class="ie8 lt-ie10 lt-ie9 no-js" lang="ru"><![endif]-->
-<!--[if IE 9 ]>
-<html class="ie9 lt-ie10 no-js" lang="ru"><![endif]-->
-<!--[if (gt IE 9)|!(IE)]><!-->
-<html class="no-js" lang="ru">
-<!--<![endif]-->
+
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
-  <meta charset="utf-8">
-  <title>Заголовок</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-  <meta content="telephone=no" name="format-detection">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="HandheldFriendly" content="true">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
-  <script>
-  (function(H) {
-    H.className = H.className.replace(/\bno-js\b/, 'js')
-  })(document.documentElement)
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
-	{%- if isExport %}
-    <script src="/javascripts/app.min.js"></script>
-		{%- else %}
-    <!-- include liveReload only in Dev server -->
-    <script src="//localhost:35729/livereload.js"></script>
-    <script src="/javascripts/app.js"></script>
-	{%- endif %}
+  {% include "jet-blocks/head.html" %}
+
+  {# Дополнительная статика в head #}
+  {%- block head %}{% endblock -%}
 </head>
 <body>
+  <div class="hero" style="{% block heroStyle %}{% endblock %}">
+    {% include "jet-blocks/header.html" %}
+    {% include "blocks/heroContent.html" %}
+  </div>
+
+  {# Основной контент страницы #}
   {% block content %}{% endblock content %}
   
+  {% include "jet-blocks/request.html" %}
+  {% include "jet-blocks/work-cards.html" %}
+  {% include "jet-blocks/footer.html" %}
+  {% include "jet-blocks/popups.html" %}
+  {% include "jet-blocks/analitics.html" %}
+  
+
+  <script src="/javascripts/jet.min.js"></script>
+
+  {%- if isExport %}
+    <script src="/javascripts/app.min.js"></script>
+    {%- else %}    
+    <script src="//localhost:35729/livereload.js"></script>
+    <script src="/javascripts/app.js"></script>
+  {%- endif %}
+
+  {# Дополнительная статика в body #}
+  {%- block footer %}{% endblock -%}
 </body>

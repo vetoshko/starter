@@ -1,0 +1,225 @@
+.popup__wrp {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0,0,0,0.7);
+  display: none;
+  z-index: 10;
+}
+.popup__wrp.show {
+  display: block;
+}
+.popup__content {
+  background-color: #fff;
+  padding: 30px 70px 40px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -219px;
+  margin-top: -310px;
+  border-radius: 4px;
+  color: #000;
+  width: 438px;
+  box-sizing: border-box;
+  display: none;
+  font-family: @base-font;
+}
+.popup__title {
+  margin: 0;
+  font-size: 32px;
+  margin-bottom: 11px;
+  text-align: center;
+    font-weight: 600;
+}
+.popup__text {
+  margin: 10px 0 19px;
+  font-size: 22px;
+  line-height: 25px;
+  text-align: center;
+}
+.popup__phone {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 9px 13px 9px 13px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 17px;
+  height: 44px;
+  font-family: @base-font;
+  font-size: 22px;
+}
+.popup__phone:focus {
+  outline: none;
+  border-color: #525659;
+}
+.popup__phone::-webkit-input-placeholder {
+  color: #989898;
+}
+.popup__phone:-moz-placeholder {
+  color: #989898;
+}
+.popup__mail {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 9px 13px;
+  height: 44px;
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 17px;
+    font-family: @base-font;
+  font-size: 22px;
+}
+.popup__mail:focus {
+  outline: none;
+  border-color: #525659;
+}
+.popup__mail::-webkit-input-placeholder {
+  color: #989898;
+}
+.popup__mail:-moz-placeholder {
+  color: #989898;
+}
+.popup__input-wrp {
+  position: relative;
+}
+.popup__placeholder {
+  color: #000;
+  font-size: 1rem;
+  position: absolute;
+  top: 10px;
+  left: 15px;
+}
+.popup__textarea {
+  border: 1px solid #ccc;
+  background-color: #fff;
+  padding: 9px 13px;
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 0px;
+  height: 228px;
+    font-family: @base-font;
+  font-size: 22px;
+}
+.popup__textarea:focus {
+  outline: none;
+  border-color: #525659;
+}
+.popup__textarea::-webkit-input-placeholder {
+  color: #989898;
+}
+.popup__textarea:-moz-placeholder {
+  color: #989898;
+}
+.popup__submit {
+  color: #fff;
+  padding: 0 15px;
+  width: 100%;
+  font-size: 22px;
+  height: 60px;
+  outline: none;
+  cursor: pointer;
+  margin-top: 15px;
+  border: 1px solid #aa050f;
+  background: #aa050f;
+    font-family: @base-font;
+  font-weight: 600;
+  transition: all linear 0.1s;
+}
+.popup__submit:hover {
+  background-color: #fff;
+  color: #aa050f;
+}
+.popup__submit:active {
+  background: #aa050f;
+  color: #fff;
+}
+.popup__close {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  font-size: 30px;
+  width: 14px;
+  height: 14px;
+  opacity: 0.28;
+  background: transparent url("../skin/popup__close.png");
+  border: none;
+  cursor: pointer;
+  outline: none;
+  z-index: 1;
+}
+.popup__close:hover {
+  opacity: 1;
+}
+.popup__thank-content {
+  display: none;
+  background-color: #fff;
+  padding: 20px 75px 40px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -219px;
+  margin-top: -270px;
+  border-radius: 8px;
+  color: #000;
+  width: 438px;
+  box-sizing: border-box;
+  min-height: 540px;
+}
+.popup__thank-content .popup__title {
+  line-height: 36px;
+  margin-bottom: 20px;
+  padding-top: 15px;
+}
+.popup__thank-content.show {
+  display: block;
+}
+.popup__text-wrp {
+  width: 230px;
+  margin: 0 auto;
+  text-align: center;
+}
+.popup__text_thanks {
+  color: #000;
+  margin: 10px 0 2px;
+  font-size: 22px;
+  line-height: 25px;
+}
+.popup__text_thanks>p {
+  margin-top: 10px;
+  margin-bottom: 0px;
+}
+.popup__subscr-content {
+  display: none;
+  background-color: #fff;
+  padding: 40px 75px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  margin-left: -313px;
+  margin-top: -168px;
+  color: #000;
+  width: 625px;
+  box-sizing: border-box;
+  min-height: 335px;
+}
+.popup__subscr-thank-image {
+  position: absolute;
+  right: 80px;
+  top: 15px;
+}
+.popup-error {
+  color: #cc2b27;
+  margin: 0 0 10px;
+}
+.popup__link {
+  color: #aa050f;
+  text-decoration: none;
+  opacity: 1;
+  transition: opacity linear 0.1s;
+}
+.popup__link:hover {
+  opacity: 0.6;
+}
