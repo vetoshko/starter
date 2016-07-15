@@ -1,0 +1,168 @@
+.jet-sticky {
+	position: fixed;
+	left: 0;
+	right: 0;
+	background-color: #000;
+	background-color: fade(#000, 90%);
+	z-index: 9;
+	top: 0;
+	transform: translateY(-100%);
+	opacity: 0;
+	transition: transform .3s ease-in-out, opacity .4s ease-in-out;
+
+	* {
+		box-sizing: border-box;
+	}
+
+	&__inner {
+		width: 59.3rem;
+    margin: 0 auto;
+	}
+	
+
+	&__row {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		padding: 18px 20px 13px 20px;
+		color: #fff;
+		font-family: @reg-font;
+	}
+
+	&--is-active {
+		transform: translateY(0%);
+		opacity: 1;
+	}
+
+	&--menu-visible &__dotburger {
+		circle {
+			fill: #fff;
+		}
+	}
+
+	&__dotburger {
+		display: inline-block;
+		vertical-align: top;
+		margin-top: 6px;
+		margin-left: 10px;
+		width: 24px;
+		height: 24px;
+
+		circle {
+			stroke-width: 1px;
+			stroke: #fff;
+			fill: transparent;
+			transition: all .3s ease-in;
+		}
+
+		&:active {
+			transform: scale(.98);
+		}
+		
+		&:hover {
+			circle {
+				fill: #fff;
+			}
+		}
+	}
+
+	&__logo {
+		width: 40px;
+		height: 40px;
+		text-decoration: none;
+		display: inline-block;
+	}
+
+	&__controls {
+		width: 80px;
+		align-self: center;
+	}
+
+	&__menu {
+		padding: 18px 20px;
+		color: #fff;
+		font-family: @base-font;
+		box-sizing: border-box;
+		display: none;
+		
+
+		&-item {
+			color: #fff;
+			text-decoration: none;
+			display: inline-block;
+			vertical-align: top;
+			margin-right: 16px;
+			font-size: 22px;
+			transition: opacity .2s;
+			transform: translateZ(0);
+
+			&:hover {
+				opacity: .6;
+			}
+
+			&:last-child {
+				float: right;
+				margin-right: 0;
+			}
+
+			&--active {
+				color: #ffa1a1;
+			}
+		}
+	}
+
+	&__social {
+		width: 80px;
+		text-align: right;
+		align-self: center;
+	}
+
+	&__share {
+		width: 26px;
+		height: 26px;
+		display: inline-block;
+		position: relative;
+		background-color: #d1d1d1;
+		border-radius: 4px;
+		transition: background .3s;
+		margin-left: 10px;
+
+		svg {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			fill: #000;
+			transition: fill .3s;
+		}
+
+		&:hover {
+			background-color: #4671a8;
+			svg {
+				fill: #fff;
+			}
+		}
+	}
+
+	@media only screen and (max-width: 1023px) {
+		&__inner {
+			width: auto;
+			
+		}
+
+		&__menu {
+			&-item {
+				display: block;
+				width: 100%;
+				font-size: 17px;
+				text-align: center;
+				margin-bottom: 5px;
+				padding: 8px 0;
+
+			}
+		}
+  }
+}
+

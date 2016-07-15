@@ -10,7 +10,7 @@ var nunjucks = require('nunjucks');
 
 var app = express();
 
-global.case = require('caseConfig.json');
+global.case = require('./caseConfig.json');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');

@@ -1,51 +1,19 @@
-<div class="r-item r-item_rbt">
-  <div class="r-item__h">Другие работы</div>
-  <p class="r-item__p">Мы работаем над большим количеством крутых
+<div class="jet-section jet-section--no-padbottom jet-bordered text-center">
+  <div class="jet-section__header">Другие работы</div>
+  <p class="jet-text">Мы работаем над большим количеством крутых
     <br> и интересных проектов. Вот несколько похожих.</p>
   <div class="work-card">
-    <a class="work-card__item" href="http://www.jetstyle.ru/portfolio/ugmk-ocm" style="background-image:url(http://www.jetstyle.ru/static_advanta/media/img/ugmk.jpg);">
-      <div class="work-card__footer">
-        <div class="work-card__ftext">Революция стиля
-          <nobr>для УГМК-ОЦМ</nobr>
+    {%- for item in ctx.works %}
+      <a class="work-card__item" href="{{ item.url }}" style="background-image:url({{'/images/works/' ~item.image }});">
+        <div class="work-card__footer">
+          <div class="work-card__ftext">{{ item.name|safe }}</div>
+          <div>
+            {% for tag in item.tags %}
+              <span class="work-card__tag work-card__tag_type_{{ tag.type }}">{{ tag.label }}</span>
+            {% endfor %}
+          </div>
         </div>
-        <div>
-          <span class="work-card__tag work-card__tag_type_black">Сайты</span>
-          <span class="work-card__tag work-card__tag_type_black">Дизайн</span>
-          <span class="work-card__tag work-card__tag_type_black">Интерфейсы</span>
-          <span class="work-card__tag work-card__tag_type_red">New</span>
-        </div>
-      </div>
-    </a>
-    <a class="work-card__item" href="http://www.jetstyle.ru/portfolio/rbt" style="background-image:url(http://www.jetstyle.ru/static_advanta/media/img/rbt.jpg);">
-      <div class="work-card__footer">
-        <div class="work-card__ftext">Проектирование и&nbsp;редизайн интернет-магазина RBT.ru</div>
-        <div>
-          <span class="work-card__tag work-card__tag_type_black">Сайты</span>
-          <span class="work-card__tag work-card__tag_type_black">Дизайн</span>
-          <span class="work-card__tag work-card__tag_type_black">Интерфейсы</span>
-          <span class="work-card__tag work-card__tag_type_red">New</span>
-        </div>
-      </div>
-    </a>
-    <a class="work-card__item" href="http://www.jetstyle.ru/portfolio/etvbomb" style="background-image:url(http://www.jetstyle.ru/static_advanta/media/img/etv.jpg);">
-      <div class="work-card__footer">
-        <div class="work-card__ftext">«Бомбический сайт» для екатеринбургского канала ЕТВ</div>
-        <div>
-          <span class="work-card__tag work-card__tag_type_black">Сайты</span>
-          <span class="work-card__tag work-card__tag_type_black">Дизайн</span>
-          <span class="work-card__tag work-card__tag_type_black">Интерфейсы</span>
-        </div>
-      </div>
-    </a>
-    <a class="work-card__item" href="http://www.jetstyle.ru/portfolio/ridero" style="background-image:url(http://www.jetstyle.ru/static_advanta/media/img/ridero.jpg);">
-      <div class="work-card__footer">
-        <div class="work-card__ftext">Дизайн цифровой платформы для независимых авторов</div>
-        <div>
-          <span class="work-card__tag work-card__tag_type_black">Сервис</span>
-          <span class="work-card__tag work-card__tag_type_black">Дизайн</span>
-          <span class="work-card__tag work-card__tag_type_black">Интерфейсы</span>
-        </div>
-      </div>
-    </a>
+      </a>
+    {%- endfor %}
   </div>
 </div>

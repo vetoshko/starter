@@ -1,11 +1,11 @@
-<section class="jet-team">
-	<div class="jet-team__container">
-		<h2 class="jet-team__header">Команда</h2>
+<section class="jet-team jet-section">
+	<div class="jet-team__container jet-width">
+		<h2 class="jet-team__header jet-section__header">Команда</h2>
 		<div class="jet-team__list">
-			{%- for person in team %}
+			{%- for person in ctx.team %}
 				<div class="jet-team__person">
 					<div class="jet-team__imgbox">
-						<img src="/images/{{ person.img }}" alt="{{ person.name }} {{ person.lastName }}">
+						<img src="/images/team/{{ person.img }}" alt="{{ person.name }} {{ person.lastName }}">
 					</div>
 					<div class="jet-team__name">
 						<span>{{ person.name }}</span><span>{{ person.lastName }}</span>
@@ -14,6 +14,5 @@
 				</div>
 			{% endfor -%}
 		</div>
-		<div class="jet-team__adds"></div>
 	</div>
 </section>

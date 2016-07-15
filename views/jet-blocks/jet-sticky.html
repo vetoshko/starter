@@ -1,0 +1,74 @@
+{%- set vkShare =  'http://vkontakte.ru/share.php?url=' ~ shareUrl|urlencode ~ '&title=' ~ ctx.meta.title|urlencode ~ '&description=' ~ ctx.meta.desc|urlencode ~ '&image=' ~ shareImg|urlencode -%}
+{%- set fbShare =  'http://www.facebook.com/sharer.php?s=100&p[url]=' ~ shareUrl|urlencode -%}
+<div class="jet-sticky">
+  <div class="jet-sticky__inner">
+    <div class="jet-sticky__row">
+      <div class="jet-sticky__controls">
+        <a href="http://www.jetstyle.ru/" class="jet-sticky__logo">
+          <svg version="1.1" width="40" height="40" viewBox="0 0 40 40">
+            <title>JetStyle — главная</title>
+            <desc>JetStyle — главная</desc>
+            <style type="text/css">
+            .st0 {
+              fill-rule: evenodd;
+              clip-rule: evenodd;
+              fill: #D5131F;
+            }
+            
+            .st1 {
+              fill: #ffffff;
+            }
+            </style>
+            <path class="st1" d="M2.4,30.6c0.2,0,0.5,0,0.7,0c3.9,0,6.7-0.9,8.4-2.7c1.6-1.7,2.1-3.8,2.8-6.8l2.2-10H9.2L6.9,21.7c-0.6,2.7-1.1,3.9-3.1,3.9c-0.1,0-0.2,0-0.3,0L2.4,30.6z"></path>
+            <path class="st1" d="M13.9,28.8c1.6,1.1,4.3,1.7,7.9,1.7c8.7,0,13.3-2,14.3-6.7c0.1-0.5,0.2-0.9,0.2-1.3c0-2.3-1.7-3.7-5.2-4.3l-6.5-1c-1.8-0.3-2.7-0.5-2.5-1.3c0.1-0.7,1.2-1.3,2.9-1.3c2,0,3.2,0.5,3.3,1.5v-0.2h8.6c0-0.1,0-0.2,0-0.3c0-3.6-3.5-5.2-10.7-5.2c-3.8,0-6.7,0.4-8.7,1.5L15.6,21c1,0.6,2.3,1,4,1.2l5.4,0.7c1.7,0.2,2.5,0.7,2.3,1.5c-0.2,0.9-1.3,1.4-3.3,1.4c-2,0-3.1-0.6-3-1.6h-6.1L13.9,28.8z"></path>
+            <polygon class="st1" points="16.9,9 18.1,4 10.8,4 9.7,9 "></polygon>
+            <path class="st0" d="M22.4,8.6c3.6-1.1,2.9-4.7,8.2-3c-2-1.2-4.1-1.8-6.1-0.9c-2.6,1.4-4,0.4-3.9-1.1c0.2-2.6,3-1.8,3.9-1.2 c0,0-1.7-1.3-4-1.3c-1.9,0.1-4.2,1.2-5,1.6h4.1l-0.2,1.1c-0.6,3.2,2.4,4.3,4.3,2.3c-2.7,3.3-4.6-0.7-5.3,2.7C20,8.9,21,9.1,22.4,8.6 z"></path>
+          </svg>
+        </a>
+        <a href="" class="jet-sticky__dotburger">
+          <svg version="1.1" width="24" height="24" viewBox="0 0 24 24">
+            <title>Меню</title>
+            <circle cx="3" cy="3" r="2" />
+            <circle cx="3" cy="12" r="2" />
+            <circle cx="3" cy="21" r="2" />
+            <circle cx="12" cy="3" r="2" />
+            <circle cx="12" cy="12" r="2" />
+            <circle cx="12" cy="21" r="2" />
+            <circle cx="21" cy="3" r="2" />
+            <circle cx="21" cy="12" r="2" />
+            <circle cx="21" cy="21" r="2" />
+          </svg>
+        </a>
+      </div>
+      <div class="jet-chooser">
+        <a class="jet-chooser__arrow jet-chooser__arrow--prev" href="{{ ctx.prevSiteUrl }}"></a>
+        <a class="jet-chooser__arrow jet-chooser__arrow--next" href="{{ ctx.nextSiteUrl }}"></a>
+        <div class="jet-chooser__title">{{ ctx.caseType }}</div>
+        <div class="jet-chooser__name">{{ ctx.shortTitle }}</div>
+      </div>
+
+      <div class="jet-sticky__social">
+
+        <a href="#" class="jet-sticky__share" data-share="{{ vkShare }}">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"  viewBox="0 0 414.999 414.996" enable-background="new 0 0 414.999 414.996" xml:space="preserve">
+                  <path fill-rule="evenodd" clip-rule="evenodd" d="M124.046,94.794h98.5c32.411,0,60.002,15.878,59.973,47.985
+          c-0.025,26.809-9.732,37.237-29.675,49.029c1.704,1.405,13.132,4.814,16.97,6.705c6.145,3.028,9.76,6.09,13.803,10.2
+          c11.314,11.504,13.424,22.021,13.424,40.066c0,41.868-40.496,62.917-79.494,62.917h-93.918L124.046,94.794L124.046,94.794z
+           M177.57,151.78l-0.007,28.167c25.371,0,49.211,3.342,49.211-24.167c0-25.467-26.97-21.271-49.229-21.271L177.57,151.78
+          L177.57,151.78z M177.556,271.77c27.8,0,62.145,4.58,62.748-26.982c0.631-32.922-35.281-26.98-62.732-26.98L177.556,271.77z" />
+          </svg>
+        </a>
+
+        <a href="#" class="jet-sticky__share" data-share="{{ fbShare }}">
+          <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+             width="415px" height="415px" viewBox="0 0 415 415" enable-background="new 0 0 415 415" xml:space="preserve">
+          <path d="M149.472,164.49h26.12v-11.85v-11.608v-1.936c0-11.174,0.29-28.441,8.415-39.131c8.562-11.32,20.316-19.009,40.534-19.009
+            c32.939,0,46.823,4.69,46.823,4.69l-6.53,38.696c0,0-10.882-3.145-21.041-3.145c-10.157,0-19.252,3.628-19.252,13.786v4.112v13.544
+            v11.85h41.646l-2.902,37.776h-38.744v131.276h-48.949V202.267h-26.12V164.49z"/>
+          </svg>
+        </a>
+        
+      </div>
+    </div>
+  </div>
+</div>

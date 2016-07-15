@@ -11,18 +11,19 @@ var replace = require('gulp-replace');
 var spritesmith = require('gulp.spritesmith');
 var merge = require('merge-stream');
 var sourcemaps = require('gulp-sourcemaps');
-var siteDB = require('./datasource/data.json');
 var LessPluginAutoPrefix = require('less-plugin-autoprefix');
 var LessPluginCleanCSS = require('less-plugin-clean-css');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
+var clean = require('gulp-clean');
+var caseData = require('./caseConfig.json');
 
 gulp.task('jet-less', function() {
     var autoprefix = new LessPluginAutoPrefix({
       browsers: ["last 10 versions", "IE 8", "IE 9", "IE 10"]
     });
 
-    var cleancss = new LessPluginCleanCSS({});
+  var cleancss = new LessPluginCleanCSS({});
 
   return gulp.src('public/jet-less/jet-style.less')
     .pipe(less({
@@ -95,21 +96,33 @@ gulp.task('default', function() {
   var server = gls.new(['bin/www']);
   server.start();
 
-  gulp.watch(['views/blocks/*.html','public/stylesheets/*.css', 'views/*.html', 'datasource/data.json', 'app.js', 'gulpfile.js', 'routes/**/*.js'], function(file) {
+  gulp.watch(['views/blocks/*.html',
+    'views/jet-blocks/*.html',
+    'views/blocks/*.html',
+    'public/stylesheets/*.css', 
+    './caseConfig.json',
+    'views/*.html', 
+    'app.js', 
+    'routes/**/*.js'
+    ], function(file) {
       gutil.log('File:', path.basename(file.path), 'was', file.type, '=> livereload');
       server.start.bind(server)();
       server.notify.apply(server, [file]);
   });
-  gulp.watch(['public/javascripts/jet-js/*.js'], ['compress']);
+  //gulp.watch(['public/jet-js/*.js'], ['compress']);
   gulp.watch(['public/less/*.less', 'public/less/**/*.less'], ['less:dev']);
-  gulp.watch(['public/jet-less/*.less', 'public/jet-less/**/*.less'], ['jet-less']);
+  //gulp.watch(['public/jet-less/*.less', 'public/jet-less/**/*.less'], ['jet-less']);
   gulp.watch(['public/__icons/*.png'], ['sprites']);
 });
 
 
-gulp.task('export', function() {
-  var images, scripts, styles;
+gulp.task('export', ['clean-export', ], function() {
+  var src, href, url;
   
+  src = /src=([\'\"])(?!\/\/)(\.*\/?)(.[^\'\"]*)\1/g;
+  href = /href=([\'\"])(?!\/\/)(\.*\/?)(.[^\'\"]*)\1/g;
+  url = /url\(([\'\"]?)(?!\/\/)(\.*\/?)(.[^\)]*)\1/g;
+
   nunjucksRender.nunjucks.configure(['views/'], {
     watch: false
   });
@@ -117,8 +130,11 @@ gulp.task('export', function() {
   gulp.src([ '!views/layout.html', '!views/error.html', 'views/*.html', '!views/__*.html'])
     .pipe(nunjucksRender({
       isExport: true,
-      ctx: siteDB
+      ctx: caseData
     }))
+    .pipe(replace(src, 'src=$1$3$1'))
+    .pipe(replace(href, 'href=$1$3$1'))
+    .pipe(replace(url, 'url($1$3$1'))
     .pipe(prettify({
       indent_char: ' ',
       indent_size: 2
@@ -126,10 +142,15 @@ gulp.task('export', function() {
     .pipe(gulp.dest('export'));
 });
 
+gulp.task('clean-export', function () {
+  return gulp.src('export/*', {read: false})
+    .pipe(clean());
+});
+
 
 gulp.task('copyStatic', ['less:prod', 'compress'], function() {
-  gulp.src(['public/**/*', 'public/*'])
+  gulp.src(['public/**/*', 'public/*','!public/jet-js/*', '!public/jet-less/*','!public/less/*'])
     .pipe(gulp.dest('export'));
 });
 
-gulp.task('publish', ['export', 'compress', 'less:prod', 'copyStatic']);
+gulp.task('publish', ['clean-export', 'export', 'compress', 'less:prod', 'copyStatic']);

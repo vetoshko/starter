@@ -1,19 +1,19 @@
 <meta charset="utf-8" />
 <!--[if lt IE 9]><script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script><![endif]-->
-<meta content="" name="description">
-<meta content="" name="keywords">
+<meta content="{{ ctx.meta.desc }}" name="description">
+<meta content="{{ ctx.meta.keywords }}" name="keywords">
 <meta content="telephone=no" name="format-detection">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="HandheldFriendly" content="true">
 <meta content="IE=edge" http-equiv="X-UA-Compatible">
 
-<meta itemprop="image" content="" />
-<meta property="og:title" content="" />
+<meta itemprop="image" content="{{ ctx.meta.pic }}" />
+<meta property="og:title" content="{{ ctx.meta.title }}" />
 <meta property="og:type" content="website" />
-<meta property="og:image" content="" />
-<meta property="og:url" content="" />
-<meta property="og:description" content="" />
-<meta property="og:site_name" content="" />
+<meta property="og:image" content="{{ shareImg }}" />
+<meta property="og:url" content="{{ shareUrl }}" />
+<meta property="og:description" content="{{ ctx.meta.description }}" />
+<meta property="og:site_name" content="Digital-агентство JetStyle" />
 <meta property="og:locale" content="ru_RU" />
 
 <meta property="fb:app_id" content="890195134424647" />
@@ -23,13 +23,13 @@
 <meta name="twitter:site" content="@jetstyle_"/>
 <meta name="twitter:creator" content="@jetstyle_" />
 <meta name="twitter:domain" content="www.jetstyle.ru"/>
-<meta name="twitter:title" content="" />
-<meta name="twitter:description" content="" />
-<meta name="twitter:url" content="" />
-<meta name="twitter:image" content="" />
+<meta name="twitter:title" content="{{ ctx.meta.title }}" />
+<meta name="twitter:description" content="{{ ctx.meta.desc }}" />
+<meta name="twitter:url" content="http://www.jetstyle.ru/portfolio/{{ ctx.origin }}" />
+<meta name="twitter:image" content="{{ ctx.meta.pic }}" />
 
 
 <link href="/stylesheets/jet-style.css" rel="stylesheet" type="text/css">
 
-<link rel="shortcut icon" href="/app/skins/jetsite/images/favicon.ico" />
+<link rel="shortcut icon" href="http://www.jetstyle.ru/app/skins/jetsite/images/favicon.ico" />
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 

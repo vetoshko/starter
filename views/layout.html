@@ -1,4 +1,5 @@
-
+{%- set shareUrl = 'http://www.jetstyle.ru/portfolio/' ~ ctx.origin -%}
+{%- set shareImg = shareUrl ~ '/images/' ~ ctx.meta.pic  -%}
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:og="http://ogp.me/ns#" xmlns:fb="https://www.facebook.com/2008/fbml">
 <head>
@@ -14,12 +15,18 @@
   </div>
 
   {# Основной контент страницы #}
-  {% block content %}{% endblock content %}
+  {% block content %}
+ 
+
+  {% endblock content %}
   
-  {% include "jet-blocks/request.html" %}
+  {% include "blocks/reviews.html" %}
+  {% include "jet-blocks/jet-team.html" %}
+  {% include "jet-blocks/jet-request.html" %}
   {% include "jet-blocks/work-cards.html" %}
   {% include "jet-blocks/footer.html" %}
   {% include "jet-blocks/popups.html" %}
+  {% include "jet-blocks/jet-sticky.html" %}
   {% include "jet-blocks/analitics.html" %}
   
 

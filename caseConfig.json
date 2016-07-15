@@ -1,10 +1,14 @@
 {
-	"origin": "production name",
+	"origin": "mycase",
+	"shortTitle": "Lorem Ipsum",
+	"caseType": "интерфейсы",
+	"nextSiteUrl": "http://www.jetstyle.ru/portfolio/ridero",
+	"prevSiteUrl": "http://www.jetstyle.ru/portfolio/rbt",
 	"meta": {
-		"title": "test meta title",
+		"title": "Lorem Ipsum title",
 		"desc": "Some text",
 		"keywords": "some keywords",
-		"pic": "path to image for share"
+		"pic": "ogshare.png"
 	},
 	"team": [
 		{
@@ -44,16 +48,122 @@
 			"post": "Дизайнер"
 		},
 		{
-			"name": "Мила",
-			"lastName": "Балбашова",
-			"img": "Balbashova.jpg",
-			"post": "Дизайнер"
+			"name": "Алексей",
+			"lastName": "Маркин",
+			"img": "markin.jpg",
+			"post": "Пилот истребителя"
 		},
 		{
-			"name": "Владимир",
-			"lastName": "Садчиков",
-			"img": "sadchikov.jpg",
-			"post": "Верстальщик"
+			"name": "Ляйсан",
+			"lastName": "Байбулова",
+			"img": "baybulova.jpg",
+			"post": "Видеодизайнер"
+		},
+		{
+			"name": "Александр",
+			"lastName": "Плесовских",
+			"img": "plesovskich.jpg",
+			"post": "Программист"
+		},
+		{
+			"name": "Алина",
+			"lastName": "Экизашвили",
+			"img": "Ekizashvili.jpg",
+			"post": "Дизайнер"
+		}
+	],
+	"works": [
+		{
+			"name": "Революция стиля <nobr>для УГМК-ОЦМ</nobr>",
+			"url": "http://www.jetstyle.ru/portfolio/ugmk-ocm",
+			"image": "ugmk.jpg",
+			"tags": [
+				{
+					"label": "Сайты",
+					"type": "black"
+				},
+				{
+					"label": "Дизайн",
+					"type": "black"
+				},
+				{
+					"label": "Интерфейсы",
+					"type": "black"
+				},
+				{
+					"label": "New",
+					"type": "red"
+				}
+			]
+		},
+		{
+			"name": "Проектирование1 и редизайн интернет-магазина RBT.ru",
+			"url": "http://www.jetstyle.ru/portfolio/rbt",
+			"image": "rbt.jpg",
+			"tags": [
+				{
+					"label": "Сайты",
+					"type": "black"
+				},
+				{
+					"label": "Дизайн",
+					"type": "black"
+				},
+				{
+					"label": "Интерфейсы",
+					"type": "black"
+				},
+				{
+					"label": "New",
+					"type": "red"
+				}
+			]
+		},
+		{
+			"name": "«Бомбический сайт» для екатеринбургского канала ЕТВ",
+			"url": "http://www.jetstyle.ru/portfolio/etvbomb",
+			"image": "etv.jpg",
+			"tags": [
+				{
+					"label": "Сайты",
+					"type": "black"
+				},
+				{
+					"label": "Дизайн",
+					"type": "black"
+				},
+				{
+					"label": "Интерфейсы",
+					"type": "black"
+				}
+			]
+		},
+		{
+			"name": "Дизайн цифровой платформы для независимых авторов",
+			"url": "http://www.jetstyle.ru/portfolio/ridero",
+			"image": "ridero.jpg",
+			"tags": [
+				{
+					"label": "Сайты",
+					"type": "black"
+				},
+				{
+					"label": "Дизайн",
+					"type": "black"
+				},
+				{
+					"label": "Интерфейсы",
+					"type": "black"
+				}
+			]
+		}
+	],
+	"reviews": [
+		{
+			"author": "Алексей Маркин",
+			"authorPost": "Пилот истребителя",
+			"text": "<p>Ребята из&nbsp;JetStyle быстро нашли решение сложной задачи&nbsp;— мы&nbsp;хотели не&nbsp;просто скопировать зарубежную кампанию, а&nbsp;именно локализовать&nbsp;ее, сделать интересной для русскоязычной аудитории и&nbsp;показать всем, как вместе с&nbsp;Windows можно изменить мир к&nbsp;лучшему. </p><p>Весь проект прошел по&nbsp;плану, сайт и&nbsp;конкурс мы&nbsp;запустили вовремя, все видеоролики подготовили четко по&nbsp;графику, с&nbsp;продвижением тоже не&nbsp;было проблем.</p>",
+			"image": "markin.jpg"
 		}
 	]
 }
