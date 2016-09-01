@@ -1,1 +1,237 @@
-a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}.c-icon,.list__item{display:inline-block}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}body{font-family:wf_segoe-ui,Tahoma,Verdana,Arial,sans-serif;color:#000;background-color:#fff;line-height:1.2;font-style:normal;font-weight:400;-webkit-font-smoothing:antialiased}*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.c-icon{background-image:url(../images/iconset.png);background-repeat:no-repeat}@font-face{font-family:wf_segoe-ui;src:url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/light/latest.eot);src:url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/light/latest.eot?#iefix) format('embedded-opentype'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/light/latest.woff) format('woff'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/light/latest.ttf) format('truetype'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/light/latest.svg#web) format('svg');font-weight:100;font-style:normal}@font-face{font-family:wf_segoe-ui;src:url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semilight/latest.eot);src:url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semilight/latest.eot?#iefix) format('embedded-opentype'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semilight/latest.woff) format('woff'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semilight/latest.ttf) format('truetype'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semilight/latest.svg#web) format('svg');font-weight:300;font-style:normal}@font-face{font-family:wf_segoe-ui;src:url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/normal/latest.eot);src:url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/normal/latest.eot?#iefix) format('embedded-opentype'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/normal/latest.woff) format('woff'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/normal/latest.ttf) format('truetype'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/normal/latest.svg#web) format('svg');font-weight:400;font-style:normal}@font-face{font-family:wf_segoe-ui;src:url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/italic/latest.eot);src:url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/italic/latest.eot?#iefix) format('embedded-opentype'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/italic/latest.woff) format('woff'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/italic/latest.ttf) format('truetype'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/italic/latest.svg#web) format('svg');font-weight:400;font-style:italic}.list{list-style-type:none;padding-left:0;margin-left:-2%;font-size:0}.list__item{vertical-align:top;width:18%;margin-bottom:2%;margin-left:2%;font-size:16px}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+body {
+  font-family: 'wf_segoe-ui', Segoe UI, SegoeUI, Tahoma, Verdana, Arial, sans-serif;
+  color: #000;
+  background-color: #fff;
+  line-height: 1.2;
+  font-style: normal;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+.c-icon {
+  display: inline-block;
+  background-image: url(../images/iconset.png);
+  background-repeat: no-repeat;
+}
+@font-face {
+  font-family: 'wf_segoe-ui';
+  src: url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/light/latest.eot');
+  src: url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/light/latest.eot?#iefix') format('embedded-opentype'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/light/latest.woff') format('woff'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/light/latest.ttf') format('truetype'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/light/latest.svg#web') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'wf_segoe-ui';
+  src: url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semilight/latest.eot');
+  src: url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semilight/latest.eot?#iefix') format('embedded-opentype'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semilight/latest.woff') format('woff'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semilight/latest.ttf') format('truetype'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semilight/latest.svg#web') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'wf_segoe-ui';
+  src: url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/normal/latest.eot');
+  src: url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/normal/latest.eot?#iefix') format('embedded-opentype'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/normal/latest.woff') format('woff'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/normal/latest.ttf') format('truetype'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/normal/latest.svg#web') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'wf_segoe-ui';
+  src: url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/italic/latest.eot');
+  src: url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/italic/latest.eot?#iefix') format('embedded-opentype'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/italic/latest.woff') format('woff'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/italic/latest.ttf') format('truetype'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/italic/latest.svg#web') format('svg');
+  font-weight: 400;
+  font-style: italic;
+}
+.footer {
+  background-color: #d7d9da;
+  background-color: #f2f2f2;
+  padding: 40px 0;
+}
+.footer-bottom {
+  display: table;
+  width: 100%;
+}
+.footer-bottom__col {
+  display: table-cell;
+  vertical-align: top;
+}
+.footer-menu {
+  list-style-type: none;
+  margin: 0 0 0 -25px;
+  padding: 0;
+  text-align: center;
+}
+.footer-menu__item {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 25px;
+}
+@media (max-width: 490px) {
+  .footer-menu__item {
+    margin-bottom: 8px;
+  }
+}
+.footer-menu__item img {
+  vertical-align: middle;
+}
+.footer-links {
+  text-align: center;
+}
+.footer-links ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-links ul > li {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 20px;
+  text-transform: uppercase;
+}
+@media (max-width: 490px) {
+  .footer-links ul > li {
+    margin-left: 0px;
+    margin-bottom: 8px;
+    display: block;
+  }
+}
+.footer-links ul > li a {
+  color: #4a4c4f;
+}
+.footer-links ul > li a:hover {
+  text-decoration: none;
+}
+.mb30 {
+  margin-bottom: 30px;
+}

@@ -34,5 +34,8 @@
 </head>
 <body>
   {% block content %}{% endblock content %}
+  {% include "blocks/TDFooter.html" %}
+  {%- if isExport %}{% include "blocks/dpe_analitics.html" %}{%- endif %}
+  
   
 </body>
