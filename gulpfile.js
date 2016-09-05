@@ -3,7 +3,6 @@ var combiner = require('stream-combiner2');
 var gulp = require('gulp');
 var gutil = require('gulp-util');
 var less = require('gulp-less');
-//var server = require('gulp-express');
 var gls = require('gulp-live-server');
 var nunjucksRender = require('gulp-nunjucks-render');
 var prettify = require('gulp-html-prettify');
@@ -16,6 +15,7 @@ var LessPluginAutoPrefix = require('less-plugin-autoprefix');
 var LessPluginCleanCSS = require('less-plugin-clean-css');
 var uglify = require('gulp-uglify');
 var concat = require('gulp-concat');
+var notify = require("gulp-notify");
 
 gulp.task('less:dev', function() {
     var autoprefix = new LessPluginAutoPrefix({
@@ -23,14 +23,19 @@ gulp.task('less:dev', function() {
     });
 
   return gulp.src('public/less/style.less')
+    //.pipe(sourcemaps.init())
     .pipe(less({
       plugins: [autoprefix]
-    }).on('error', function(err) {
-      gutil.log(err);
-      this.emit('end');
-    }))
+    })
+      .on('error', notify.onError({
+        message: "Error: <%= error.message %>",
+        title: "Less Compile Error"
+      }))
+    )
+    //.pipe(sourcemaps.write('.', {includeContent: false, mapSources: 'public/less/**'}))
     .pipe(gulp.dest('public/stylesheets/'));
 });
+
 
 gulp.task('less:prod', function() {
   var cleancss = new LessPluginCleanCSS({
@@ -43,10 +48,12 @@ gulp.task('less:prod', function() {
   return gulp.src('public/less/style.less')
     .pipe(less({
       plugins: [autoprefix, cleancss]
-    }).on('error', function(err) {
-      gutil.log(err);
-      this.emit('end');
-    }))
+    })
+      .on('error', notify.onError({
+        message: "Error: <%= error.message %>",
+        title: "Less Compile Error"
+      }))
+    )
     .pipe(gulp.dest('public/stylesheets/'));
 });
 
@@ -101,7 +108,7 @@ gulp.task('exportDPE', function() {
   scripts = new RegExp('src=+([\'\"])\/javascripts\/(.[^\'\"]+)', 'g');
   styles = new RegExp('src=+([\'\"])\/stylesheets\/(.[^\'\"]+)', 'g');
 
-  gulp.src(['views/*.html', '!views/__*.html'])
+  gulp.src(['views/*.html', '!views/error.html', '!views/layout.html', '!views/__*.html'])
     .pipe(nunjucksRender({
       isExport: true,
       ctx: siteDB
@@ -114,10 +121,15 @@ gulp.task('exportDPE', function() {
     .pipe(replace(scripts, 'src=$1@File("/files/js/$2")'))
     .pipe(replace(styles, 'src=$1@File("/files/css/$2")'))
     .pipe(gulp.dest('export'));
+    
 });
 
 gulp.task('exportHTML', function() {
-  var images, scripts, styles;
+  var src, href, url;
+
+  src = /src=([\'\"])(?!\/\/)(?!\.*\/?__core)(\.*\/?)(.[^\'\"]*)\1/g;
+  href = /href=([\'\"])(?!\/\/)(?!\.*\/?__core)(\.*\/?)(.[^\'\"]*)\1/g;
+  url = /url\(([\'\"]?)(?!\/\/)(?!\.*\/?__core)(\.*\/?)(.[^\)]*)\1/g;
   
   nunjucksRender.nunjucks.configure(['views/'], {
     watch: false
@@ -133,12 +145,15 @@ gulp.task('exportHTML', function() {
       indent_char: ' ',
       indent_size: 2
     }))
+    .pipe(replace(src, 'src=$1$3$1'))
+    .pipe(replace(href, 'href=$1$3$1'))
+    .pipe(replace(url, 'url($1$3$1'))
     .pipe(gulp.dest('export'));
 });
 
-
+// TODO: ignore less folder
 gulp.task('copyStatic', ['less:prod', 'compress'], function() {
-  gulp.src(['public/**/*', 'public/*'])
+  gulp.src(['public/**/*', 'public/*' ])
     .pipe(gulp.dest('export'));
 });
 
