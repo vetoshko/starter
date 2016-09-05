@@ -1,1 +1,450 @@
-a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}html{font-size:16px}body{font-family:wf_segoe-ui,Segoe UI,SegoeUI,Tahoma,Verdana,Arial,sans-serif;color:#000;background-color:#fff;line-height:1.2;font-style:normal;font-weight:400;-webkit-font-smoothing:antialiased}*,:after,:before{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}a{color:#00bcf2;-webkit-transition:color .3s ease-in-out;-o-transition:color .3s ease-in-out;transition:color .3s ease-in-out}a:hover{color:#26cfff}@font-face{font-family:wf_segoe-ui;src:url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/light/latest.eot);src:url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/light/latest.eot?#iefix) format('embedded-opentype'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/light/latest.woff) format('woff'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/light/latest.ttf) format('truetype'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/light/latest.svg#web) format('svg');font-weight:100;font-style:normal}@font-face{font-family:wf_segoe-ui;src:url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semilight/latest.eot);src:url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semilight/latest.eot?#iefix) format('embedded-opentype'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semilight/latest.woff) format('woff'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semilight/latest.ttf) format('truetype'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semilight/latest.svg#web) format('svg');font-weight:300;font-style:normal}@font-face{font-family:wf_segoe-ui;src:url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/normal/latest.eot);src:url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/normal/latest.eot?#iefix) format('embedded-opentype'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/normal/latest.woff) format('woff'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/normal/latest.ttf) format('truetype'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/normal/latest.svg#web) format('svg');font-weight:400;font-style:normal}@font-face{font-family:wf_segoe-ui;src:url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/italic/latest.eot);src:url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/italic/latest.eot?#iefix) format('embedded-opentype'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/italic/latest.woff) format('woff'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/italic/latest.ttf) format('truetype'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/italic/latest.svg#web) format('svg');font-weight:400;font-style:italic}@font-face{font-family:wf_segoe-ui;src:url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semibold/latest.eot);src:url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semibold/latest.eot?#iefix) format('embedded-opentype'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semibold/latest.woff) format('woff'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semibold/latest.ttf) format('truetype'),url(https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semibold/latest.svg#web) format('svg');font-weight:600;font-style:normal}.c-dpe-footer{background-color:#f2f2f2;padding:40px 0}.c-dpe-footer__menu{list-style-type:none;margin:0 0 0 -25px;padding:0;text-align:center}.c-dpe-footer__menu-item{display:inline-block;vertical-align:top;margin-left:25px}@media (max-width:960px){.c-dpe-footer__menu-item{margin-bottom:8px}}.c-dpe-footer__menu-item img{vertical-align:middle}.c-dpe-footer__links{text-align:center;margin-bottom:30px}.c-dpe-footer__links-item{display:inline-block;vertical-align:top;margin-left:20px;text-transform:uppercase}@media (max-width:960px){.c-dpe-footer__links-item{margin-left:0;margin-bottom:8px;display:block}}.c-dpe-footer__links-item a{color:#4a4c4f}.c-dpe-footer__links-item a:hover{text-decoration:none}.c-dpe-footer__links ul{list-style-type:none;margin:0;padding:0}.h-clearfix:after,.h-clearfix:before{display:table;content:" ";-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box}.h-clearfix:after{clear:both}
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+html {
+  font-size: 16px;
+}
+body {
+  font-family: 'wf_segoe-ui', Segoe UI, SegoeUI, Tahoma, Verdana, Arial, sans-serif;
+  color: #000;
+  background-color: #fff;
+  line-height: 1.2;
+  font-style: normal;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+}
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+}
+a {
+  color: #00bcf2;
+  transition: color 0.3s ease-in-out;
+}
+a:hover {
+  color: #26cfff;
+}
+@font-face {
+  font-family: 'wf_segoe-ui';
+  src: url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/light/latest.eot');
+  src: url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/light/latest.eot?#iefix') format('embedded-opentype'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/light/latest.woff') format('woff'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/light/latest.ttf') format('truetype'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/light/latest.svg#web') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'wf_segoe-ui';
+  src: url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semilight/latest.eot');
+  src: url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semilight/latest.eot?#iefix') format('embedded-opentype'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semilight/latest.woff') format('woff'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semilight/latest.ttf') format('truetype'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semilight/latest.svg#web') format('svg');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'wf_segoe-ui';
+  src: url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/normal/latest.eot');
+  src: url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/normal/latest.eot?#iefix') format('embedded-opentype'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/normal/latest.woff') format('woff'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/normal/latest.ttf') format('truetype'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/normal/latest.svg#web') format('svg');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'wf_segoe-ui';
+  src: url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/italic/latest.eot');
+  src: url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/italic/latest.eot?#iefix') format('embedded-opentype'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/italic/latest.woff') format('woff'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/italic/latest.ttf') format('truetype'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/italic/latest.svg#web') format('svg');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'wf_segoe-ui';
+  src: url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semibold/latest.eot');
+  src: url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semibold/latest.eot?#iefix') format('embedded-opentype'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semibold/latest.woff') format('woff'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semibold/latest.ttf') format('truetype'), url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/semibold/latest.svg#web') format('svg');
+  font-weight: 600;
+  font-style: normal;
+}
+.c-dpe-footer {
+  background-color: #d7d9da;
+  background-color: #f2f2f2;
+  padding: 40px 0;
+}
+.c-dpe-footer__menu {
+  list-style-type: none;
+  margin: 0 0 0 -25px;
+  padding: 0;
+  text-align: center;
+}
+.c-dpe-footer__menu-item {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 25px;
+}
+@media (max-width: 960px) {
+  .c-dpe-footer__menu-item {
+    margin-bottom: 8px;
+  }
+}
+.c-dpe-footer__menu-item img {
+  vertical-align: middle;
+}
+.c-dpe-footer__links {
+  text-align: center;
+  margin-bottom: 30px;
+}
+.c-dpe-footer__links-item {
+  display: inline-block;
+  vertical-align: top;
+  margin-left: 20px;
+  text-transform: uppercase;
+}
+@media (max-width: 960px) {
+  .c-dpe-footer__links-item {
+    margin-left: 0px;
+    margin-bottom: 8px;
+    display: block;
+  }
+}
+.c-dpe-footer__links-item a {
+  color: #4a4c4f;
+}
+.c-dpe-footer__links-item a:hover {
+  text-decoration: none;
+}
+.c-dpe-footer__links ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+}
+.h-clearfix:before,
+.h-clearfix:after {
+  display: table;
+  content: " ";
+  box-sizing: border-box;
+}
+.h-clearfix:after {
+  clear: both;
+}
+.h-mb-50 {
+  margin-bottom: -50px;
+}
+.h-mb-45 {
+  margin-bottom: -45px;
+}
+.h-mb-40 {
+  margin-bottom: -40px;
+}
+.h-mb-35 {
+  margin-bottom: -35px;
+}
+.h-mb-30 {
+  margin-bottom: -30px;
+}
+.h-mb-25 {
+  margin-bottom: -25px;
+}
+.h-mb-20 {
+  margin-bottom: -20px;
+}
+.h-mb-15 {
+  margin-bottom: -15px;
+}
+.h-mb-10 {
+  margin-bottom: -10px;
+}
+.h-mb-5 {
+  margin-bottom: -5px;
+}
+.h-mb0 {
+  margin-bottom: 0px;
+}
+.h-mb5 {
+  margin-bottom: 5px;
+}
+.h-mb10 {
+  margin-bottom: 10px;
+}
+.h-mb15 {
+  margin-bottom: 15px;
+}
+.h-mb20 {
+  margin-bottom: 20px;
+}
+.h-mb25 {
+  margin-bottom: 25px;
+}
+.h-mb30 {
+  margin-bottom: 30px;
+}
+.h-mb35 {
+  margin-bottom: 35px;
+}
+.h-mb40 {
+  margin-bottom: 40px;
+}
+.h-mb45 {
+  margin-bottom: 45px;
+}
+.h-mb50 {
+  margin-bottom: 50px;
+}
+.h-mt-50 {
+  margin-top: -50px;
+}
+.h-mt-45 {
+  margin-top: -45px;
+}
+.h-mt-40 {
+  margin-top: -40px;
+}
+.h-mt-35 {
+  margin-top: -35px;
+}
+.h-mt-30 {
+  margin-top: -30px;
+}
+.h-mt-25 {
+  margin-top: -25px;
+}
+.h-mt-20 {
+  margin-top: -20px;
+}
+.h-mt-15 {
+  margin-top: -15px;
+}
+.h-mt-10 {
+  margin-top: -10px;
+}
+.h-mt-5 {
+  margin-top: -5px;
+}
+.h-mt0 {
+  margin-top: 0px;
+}
+.h-mt5 {
+  margin-top: 5px;
+}
+.h-mt10 {
+  margin-top: 10px;
+}
+.h-mt15 {
+  margin-top: 15px;
+}
+.h-mt20 {
+  margin-top: 20px;
+}
+.h-mt25 {
+  margin-top: 25px;
+}
+.h-mt30 {
+  margin-top: 30px;
+}
+.h-mt35 {
+  margin-top: 35px;
+}
+.h-mt40 {
+  margin-top: 40px;
+}
+.h-mt45 {
+  margin-top: 45px;
+}
+.h-mt50 {
+  margin-top: 50px;
+}
+.h-fz14 {
+  font-size: 14px;
+  font-size: 0.875rem;
+}
+.h-fz16 {
+  font-size: 16px;
+  font-size: 1rem;
+}
+.h-fz18 {
+  font-size: 18px;
+  font-size: 1.125rem;
+}
+.h-fz20 {
+  font-size: 20px;
+  font-size: 1.25rem;
+}
+.h-fz22 {
+  font-size: 22px;
+  font-size: 1.375rem;
+}
+.h-fz24 {
+  font-size: 24px;
+  font-size: 1.5rem;
+}
+.h-fz26 {
+  font-size: 26px;
+  font-size: 1.625rem;
+}
+.h-fz28 {
+  font-size: 28px;
+  font-size: 1.75rem;
+}
+.h-fz30 {
+  font-size: 30px;
+  font-size: 1.875rem;
+}
+.h-fz32 {
+  font-size: 32px;
+  font-size: 2rem;
+}
+.h-fz34 {
+  font-size: 34px;
+  font-size: 2.125rem;
+}
+.h-fz36 {
+  font-size: 36px;
+  font-size: 2.25rem;
+}
+.h-fz38 {
+  font-size: 38px;
+  font-size: 2.375rem;
+}
+.h-fz40 {
+  font-size: 40px;
+  font-size: 2.5rem;
+}
+.h-fz42 {
+  font-size: 42px;
+  font-size: 2.625rem;
+}
+.h-fz44 {
+  font-size: 44px;
+  font-size: 2.75rem;
+}
+.h-fz46 {
+  font-size: 46px;
+  font-size: 2.875rem;
+}
+.h-fz48 {
+  font-size: 48px;
+  font-size: 3rem;
+}
+.h-fz50 {
+  font-size: 50px;
+  font-size: 3.125rem;
+}

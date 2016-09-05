@@ -5,3 +5,10 @@
 	}
 	.atomLoop(@prop, @vals: @vals + @step, @step, @max, @class); 
 }
+
+.atomLoopFz(@vals, @step, @max, @class) when (@vals <= abs(@max)) {
+	.@{class}@{vals} {
+		.remFz(@vals)
+	}
+	.atomLoopFz(@vals: @vals + @step, @step, @max, @class)
+}
