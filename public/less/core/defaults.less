@@ -1,4 +1,8 @@
 // this file for the defaults styles, such as <body> or <a> for example...
+html {
+	font-size: @base-font-size;
+}
+
 body {
 	font-family: @base-font;
 	color: @base-color;
@@ -15,9 +19,11 @@ body {
 	box-sizing: @base-box-model;
 }
 
-.c-icon {
-	// temp styles, don't remove this rulset
-	display: inline-block;
-	background-image: url(../images/iconset.png);
-	background-repeat: no-repeat;
+a {
+	color: @link-color;
+	transition: color .3s ease-in-out;
+
+	&:hover {
+		color: lighten(@link-color, 10%)
+	}
 }

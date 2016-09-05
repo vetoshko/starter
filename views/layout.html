@@ -8,34 +8,31 @@
 <!--[if (gt IE 9)|!(IE)]><!-->
 <html class="no-js" lang="ru">
 <!--<![endif]-->
-<head>
-  <meta charset="utf-8">
-  <title>Заголовок</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
-  <meta content="telephone=no" name="format-detection">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="HandheldFriendly" content="true">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
-  <script>
-  (function(H) {
-    H.className = H.className.replace(/\bno-js\b/, 'js')
-  })(document.documentElement)
-  </script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
-	{%- if isExport %}
-    <script src="/javascripts/app.min.js"></script>
-		{%- else %}
-    <!-- include liveReload only in Dev server -->
-    <script src="//localhost:35729/livereload.js"></script>
-    <script src="/javascripts/app.js"></script>
-	{%- endif %}
-</head>
-<body>
-  {% block content %}{% endblock content %}
-  {% include "blocks/TDFooter.html" %}
-  {%- if isExport %}{% include "blocks/dpe_analitics.html" %}{%- endif %}
-  
-  
-</body>
+  <head>
+    <meta charset="utf-8">
+    <title>Заголовок</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+    <meta content="telephone=no" name="format-detection">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="HandheldFriendly" content="true">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <link href="/stylesheets/style.css" rel="stylesheet" type="text/css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
+  	{%- if isExport %}
+      <script src="/javascripts/app.min.js"></script>
+  		{%- else %}
+      <!-- include liveReload only in Dev server -->
+      <script src="//localhost:35729/livereload.js"></script>
+      <script src="/javascripts/app.js"></script>
+  	{%- endif %}
+  </head>
+  <body>
+    {% block content %}{% endblock content %}
+    {% include "blocks/dpe_footer.html" %}
+    {%- if isExport %}
+      {#% include "blocks/dpe_analitics.html" %#}
+    {%- endif %}
+  </body>
+</html>

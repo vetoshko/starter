@@ -6,7 +6,7 @@
 	// @fz - размер шрифта у итема(значение) - по умолчанию равен @base-font-size
 // Пример использования: .InlineList(5, 2) - создаст сетку по 5 элементов в строке с горизональным отступом равным 2%
 
-.InlineList(@count: 4, @offset: 5, @mb: unit(@offset, %), @fz: @base-font-size) {
+.inlineList(@count: 4, @offset: 5, @mb: unit(@offset, %), @fz: @base-font-size) {
 	list-style-type: none; // reset default ul styles;
 	padding-left: 0;
 	margin-left: unit(-@offset, %);

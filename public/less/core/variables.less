@@ -1,5 +1,6 @@
 
-@base-font: 'wf_segoe-ui', Segoe UI, SegoeUI, Tahoma,Verdana,Arial,sans-serif;
+// base variables
+@base-font: 'wf_segoe-ui', Segoe UI, SegoeUI, Tahoma, Verdana, Arial, sans-serif;
 @base-font-size: 16px;
 @base-font-weight: 400;
 @base-line-height: 1.2;
@@ -7,5 +8,24 @@
 @base-bg-color: #fff;
 @base-box-model: border-box;
 
-@mobile-widht: 490px;
-@gray: 				#d7d9da;
+
+@link-color: #00bcf2;
+
+// color definitions
+@gray: #d7d9da;
+
+// media query brakepoints
+@screen-xs:                        480px;
+@screen-xs-min:                    @screen-xs;
+@screen-sm:                        768px;
+@screen-sm-min:                    @screen-sm;
+@screen-md:                        992px;
+@screen-md-min:                    @screen-md;
+@screen-lg:                        1200px;
+@screen-lg-min:                    @screen-lg;
+@screen-xl:                        1600px;
+@screen-xl-min:                    @screen-xl;
+@screen-xs-max:                    ( @screen-sm-min - 1 );
+@screen-sm-max:                    ( @screen-md-min - 1 );
+@screen-md-max:                    ( @screen-lg-min - 1 );
+@screen-lg-max:                    ( @screen-xl-min - 1 );

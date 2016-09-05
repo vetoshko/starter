@@ -23,14 +23,12 @@ gulp.task('less:dev', function() {
     });
 
   return gulp.src('public/less/style.less')
-  	//.pipe(sourcemaps.init())
     .pipe(less({
       plugins: [autoprefix]
     }).on('error', function(err) {
       gutil.log(err);
       this.emit('end');
     }))
-    //.pipe(sourcemaps.write('.', {includeContent: false, mapSources: 'public/less/**'}))
     .pipe(gulp.dest('public/stylesheets/'));
 });
 
@@ -43,14 +41,12 @@ gulp.task('less:prod', function() {
     });
 
   return gulp.src('public/less/style.less')
-    //.pipe(sourcemaps.init())
     .pipe(less({
       plugins: [autoprefix, cleancss]
     }).on('error', function(err) {
       gutil.log(err);
       this.emit('end');
     }))
-    //.pipe(sourcemaps.write('.', {includeContent: false, mapSources: 'public/less/**'}))
     .pipe(gulp.dest('public/stylesheets/'));
 });
 
