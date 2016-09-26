@@ -143,13 +143,6 @@ body {
 *:after {
   box-sizing: border-box;
 }
-a {
-  color: #00bcf2;
-  transition: color 0.3s ease-in-out;
-}
-a:hover {
-  color: #26cfff;
-}
 @font-face {
   font-family: 'wf_segoe-ui';
   src: url('https://c.s-microsoft.com/static/fonts/segoe-ui/cyrillic/light/latest.eot');
