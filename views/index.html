@@ -1,4 +1,20 @@
+{%- set Page = {
+
+	"title": "Заголовок страницы",
+	"description": "Описание страницы"
+
+} -%}
 {% extends "layout.html" %}
 {% block content %}
-	{{ ctx.title }}
+	<section class="l-section">
+		<div class="l-container">
+		{{ Page.title }}
+
+		<div class="l-row">
+			<div class="l-col--xs-5">сетка</div>
+			<div class="l-col--xs-5">сетка</div>
+			<div class="l-col--xs-2">сетка</div>
+		</div>
+	</div>
+	</section>
 {% endblock %}

@@ -10,8 +10,8 @@
 <!--<![endif]-->
   <head>
     <meta charset="utf-8">
-    <title>{{ Page.title }}</title>
-    <meta content="{{ Page.description }}" name="description">
+    <title>Заголовок</title>
+    <meta content="" name="description">
     <meta content="" name="keywords">
     <meta content="telephone=no" name="format-detection">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -21,6 +21,10 @@
   </head>
   <body>
     {% block content %}{% endblock content %}
+    {% include "blocks/dpe_footer.html" %}
+    {%- if isExport %}
+      {#% include "blocks/dpe_analitics.html" %#}
+    {%- endif %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
     {%- if isExport %}
       <script src="/javascripts/app.min.js"></script>
