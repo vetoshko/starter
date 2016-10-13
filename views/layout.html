@@ -25,6 +25,7 @@
     {%- if isExport %}
       <script src="/javascripts/app.min.js"></script>
       {%- else %}
+      {% include "blocks/__add_component.html" %}
       <!-- include liveReload only in Dev server -->
       <script src="//localhost:35729/livereload.js"></script>
       <script src="/javascripts/app.js"></script>
