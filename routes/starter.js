@@ -39,12 +39,12 @@ function getComponentLocation (file) {
 				if (err.code === 'ENOENT') {
 					result = {endpoint, lessPath, endpointDir}
 				} else {
-					result = {error: 'Что то не так с чтдоступом к файлу\n' + lessPath}
+					result = {error: 'Что то не так с доступом к файлу\n' + lessPath}
 				}
 			}
 		}
 	} else {
-		result = {error: 'Неизветсный префикс. Используй доступные c-/m-/h-\n Или пиздуй писать руками'}
+		result = {error: 'Неизветсный префикс. Используй доступные c-/m-/h-\nИли пиши руками'}
 	}
 	return result;
 }
