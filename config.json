@@ -1,0 +1,14 @@
+{
+	"static":  "/",
+	"export_static": "",
+	"dpe": false,
+	"pages": [
+		{
+			"name": "index",
+			"page_data": [],
+			"page_vars": {
+				
+			}
+		}
+	]
+}

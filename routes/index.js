@@ -1,5 +1,8 @@
-var express = require('express');
-var router = express.Router();
+'use strict';
+
+let express = require('express');
+let router = express.Router();
+let config = require('../config.json');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
