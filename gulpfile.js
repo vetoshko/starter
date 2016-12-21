@@ -1,23 +1,24 @@
-var path = require('path');
-var combiner = require('stream-combiner2');
-var gulp = require('gulp');
-var gutil = require('gulp-util');
-var less = require('gulp-less');
-var gls = require('gulp-live-server');
-var nunjucksRender = require('gulp-nunjucks-render');
-var prettify = require('gulp-html-prettify');
-var replace = require('gulp-replace');
-var spritesmith = require('gulp.spritesmith');
-var merge = require('merge-stream');
-var sourcemaps = require('gulp-sourcemaps');
-var siteDB = require('./datasource/data.json');
-var LessPluginAutoPrefix = require('less-plugin-autoprefix');
-var LessPluginCleanCSS = require('less-plugin-clean-css');
-var uglify = require('gulp-uglify');
-var concat = require('gulp-concat');
-var notify = require("gulp-notify");
+'use strict';
+let path = require('path');
+let gulp = require('gulp');
+let gutil = require('gulp-util');
+let less = require('gulp-less');
+let gls = require('gulp-live-server');
+let nunjucksRender = require('gulp-nunjucks-render');
+let prettify = require('gulp-html-prettify');
+let replace = require('gulp-replace');
+let spritesmith = require('gulp.spritesmith');
+let merge = require('merge-stream');
+let sourcemaps = require('gulp-sourcemaps');
+let siteDB = require('./datasource/data.json');
+let LessPluginAutoPrefix = require('less-plugin-autoprefix');
+let LessPluginCleanCSS = require('less-plugin-clean-css');
+let uglify = require('gulp-uglify');
+let concat = require('gulp-concat');
+let notify = require("gulp-notify");
+let babel = require('gulp-babel');
 
-gulp.task('less:dev', function() {
+gulp.task('less:dev', () => {
     var autoprefix = new LessPluginAutoPrefix({
       browsers: ["last 2 versions"]
     });
@@ -36,12 +37,12 @@ gulp.task('less:dev', function() {
     .pipe(gulp.dest('public/stylesheets/'));
 });
 
-
-gulp.task('less:prod', function() {
-  var cleancss = new LessPluginCleanCSS({
+gulp.task('less:prod', () => {
+  let cleancss = new LessPluginCleanCSS({
       advanced: true
-    }),
-    autoprefix = new LessPluginAutoPrefix({
+    });
+
+  let autoprefix = new LessPluginAutoPrefix({
       browsers: ["last 30 versions", "IE 8", "IE 9"]
     });
 
@@ -57,48 +58,69 @@ gulp.task('less:prod', function() {
     .pipe(gulp.dest('public/stylesheets/'));
 });
 
-gulp.task('compress', function() {
+gulp.task('js', () => {
+  return gulp.src('public/javascripts/sources/*.js')
+    .pipe(sourcemaps.init())
+    .pipe(babel({
+      presets: ['es2015']
+    })
+      .on('error', notify.onError({
+        message: "Error: <%= error.message %>",
+        title: "JS Compile Error"
+      }))
+    )
+    .pipe(sourcemaps.write('../javascripts/'))
+    .pipe(gulp.dest('public/javascripts/'));
+});
+
+gulp.task('compress', () => {
   return gulp.src(['public/javascripts/dist/*.js', 'public/javascripts/app.js'])
     .pipe(uglify())
     .pipe(concat('app.min.js'))
     .pipe(gulp.dest('public/javascripts/'));
 });
 
-gulp.task('sprites', function() {
+gulp.task('sprites', () => {
 
-  var spriteData = gulp.src('public/__icons/*.png').pipe(spritesmith({
+  let spriteData = gulp.src('public/__icons/*.png').pipe(spritesmith({
     imgName: 'iconset.png',
     cssName: 'c-icon.less',
     padding: 10,
     cssTemplate: 'icons.hbs'
   }));
 
-  var imgStream = spriteData.img
+  let imgStream = spriteData.img
     .pipe(gulp.dest('public/images/'));
-  var cssStream = spriteData.css
+  let cssStream = spriteData.css
     .pipe(gulp.dest('public/less/components/'));
 
   return merge(imgStream, cssStream);
 });
 
-gulp.task('default', function() {
-  var server = gls.new(['bin/www']);
+gulp.task('default', () => {
+  let server = gls.new(['bin/www']);
   server.start();
 
-  gulp.watch(['views/blocks/*.html','public/stylesheets/*.css', 'views/*.html', 'datasource/data.json', 'app.js', 'gulpfile.js', 'routes/**/*.js'], function(file) {
+  gulp.watch(['views/blocks/*.html', 'views/*.html', 'datasource/data.json', 'app.js', 'gulpfile.js', 'routes/**/*.js'], function(file) {
       gutil.log('File:', path.basename(file.path), 'was', file.type, '=> livereload');
       server.start.bind(server)();
       server.notify.apply(server, [file]);
   });
 
+  gulp.watch(['public/stylesheets/*.css', 'public/javascripts/*.js'], function(file) {
+      gutil.log('File:', path.basename(file.path), 'was', file.type, '=> livereload');
+      server.notify.apply(server, [file]);
+  });
+
+  gulp.watch(['public/javascripts/sources/*.js'], ['js']);
   gulp.watch(['public/less/*.less', 'public/less/**/*.less'], ['less:dev']);
   gulp.watch(['public/__icons/*.png'], ['sprites']);
   
 });
 
 
-gulp.task('exportDPE', function() {
-  var images, scripts, styles;
+gulp.task('exportDPE', () => {
+  let images, scripts, styles;
   
   nunjucksRender.nunjucks.configure(['views/'], {
     watch: false
@@ -124,8 +146,8 @@ gulp.task('exportDPE', function() {
     
 });
 
-gulp.task('exportHTML', function() {
-  var src, href, url;
+gulp.task('exportHTML', () => {
+  let src, href, url;
 
   src = /src=([\'\"])(?!\/\/)(?!\.*\/?__core)(\.*\/?)(.[^\'\"]*)\1/g;
   href = /href=([\'\"])(?!\/\/)(?!\.*\/?__core)(\.*\/?)(.[^\'\"]*)\1/g;
@@ -136,7 +158,7 @@ gulp.task('exportHTML', function() {
   });
 
 
-  gulp.src([ '!views/layout.html', '!views/error.html', 'views/*.html', '!views/__*.html'])
+gulp.src([ '!views/layout.html', '!views/error.html', 'views/*.html', '!views/__*.html'])
     .pipe(nunjucksRender({
       isExport: true,
       ctx: siteDB
@@ -152,10 +174,10 @@ gulp.task('exportHTML', function() {
 });
 
 // TODO: ignore less folder
-gulp.task('copyStatic', ['less:prod', 'compress'], function() {
-  gulp.src(['public/**/*', 'public/*' ])
+gulp.task('copyStatic', ['less:prod', 'js'], () => {
+  gulp.src(['!public/less', '!public/less/**', '!public/javascripts/sources/*', '!public/javascripts/sources', 'public/**/*', 'public/*' ])
     .pipe(gulp.dest('export'));
 });
 
-gulp.task('publish', ['exportHTML', 'compress', 'less:prod', 'copyStatic']);
-gulp.task('publishDPE', ['exportDPE', 'compress', 'less:prod']);
+gulp.task('publish', ['exportHTML', 'copyStatic']);
+gulp.task('publishDPE', ['exportDPE', 'copyStatic']);

@@ -1,6 +1,6 @@
 <script>
 	(function() {
-		var promptText = 'Названия компонента (Без .less)\nДоступные префиксы\n\tc - Компонент\n\tm - Миксин\n\th - Хлпер\n',
+		var promptText = 'Названия компонента (Без .less)\nДоступные префиксы\n\c - Компонент\nm - Миксин\nh - Хлпер\n',
 				component;
 		function trigger(e) {
 	    if (e.keyCode === 26 && e.ctrlKey) {
@@ -20,7 +20,6 @@
 	    		  	if (data.error) {
 	    		  		alert(data.error)
 	    		  	}
-	    		    console.log()
 	    		  }
 
 	    		}

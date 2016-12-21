@@ -22,13 +22,12 @@
   <body>
     {% block content %}{% endblock content %}
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script> 
-    {%- if isExport %}
-      <script src="/javascripts/app.min.js"></script>
-      {%- else %}
+
+    {%- if not isExport %}
       {% include "blocks/__add_component.html" %}
       <!-- include liveReload only in Dev server -->
       <script src="//localhost:35729/livereload.js"></script>
-      <script src="/javascripts/app.js"></script>
     {%- endif %}
+    <script src="/javascripts/common.js"></script>
   </body>
 </html>
