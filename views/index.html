@@ -2,15 +2,22 @@
 	"title": "Заголовок страницы",
 	"description": "Описание страницы"
 } -%}
+
 {% extends "layout.html" %}
+
 {% block content %}
 	<section class="l-section">
 		<div class="l-container">
-		<div class="c-title">{{ Page.title }}</div>
+		<h1>Переменные</h1>
+		<ul>
+			<li>-- Инлайн ( на текущей странице ) => {{ Page.title }}</li>
+			<li>-- Локальная ( для текущей странице ) => {{ locals.test }}</li>
+			<li>-- Глобальная ( для всех страниц ) => {{ common.data.title }}</li>
+		</ul>
 		<div class="l-row">
-			<div class="l-col--xs-5">сетка</div>
-			<div class="l-col--xs-5">сетка</div>
-			<div class="l-col--xs-2">сетка</div>
+			<div class="l-col--xs-5">{{ index.foo }}</div>
+			<div class="l-col--xs-5">{{ locals.test }}</div>
+			<div class="l-col--xs-2">{{ common.data.title }}</div>
 		</div>
 	</div>
 	</section>

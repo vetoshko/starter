@@ -1,13 +1,20 @@
 {
-	"static":  "/",
-	"export_static": "",
+	"devStatic": "/",
+	"buildStatic": "/",
+	"appPort": 8080,
 	"dpe": false,
+	"commonData": ["data"],
+	"buildInset": [],
 	"pages": [
 		{
 			"name": "index",
-			"page_data": [],
-			"page_vars": {
-				
+			"route": "/",
+			"pageData": ["index"],
+			"pageVars": {
+				"test": 123,
+				"foo": "bar",
+				"loop": 1,
+				"bool": true
 			}
 		}
 	]

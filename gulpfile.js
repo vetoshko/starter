@@ -101,7 +101,15 @@ gulp.task('default', () => {
   let server = gls.new(['bin/www']);
   server.start();
 
-  gulp.watch(['views/blocks/*.html', 'views/*.html', 'datasource/data.json', 'app.js', 'gulpfile.js', 'routes/**/*.js'], function(file) {
+  gulp.watch([
+    'views/blocks/*.html', 
+    'views/*.html', 
+    'datasource/data.json', 
+    'app.js', 
+    'config.json', 
+    'gulpfile.js', 
+    'routes/**/*.js'
+    ], function(file) {
       gutil.log('File:', path.basename(file.path), 'was', file.type, '=> livereload');
       server.start.bind(server)();
       server.notify.apply(server, [file]);
