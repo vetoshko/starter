@@ -1,29 +1,33 @@
 'use strict';
-let path = require('path');
-let gulp = require('gulp');
-let gutil = require('gulp-util');
-let less = require('gulp-less');
-let gls = require('gulp-live-server');
-let nunjucksRender = require('gulp-nunjucks-render');
-let prettify = require('gulp-html-prettify');
-let replace = require('gulp-replace');
-let spritesmith = require('gulp.spritesmith');
-let merge = require('merge-stream');
-let sourcemaps = require('gulp-sourcemaps');
-let siteDB = require('./datasource/data.json');
-let LessPluginAutoPrefix = require('less-plugin-autoprefix');
-let LessPluginCleanCSS = require('less-plugin-clean-css');
-let uglify = require('gulp-uglify');
-let concat = require('gulp-concat');
-let notify = require("gulp-notify");
-let babel = require('gulp-babel');
+const path = require('path');
+const gulp = require('gulp');
+const gutil = require('gulp-util');
+const less = require('gulp-less');
+const gls = require('gulp-live-server');
+const nunjucksRender = require('gulp-nunjucks-render');
+const prettify = require('gulp-html-prettify');
+const replace = require('gulp-replace');
+const spritesmith = require('gulp.spritesmith');
+const merge = require('merge-stream');
+const sourcemaps = require('gulp-sourcemaps');
+const siteDB = require('./datasource/data.json');
+const LessPluginAutoPrefix = require('less-plugin-autoprefix');
+const LessPluginCleanCSS = require('less-plugin-clean-css');
+const uglify = require('gulp-uglify');
+const concat = require('gulp-concat');
+const notify = require("gulp-notify");
+const babel = require('gulp-babel');
+const exec = require('child_process').exec;
+const config = require('./config.json');
+
+console.log('============', config)
 
 gulp.task('less:dev', () => {
-    var autoprefix = new LessPluginAutoPrefix({
-      browsers: ["last 2 versions"]
-    });
+  var autoprefix = new LessPluginAutoPrefix({
+    browsers: ["last 2 versions"]
+  });
 
-  return gulp.src('public/less/style.less')
+  return gulp.src('public/less/*.less')
     //.pipe(sourcemaps.init())
     .pipe(less({
       plugins: [autoprefix]
@@ -43,10 +47,10 @@ gulp.task('less:prod', () => {
     });
 
   let autoprefix = new LessPluginAutoPrefix({
-      browsers: ["last 30 versions", "IE 8", "IE 9"]
+      browsers: ["last 20 versions", "IE 8", "IE 9"]
     });
 
-  return gulp.src('public/less/style.less')
+  return gulp.src('public/less/*.less')
     .pipe(less({
       plugins: [autoprefix, cleancss]
     })
@@ -104,7 +108,7 @@ gulp.task('default', () => {
   gulp.watch([
     'views/blocks/*.html', 
     'views/*.html', 
-    'datasource/data.json', 
+    'datasource/*.json', 
     'app.js', 
     'config.json', 
     'gulpfile.js', 
@@ -126,23 +130,22 @@ gulp.task('default', () => {
   
 });
 
+gulp.task('compileHtml', function (cb) {
+  exec('node __export.js', function (err, stdout, stderr) {
+    console.log(stdout);
+    cb(err);
+  });
+});
+
 
 gulp.task('exportDPE', () => {
   let images, scripts, styles;
-  
-  nunjucksRender.nunjucks.configure(['views/'], {
-    watch: false
-  });
   
   images = new RegExp('src=+([\'\"])\/images\/(.[^\'\"]+)', 'g');
   scripts = new RegExp('src=+([\'\"])\/javascripts\/(.[^\'\"]+)', 'g');
   styles = new RegExp('src=+([\'\"])\/stylesheets\/(.[^\'\"]+)', 'g');
 
-  gulp.src(['views/*.html', '!views/error.html', '!views/layout.html', '!views/__*.html'])
-    .pipe(nunjucksRender({
-      isExport: true,
-      ctx: siteDB
-    }))
+  gulp.src([ 'html/*.html'])
     .pipe(prettify({
       indent_char: ' ',
       indent_size: 2
@@ -150,41 +153,23 @@ gulp.task('exportDPE', () => {
     .pipe(replace(images, 'src=$1@File("/files/images/$2")'))
     .pipe(replace(scripts, 'src=$1@File("/files/js/$2")'))
     .pipe(replace(styles, 'src=$1@File("/files/css/$2")'))
-    .pipe(gulp.dest('export'));
-    
+    .pipe(gulp.dest(`${config.buildDir}`));
 });
 
-gulp.task('exportHTML', () => {
-  let src, href, url;
-
-  src = /src=([\'\"])(?!\/\/)(?!\.*\/?__core)(\.*\/?)(.[^\'\"]*)\1/g;
-  href = /href=([\'\"])(?!\/\/)(?!\.*\/?__core)(\.*\/?)(.[^\'\"]*)\1/g;
-  url = /url\(([\'\"]?)(?!\/\/)(?!\.*\/?__core)(\.*\/?)(.[^\)]*)\1/g;
+gulp.task('exportHTML', ['compileHtml'], () => {
   
-  nunjucksRender.nunjucks.configure(['views/'], {
-    watch: false
-  });
-
-
-gulp.src([ '!views/layout.html', '!views/error.html', 'views/*.html', '!views/__*.html'])
-    .pipe(nunjucksRender({
-      isExport: true,
-      ctx: siteDB
-    }))
+  gulp.src([ 'html/*.html'])
     .pipe(prettify({
       indent_char: ' ',
       indent_size: 2
     }))
-    .pipe(replace(src, 'src=$1$3$1'))
-    .pipe(replace(href, 'href=$1$3$1'))
-    .pipe(replace(url, 'url($1$3$1'))
-    .pipe(gulp.dest('export'));
+    .pipe(gulp.dest(`${config.buildDir}`));
 });
 
-// TODO: ignore less folder
+
 gulp.task('copyStatic', ['less:prod', 'js'], () => {
   gulp.src(['!public/less', '!public/less/**', '!public/javascripts/sources/*', '!public/javascripts/sources', 'public/**/*', 'public/*' ])
-    .pipe(gulp.dest('export'));
+    .pipe(gulp.dest(`${config.buildDir}`));
 });
 
 gulp.task('publish', ['exportHTML', 'copyStatic']);

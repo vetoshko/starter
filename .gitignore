@@ -6,6 +6,4 @@ node_modules/*
 *.sublime-project
 *.sublime-workspace
 export/*
-./*.zip
-./*.rar
-build.zip
+html/*

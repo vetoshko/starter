@@ -1,20 +1,23 @@
 #!/usr/bin/env node
-
+'use strict';
 /**
  * Module dependencies.
  */
-
+const config = require('../config.json');
 var app = require('../app');
 var debug = require('debug')('starter:server');
 var http = require('http');
+
 
 /**
  * Get port from environment and store in Express.
  */
 
-var port = normalizePort(process.env.PORT || '3000');
+var port = normalizePort(process.env.PORT || config.port);
 app.set('port', port);
 
+
+console.log(`App Listening on port: ${port}`);
 /**
  * Create HTTP server.
  */

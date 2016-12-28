@@ -13,7 +13,6 @@ let commonData = {};
 });
 */
 
-
 if (config.commonData) {
 	_.forEach(config.commonData, name => {
 		let d = JSON.parse(fs.readFileSync(path.join(__dirname, '../datasource', `${name}.json`)));
@@ -21,15 +20,12 @@ if (config.commonData) {
 	});
 }
 
-function getPage() {
-	
-}
-
 _.forEach(config.pages, page => {
 
 	router.get(page.route, (req, res, next) => {
 		
 		let context = {
+			root: config.devStatic,
 			locals: {},
 			common: commonData
 		}

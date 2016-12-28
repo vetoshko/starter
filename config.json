@@ -1,10 +1,11 @@
 {
 	"devStatic": "/",
 	"buildStatic": "/",
-	"appPort": 8080,
+	"buildDir": "build",
+	"port": 8080,
 	"dpe": false,
 	"commonData": ["data"],
-	"buildInset": [],
+	"bildAddOn": [],
 	"pages": [
 		{
 			"name": "index",
