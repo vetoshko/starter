@@ -1,4 +1,5 @@
 'use strict';
+const _ = require('lodash');
 const path = require('path');
 const gulp = require('gulp');
 const gutil = require('gulp-util');
@@ -20,7 +21,7 @@ const babel = require('gulp-babel');
 const exec = require('child_process').exec;
 const config = require('./config.json');
 
-console.log('============', config)
+
 
 gulp.task('less:dev', () => {
   var autoprefix = new LessPluginAutoPrefix({
@@ -73,6 +74,7 @@ gulp.task('js', () => {
         title: "JS Compile Error"
       }))
     )
+    .pipe(uglify())
     .pipe(sourcemaps.write('../javascripts/'))
     .pipe(gulp.dest('public/javascripts/'));
 });
@@ -168,8 +170,19 @@ gulp.task('exportHTML', ['compileHtml'], () => {
 
 
 gulp.task('copyStatic', ['less:prod', 'js'], () => {
-  gulp.src(['!public/less', '!public/less/**', '!public/javascripts/sources/*', '!public/javascripts/sources', 'public/**/*', 'public/*' ])
-    .pipe(gulp.dest(`${config.buildDir}`));
+  let arr = ['public/**'];
+  
+  if (config.buildIgnore.length > 0 ) {
+    _.each(config.buildIgnore, el => {
+      if (el.split('.').length === 1 ) {
+        arr.push(`!public/${el}`, `!public/${el}/**`)
+      } else {
+        arr.push(`!public/${el}`);
+      }
+    })
+  }
+  gulp.src(arr).pipe(gulp.dest(`${config.buildDir}`))
+
 });
 
 gulp.task('publish', ['exportHTML', 'copyStatic']);

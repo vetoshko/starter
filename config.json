@@ -6,6 +6,7 @@
 	"dpe": false,
 	"commonData": ["data"],
 	"bildAddOn": [],
+	"buildIgnore": ["less", "javascripts/sources"],
 	"pages": [
 		{
 			"name": "index",
