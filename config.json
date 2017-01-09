@@ -1,6 +1,6 @@
 {
 	"devStatic": "/",
-	"buildStatic": "/",
+	"buildStatic": "/static/",
 	"buildDir": "build",
 	"port": 8080,
 	"dpe": false,

@@ -10,7 +10,7 @@
     <meta name="HandheldFriendly" content="true">
     <meta content="IE=edge" http-equiv="X-UA-Compatible">
 
-    <link href="{{ root }}stylesheets/style.css" rel="stylesheet" type="text/css">
+    <link href="{{ 'style.css'|css_asset }}" rel="stylesheet" type="text/css">
   </head>
   <body>
     {% block content %}{% endblock content %}
@@ -20,6 +20,6 @@
       <!-- include liveReload only in Dev server -->
       <script src="//localhost:35729/livereload.js"></script>
     {%- endif %}
-    <script src="{{ root  }}javascripts/common.js"></script>
+    <script src="{{ 'common.js'|js_asset }}"></script>
   </body>
 </html>

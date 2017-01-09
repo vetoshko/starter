@@ -8,12 +8,21 @@ const compileDir = path.join(__dirname, 'html');
 const templateDir = path.join(__dirname, 'views');
 const nunjucks = require('nunjucks');
 const del = require('del');
-
-nunjucks.configure('views', {
-    autoescape: true,
+const env = nunjucks.configure('views', {
+    autoescape: false,
 });
 
+let filters = require('./filters/filters');
 let commonData = {};
+
+
+filters.export = true;
+
+_.each(filters, (func, name) => {
+  if (name !== 'export') {
+    env.addFilter(name, func);
+  }
+});
 
 if (config.commonData) {
 	_.forEach(config.commonData, name => {
@@ -58,6 +67,5 @@ if (!fs.existsSync(compileDir)) {
 
 		res = nunjucks.render(path.join(templateDir, `${page.name}.html`), context);
 		fs.writeFileSync(path.join(compileDir, `${page.name}.html`), res);
-
 	});
 })()

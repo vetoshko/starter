@@ -1,13 +1,14 @@
 var express = require('express');
 var path = require('path');
 var favicon = require('serve-favicon');
+var _ = require('lodash');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var routes = require('./routes/index');
 var starter = require('./routes/starter');
 var nunjucks = require('nunjucks');
-
+var filters = require('./filters/filters');
 var app = express();
 
 
@@ -15,10 +16,18 @@ var app = express();
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'html');
 
-nunjucks.configure('views', {
-    autoescape: true,
-    express: app
+var env = nunjucks.configure('views', {
+    autoescape: false,
+    express: app,
+    watch: true
 });
+
+_.each(filters, (func, name) => {
+  if (name !== 'export') {
+    env.addFilter(name, func);
+  }
+});
+
 
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
