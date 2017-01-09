@@ -37,7 +37,11 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/starter', starter);
+
+if (app.get('env') === 'development') {
+  app.use('/starter', starter);
+}
+
 app.use('/', routes);
 
 // catch 404 and forward to error handler

@@ -49,7 +49,8 @@ if (!fs.existsSync(compileDir)) {
 		context = {
 			root: config.buildStatic,
 		 	locals: {},
-		 	common: commonData
+		 	common: commonData,
+		 	isExport: true
 		}
 
 		if (page.pageData) {
