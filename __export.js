@@ -50,7 +50,8 @@ if (!fs.existsSync(compileDir)) {
 			root: config.buildStatic,
 		 	locals: {},
 		 	common: commonData,
-		 	isExport: true
+		 	isExport: true,
+			_env: process.env.NODE_ENV
 		}
 
 		if (page.pageData) {

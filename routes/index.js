@@ -27,7 +27,8 @@ _.forEach(config.pages, page => {
 		let context = {
 			root: config.devStatic,
 			locals: {},
-			common: commonData
+			common: commonData,
+			_env: process.env.NODE_ENV
 		}
 
 		if (page.pageData) {
