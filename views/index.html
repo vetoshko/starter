@@ -1,8 +1,3 @@
-{%- set Page = {
-	"title": "Заголовок страницы",
-	"description": "Описание страницы"
-} -%}
-
 {% extends "layout.html" %}
 
 {% block content %}
@@ -10,15 +5,10 @@
 		<div class="l-container">
 		<h1>Переменные</h1>
 		<ul>
-			<li>-- Инлайн ( на текущей странице ) => {{ Page.title }}</li>
-			<li>-- Локальная ( для текущей странице ) => {{ locals.test }}</li>
+			<li>-- Инлайн ( на текущей странице ) => {{ locals.title }}</li>
+			<li>-- Локальная ( для текущей странице ) => {{ locals.description }}</li>
 			<li>-- Глобальная ( для всех страниц ) => {{ common.data.title }}</li>
 		</ul>
-		<div class="l-row">
-			<div class="l-col--xs-5">{{ index.foo }}</div>
-			<div class="l-col--xs-5">{{ locals.test }}</div>
-			<div class="l-col--xs-2">{{ common.data.title }}</div>
-		</div>
 	</div>
 	</section>
 {% endblock %}

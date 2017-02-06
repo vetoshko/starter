@@ -8,11 +8,6 @@ let _ = require('lodash');
 let config = require('../config.json');
 let commonData = {};
 
-/*router.get('/', (req, res, next) => {
-  res.render('index', { title: 'Express', ctx: global.siteDB });
-});
-*/
-
 if (config.commonData) {
 	_.forEach(config.commonData, name => {
 		let d = JSON.parse(fs.readFileSync(path.join(__dirname, '../datasource', `${name}.json`)));

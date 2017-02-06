@@ -13,10 +13,8 @@
 			"route": "/",
 			"pageData": ["index"],
 			"pageVars": {
-				"test": 123,
-				"foo": "bar",
-				"loop": 1,
-				"bool": true
+				"title": "Заголовок страницы",
+				"description": "Описание страницы"
 			}
 		}
 	]

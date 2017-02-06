@@ -19,6 +19,7 @@ const concat = require('gulp-concat');
 const notify = require("gulp-notify");
 const babel = require('gulp-babel');
 const exec = require('child_process').exec;
+
 const config = require('./config.json');
 
 
@@ -115,14 +116,14 @@ gulp.task('default', () => {
     'config.json', 
     'gulpfile.js', 
     'routes/**/*.js'
-    ], function(file) {
-      gutil.log('File:', path.basename(file.path), 'was', file.type, '=> livereload');
+    ], file => {
+      gutil.log(`File ${path.basename(file.path)} was ${file.type} => livereload`);
       server.start.bind(server)();
       server.notify.apply(server, [file]);
   });
 
-  gulp.watch(['public/stylesheets/*.css', 'public/javascripts/*.js'], function(file) {
-      gutil.log('File:', path.basename(file.path), 'was', file.type, '=> livereload');
+  gulp.watch(['public/stylesheets/*.css', 'public/javascripts/*.js'], file => {
+      gutil.log(`File ${path.basename(file.path)} was ${file.type} => livereload`);
       server.notify.apply(server, [file]);
   });
 
@@ -132,30 +133,10 @@ gulp.task('default', () => {
   
 });
 
-gulp.task('compileHtml', function (cb) {
-  exec('node __export.js', function (err, stdout, stderr) {
-    console.log(stdout);
+gulp.task('compileHtml', cb => {
+  exec('node __export.js', (err, stdout, stderr) => {
     cb(err);
   });
-});
-
-
-gulp.task('exportDPE', () => {
-  let images, scripts, styles;
-  
-  images = new RegExp('src=+([\'\"])\/images\/(.[^\'\"]+)', 'g');
-  scripts = new RegExp('src=+([\'\"])\/javascripts\/(.[^\'\"]+)', 'g');
-  styles = new RegExp('src=+([\'\"])\/stylesheets\/(.[^\'\"]+)', 'g');
-
-  gulp.src([ 'html/*.html'])
-    .pipe(prettify({
-      indent_char: ' ',
-      indent_size: 2
-    }))
-    .pipe(replace(images, 'src=$1@File("/files/images/$2")'))
-    .pipe(replace(scripts, 'src=$1@File("/files/js/$2")'))
-    .pipe(replace(styles, 'src=$1@File("/files/css/$2")'))
-    .pipe(gulp.dest(`${config.buildDir}`));
 });
 
 gulp.task('exportHTML', ['compileHtml'], () => {
@@ -186,4 +167,3 @@ gulp.task('copyStatic', ['less:prod', 'js'], () => {
 });
 
 gulp.task('publish', ['exportHTML', 'copyStatic']);
-gulp.task('publishDPE', ['exportDPE', 'copyStatic']);
