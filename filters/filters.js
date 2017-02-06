@@ -27,6 +27,9 @@ let filters = {
 	img_asset: path => {
 		return filters.export ? config.dpe ? `@File(\'images/${path}\')` : `${config.buildStatic}images/${path}` : `${config.devStatic}images/${path}`
 	},
+	uploads: path => {
+		return filters.export ? config.dpe ? `@File(\'uploads/${path}\')` : `${config.buildStatic}uploads/${path}` : `${config.devStatic}uploads/${path}`
+	},
 	js_asset: path => {
 		return filters.export ? config.dpe ? `@File(\'js/${path}\')` : `${config.buildStatic}javascripts/${path}` : `${config.devStatic}javascripts/${path}`
 	},
