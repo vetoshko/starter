@@ -18,12 +18,16 @@ if (config.commonData) {
 _.forEach(config.pages, page => {
 
 	router.get(page.route, (req, res, next) => {
+
+		let layout = page.layout || config.defaultLayout;
 		
 		let context = {
 			root: config.devStatic,
 			locals: {},
 			common: commonData,
-			_env: process.env.NODE_ENV
+			storage: `${config.devStatic}storage/`,
+			_env: process.env.NODE_ENV,
+			layout
 		}
 
 		if (page.pageData) {

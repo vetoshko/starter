@@ -40,18 +40,25 @@ if (!fs.existsSync(compileDir)) {
 	del.sync([`${compileDir}/*.html`]);
 
 	_.forEach(config.pages, page => {
-		let template, 
-			context, 
-			res;
+
+		let template, context, res, layout;
+
+		layout = page.layout || config.defaultLayout;
+
+		if (config.contentOnly) {
+			layout = config.emptyLayout
+		}
 
 		template = fs.readFileSync(path.join(templateDir, `${page.name}.html`));
 
 		context = {
 			root: config.buildStatic,
-		 	locals: {},
 		 	common: commonData,
 		 	isExport: true,
-			_env: process.env.NODE_ENV
+			_env: process.env.NODE_ENV,
+		 	locals: {},
+		 	storage: config.storage,
+			layout
 		}
 
 		if (page.pageData) {
@@ -70,4 +77,19 @@ if (!fs.existsSync(compileDir)) {
 		res = nunjucks.render(path.join(templateDir, `${page.name}.html`), context);
 		fs.writeFileSync(path.join(compileDir, `${page.name}.html`), res);
 	});
+
+	// compile default layout
+
+	if (config.contentOnly) {
+		const context = {
+			root: config.buildStatic,
+		 	isExport: true,
+			_env: process.env.NODE_ENV,
+		 	storage: config.storage
+		}
+
+		const template = fs.readFileSync(path.join(templateDir, config.defaultLayout));
+		const result = nunjucks.render(path.join(templateDir, config.defaultLayout), context);
+		fs.writeFileSync(path.join(compileDir, config.defaultLayout), result);
+	}
 })()

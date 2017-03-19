@@ -1,11 +1,15 @@
 {
 	"devStatic": "/",
-	"buildStatic": "/static/",
+	"buildStatic": "",
 	"buildDir": "build",
 	"port": 8080,
 	"dpe": false,
 	"commonData": ["data"],
 	"bildAddOn": [],
+	"defaultLayout": "layout.html", 
+	"emptyLayout": "empty_layout.html", 
+	"contentOnly": false,
+	"storage": "https://path-to-blob/",
 	"buildIgnore": ["less", "javascripts/sources"],
 	"pages": [
 		{

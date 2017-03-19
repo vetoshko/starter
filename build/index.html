@@ -7,6 +7,7 @@
   <meta content="Описание страницы" name="description">
   <meta content="" name="keywords">
   <meta content="telephone=no" name="format-detection">
+
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="HandheldFriendly" content="true">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
@@ -21,52 +22,13 @@
       <h1>Переменные</h1>
       <ul>
         <li>-- Инлайн ( на текущей странице ) => Заголовок страницы</li>
-        <li>-- Локальная ( для текущей странице ) => 123</li>
+        <li>-- Локальная ( для текущей странице ) => Описание страницы</li>
         <li>-- Глобальная ( для всех страниц ) => Заголовок страницы</li>
+        <img src="https://path-to-blob/images/test.png" alt="">
       </ul>
-      /static/images/sdsds /static/images/sdsds /static/images/sdsds /static/images/sdsds
-      <div class="l-row">
-        <div class="l-col--xs-5">bar</div>
-        <div class="l-col--xs-5">123</div>
-        <div class="l-col--xs-2">Заголовок страницы</div>
-      </div>
     </div>
   </section>
 
-  <script>
-    (function() {
-    		var promptText = 'Названия компонента (Без .less)\n Доступные префиксы\nc - Компонент\nm - Миксин\nh - Хлпер\n',
-    				component;
-    		function trigger(e) {
-    	    if (e.keyCode === 26 && e.ctrlKey) {
-    	    	component = prompt(promptText);
-    	    	if (component) {
-    	    		var ajax = new XMLHttpRequest();
-    	    		ajax.open('GET', '/starter/add_less?id=' + component, true);
-    	    		ajax.send(null);
-    
-    	    		ajax.onreadystatechange = function() {
-    	    		  if (ajax.readyState != 4) return;
-    
-    	    		  if (ajax.status != 200) {
-    	    		    alert(ajax.status + ': ' + ajax.statusText);
-    	    		  } else {
-    	    		  	var data = JSON.parse(ajax.responseText);
-    	    		  	if (data.error) {
-    	    		  		alert(data.error)
-    	    		  	}
-    	    		  }
-    
-    	    		}
-    	    	}
-        	}
-        }
-    
-        document.addEventListener('keypress', trigger);
-    	})();
-  </script>
-  <!-- include liveReload only in Dev server -->
-  <script src="//localhost:35729/livereload.js"></script>
   <script src="/static/javascripts/common.js"></script>
 </body>
 

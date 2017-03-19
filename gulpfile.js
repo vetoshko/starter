@@ -19,9 +19,8 @@ const concat = require('gulp-concat');
 const notify = require("gulp-notify");
 const babel = require('gulp-babel');
 const exec = require('child_process').exec;
-
+const gap = require('gulp-append-prepend');
 const config = require('./config.json');
-
 
 
 gulp.task('less:dev', () => {
@@ -31,6 +30,7 @@ gulp.task('less:dev', () => {
 
   return gulp.src('public/less/*.less')
     //.pipe(sourcemaps.init())
+    .pipe(gap.prependText(`@storage: "../storage/";`))
     .pipe(less({
       plugins: [autoprefix]
     })
@@ -39,6 +39,7 @@ gulp.task('less:dev', () => {
         title: "Less Compile Error"
       }))
     )
+
     //.pipe(sourcemaps.write('.', {includeContent: false, mapSources: 'public/less/**'}))
     .pipe(gulp.dest('public/stylesheets/'));
 });
@@ -53,6 +54,7 @@ gulp.task('less:prod', () => {
     });
 
   return gulp.src('public/less/*.less')
+    .pipe(gap.prependText(`@storage: "${config.storage}";`))
     .pipe(less({
       plugins: [autoprefix, cleancss]
     })
@@ -162,6 +164,7 @@ gulp.task('copyStatic', ['less:prod', 'js'], () => {
       }
     })
   }
+  
   gulp.src(arr).pipe(gulp.dest(`${config.buildDir}`))
 
 });
