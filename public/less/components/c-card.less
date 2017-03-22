@@ -1,0 +1,43 @@
+.c-card {
+  width: 25%;
+  background: palevioletred;
+  //border: 1px solid red;
+  float: left;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+
+  &__sizer {
+    width: 22%;
+  }
+
+  &__gutter {
+    width: 4%;
+  }
+
+  &__image{
+    position: relative;
+    font-size: 0;
+    background-position: center;
+
+    &:after {
+      font-size: 10px;
+      content: 'vk logo';
+      position: absolute;
+      bottom: 20px;
+      right: 20px;
+    }
+  }
+
+  &__image_embedded {
+    padding-top: 100%;
+  }
+
+  &__name {
+    padding: 20px;
+    word-wrap: break-word;
+  }
+
+  &__description {
+    background: mediumpurple;
+  }
+}

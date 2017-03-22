@@ -1,4 +1,4 @@
-.env/*
+git log.env/*
 *.pyc
 __design/*
 node_modules/*
