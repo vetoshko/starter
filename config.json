@@ -9,7 +9,7 @@
 	"defaultLayout": "layout.html", 
 	"emptyLayout": "empty_layout.html", 
 	"contentOnly": false,
-	"storage": "https://path-to-blob/",
+	"storage": "https://path-to-blob",
 	"buildIgnore": ["less", "javascripts/sources"],
 	"pages": [
 		{
