@@ -6,10 +6,13 @@
   overflow: hidden;
 
   &__box {
+    margin: auto;
     width: 100%;
+    max-width: 1174px;
     height: 100vh;
     overflow: scroll;
     -ms-overflow-style: none;
+    position: relative;
 
     &::-webkit-scrollbar {
       display: none;
@@ -18,5 +21,18 @@
     .prevent-scroll & {
       overflow: hidden;
     }
+  }
+
+  &_pink {
+    background: @light-pink-color;
+    background: linear-gradient(to right, @light-pink-color, @dark-pink-color);
+  }
+
+  &_blue {
+    background: @blue-color;
+  }
+
+  &_purple {
+    background: @purple-color;
   }
 }

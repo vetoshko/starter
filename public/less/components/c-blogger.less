@@ -1,0 +1,30 @@
+.c-blogger {
+
+    &__image {
+        padding-top: 100%;
+        background-position: center;
+    }
+
+    &__name {
+        text-transform: uppercase;
+        font-size: 16px;
+        padding-top: 16px;
+    }
+
+    &:nth-child(odd) {
+        .c-blogger__name {
+            margin-top: -4px;
+            padding-top: 0;
+            padding-bottom: 17px;
+        }
+    }
+}
+
+.slick-initialized .c-blogger.slick-slide {
+    flex-direction: column;
+    display: flex;
+
+    &:nth-child(odd) {
+        flex-direction: column-reverse;
+    }
+}

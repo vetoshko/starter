@@ -1,27 +1,77 @@
-{% extends layout %}
-{% block content %}
-    <div class="c-header" style="height: 100px; background: greenyellow;"></div>
-        <div class="c-section-container">
-            <section class="c-section">
-                <div class="c-section__box">
-                    <div class="c-section__content">
-                        <div class="c-cards-holder">
-                            <div class="c-card__sizer"></div>
-                            <div class="c-card__gutter"></div>
-                            <div class="c-cards-holder__button" id="more-cards">Показать больше</div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            <section class="c-section">
-                <div class="c-section__box">
-                    <div class="c-section__content">
-                        <div>
-                            Второй тестовый слайд
-                        </div>
-                    </div>
-                </div>
-            </section>
+{% extends layout %} {% block content %}
+<div class="c-header" style="height: 100px; background: greenyellow;"></div>
+<div class="c-section-container">
+    <section class="c-section">
+        <div class="c-section__box">
+            <div class="c-section__content">
+                <ul class="c-menu">
+                    <li class="c-menu__item">Как участвовать?</li>
+                    <li class="c-menu__item">Какой приз?</li>
+                    <li class="c-menu__item">Участницы</li>
+                    <li class="c-menu__item">Интервью</li>
+                    <li class="c-menu__item">Женщины-изобретатели</li>
+                    <li class="c-menu__item">Правила участия</li>
+                </ul>
+                <a href="#" class="c-button c-button_main">Как участвовать?</a>
+            </div>
         </div>
-    <div class="c-footer" style="height: 100px; background: bisque;"></div>
+    </section>
+    <section class="c-section c-section_pink">
+        <div class="c-section__box">
+            <div class="c-section__content">
+                <div class="c-info">
+                    <div class="c-info__text">
+                        <div class="c-headline"> Как участвовать?</div>
+                        Все, что нужно – это написать небольшойпост о своей идее и опубликоватьего в социальной сети (ВК, Instagram или Twitter)с хэштэгом
+                        <span class="c-hashtag">#мечтатьневредно</span>
+                    </div>
+                    <img class="c-info__image" src="{{ 'girl-1.png'|img_asset }}" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="c-section c-section_blue">
+        <div class="c-section__box">
+            <div class="c-section__content">
+                <div class="c-info">
+                    <img class="c-info__image" src="{{ 'girl-2.png'|img_asset }}" alt="">
+                    <div class="c-info__text">
+                        <div class="c-headline">Какой приз?</div>
+                        У тебя есть шанс выиграть один из трехпланшетов, фотосессию для разворотажурнала ElleGirl, и главный приз –реализацию своей идеи! Дерзай!
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="c-section c-section_purple">
+        <div class="c-section__box">
+            <div class="c-section__content">
+                <div class="c-headline"> О чем мечтают звезды?</div>
+                <div class="c-bloggers-wrapper">
+                    {% set bloggers = [ { name: "Катя Клэп", image: "blogger-1.png" } ] %} {% for blogger in bloggers|loop(12) %}
+                    <div class="c-blogger">
+                        <div class="c-blogger__image" style="background-image: url({{ blogger.image|img_asset }})"></div>
+                        <div class="c-blogger__name">
+                            {{ blogger.name }}
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="c-section">
+        <div class="c-section__box">
+            <div class="c-section__content">
+                <div class="c-headline">О чем мечтают участницы?</div>
+                <div class="c-cards-holder">
+                    <div class="c-card__sizer"></div>
+                    <div class="c-card__gutter"></div>
+                    <div class="c-cards-holder__button" id="more-cards">Показать больше</div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>
+<div class="c-footer" style="height: 100px; background: bisque;"></div>
 {% endblock %}
