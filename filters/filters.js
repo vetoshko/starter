@@ -35,6 +35,9 @@ let filters = {
 	},
 	css_asset: path => {
 		return filters.export ? config.dpe ? `@File(\'css/${path}\')` : `${config.buildStatic}stylesheets/${path}` : `${config.devStatic}stylesheets/${path}`
+	},
+	cdn: path => {
+		return filters.export ? `${config.storage}/${path}`: `${config.devStatic}storage/${path}` 
 	}
 }
 
