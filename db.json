@@ -1,7 +1,8 @@
 {
   "cards": [
     {
-      "name": "veryveryveryverylonglonglongname",
+      "name": "Имя",
+      "lastName": "Фамилия",
       "img": "http://fakeimg.pl/300/",
       "imgWidth": "300",
       "imgHeight": "300",
@@ -9,7 +10,8 @@
       "social": "vk"
     },
     {
-      "name": "Нормальной длины Имя",
+      "name": "НормальноеИмя",
+      "lastName": "ФамилияФамилияФамилияФамилия",
       "img": "http://fakeimg.pl/250x100/",
       "imgWidth": "250",
       "imgHeight": "100",
@@ -23,7 +25,7 @@
       "social": "vk"
     },
     {
-      "name": "veryveryveryverylonglonglongname",
+      "name": "Имя",
       "img": "http://fakeimg.pl/300/",
       "imgWidth": "300",
       "imgHeight": "300",
@@ -31,7 +33,7 @@
       "social": "vk"
     },
     {
-      "name": "Нормальной длины Имя",
+      "name": "ДлинноеИмя",
       "img": "http://fakeimg.pl/250x100/",
       "imgWidth": "250",
       "imgHeight": "100",
@@ -45,7 +47,7 @@
       "social": "vk"
     },
     {
-      "name": "veryveryveryverylonglonglongname",
+      "name": "Имя",
       "img": "http://fakeimg.pl/300/",
       "imgWidth": "300",
       "imgHeight": "300",
@@ -53,7 +55,7 @@
       "social": "vk"
     },
     {
-      "name": "Нормальной длины Имя",
+      "name": "НормальноеИмя",
       "img": "http://fakeimg.pl/250x100/",
       "imgWidth": "250",
       "imgHeight": "100",
@@ -67,7 +69,7 @@
       "social": "vk"
     },
     {
-      "name": "veryveryveryverylonglonglongname",
+      "name": "Имя",
       "img": "http://fakeimg.pl/300/",
       "imgWidth": "300",
       "imgHeight": "300",
@@ -75,7 +77,7 @@
       "social": "vk"
     },
     {
-      "name": "Нормальной длины Имя",
+      "name": "НормальноеИмя",
       "img": "http://fakeimg.pl/250x100/",
       "imgWidth": "250",
       "imgHeight": "100",
@@ -89,7 +91,7 @@
       "social": "vk"
     },
     {
-      "name": "veryveryveryverylonglonglongname",
+      "name": "Имя",
       "img": "http://fakeimg.pl/300/",
       "imgWidth": "300",
       "imgHeight": "300",
@@ -97,7 +99,7 @@
       "social": "vk"
     },
     {
-      "name": "Нормальной длины Имя",
+      "name": "НормальноеИмя",
       "img": "http://fakeimg.pl/250x100/",
       "imgWidth": "250",
       "imgHeight": "100",
@@ -111,7 +113,7 @@
       "social": "vk"
     },
     {
-      "name": "veryveryveryverylonglonglongname",
+      "name": "Имя",
       "img": "http://fakeimg.pl/300/",
       "imgWidth": "300",
       "imgHeight": "300",
@@ -119,7 +121,7 @@
       "social": "vk"
     },
     {
-      "name": "Нормальной длины Имя",
+      "name": "НормальноеИмя",
       "img": "http://fakeimg.pl/250x100/",
       "imgWidth": "250",
       "imgHeight": "100",
@@ -133,7 +135,7 @@
       "social": "vk"
     },
     {
-      "name": "veryveryveryverylonglonglongname",
+      "name": "Имя",
       "img": "http://fakeimg.pl/300/",
       "imgWidth": "300",
       "imgHeight": "300",
@@ -141,7 +143,7 @@
       "social": "vk"
     },
     {
-      "name": "Нормальной длины Имя",
+      "name": "НормальноеИмя",
       "img": "http://fakeimg.pl/250x100/",
       "imgWidth": "250",
       "imgHeight": "100",
@@ -155,7 +157,7 @@
       "social": "vk"
     },
     {
-      "name": "veryveryveryverylonglonglongname",
+      "name": "Имя",
       "img": "http://fakeimg.pl/300/",
       "imgWidth": "300",
       "imgHeight": "300",
@@ -163,7 +165,7 @@
       "social": "vk"
     },
     {
-      "name": "Нормальной длины Имя",
+      "name": "НормальноеИмя",
       "img": "http://fakeimg.pl/250x100/",
       "imgWidth": "250",
       "imgHeight": "100",

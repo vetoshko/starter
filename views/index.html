@@ -12,7 +12,32 @@
                     <li class="c-menu__item">Женщины-изобретатели</li>
                     <li class="c-menu__item">Правила участия</li>
                 </ul>
-                <a href="#" class="c-button c-button_main">Как участвовать?</a>
+                <a href="#" class="c-button"><span class="c-button__text">Как участвовать?</span></a>
+            </div>
+        </div>
+    </section>
+    <section class="c-section">
+        <div class="c-section__box">
+            <div class="c-section__content">
+                <div class="c-info c-info_centered">
+                    <div class="c-headline c-info__header">
+                        <span class="c-headline__text">Об акции</span>
+                    </div>
+                    <p>
+                        Все в&#160;нашей жизни начинается с&#160;мечты.
+                        Самые крутые изобретения,без которых сегодня мы&#160;не&#160;можем представить свою жизнь,
+                        сначала были чьими-то фантазиями.
+                    </p>
+                    <p>
+                        Наверняка ты&#160;не&#160;раз задумывалась о&#160;том, чтобы изменить этотмир к&#160;лучшему.
+                        В&#160;наш век технологий нет ничего невозможного!
+                        Поделись своей светлой идеей и&#160;получи возможность выиграть
+                        отличные призы и&#160;фотосессию в&#160;журнале Elle Girl!
+                    </p>
+                     <a href="#" class="c-button c-info__button">
+                         <span class="c-button__text">Как участвовать?</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
@@ -24,8 +49,13 @@
                         <div class="c-headline"> Как участвовать?</div>
                         Все, что нужно – это написать небольшойпост о своей идее и опубликоватьего в социальной сети (ВК, Instagram или Twitter)с хэштэгом
                         <span class="c-hashtag">#мечтатьневредно</span>
+                        <div class="c-info__links">
+                            <a href="#" class="c-button">
+                                <span class="c-button__text">Какой приз?</span>
+                            </a> 
+                            <a href="#" class="c-link">Подробные правила</a>
+                        </div>
                     </div>
-                    <img class="c-info__image" src="{{ 'girl-1.png'|img_asset }}" alt="">
                 </div>
             </div>
         </div>
@@ -33,11 +63,15 @@
     <section class="c-section c-section_blue">
         <div class="c-section__box">
             <div class="c-section__content">
-                <div class="c-info">
-                    <img class="c-info__image" src="{{ 'girl-2.png'|img_asset }}" alt="">
+                <div class="c-info c-info_rtl">
                     <div class="c-info__text">
                         <div class="c-headline">Какой приз?</div>
                         У тебя есть шанс выиграть один из трехпланшетов, фотосессию для разворотажурнала ElleGirl, и главный приз –реализацию своей идеи! Дерзай!
+                        <div class="c-info__links">
+                            <a href="#" class="c-button">
+                                <span class="c-button__text">Принять участие!</span>
+                            </a> 
+                        </div>
                     </div>
                 </div>
             </div>
@@ -72,6 +106,6 @@
             </div>
         </div>
     </section>
-</div>
-<div class="c-footer" style="height: 100px; background: bisque;"></div>
-{% endblock %}
+    </div>
+    <div class="c-footer" style="height: 100px; background: bisque;"></div>
+    {% endblock %}

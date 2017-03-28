@@ -1,9 +1,7 @@
 .c-card {
   width: 25%;
-  background: palevioletred;
-  //border: 1px solid red;
   float: left;
-  margin-bottom: 20px;
+  padding: 12px;
   box-sizing: border-box;
 
   &__sizer {
@@ -33,11 +31,31 @@
   }
 
   &__name {
-    padding: 20px;
+    max-width: 100%;
+    color: #000;
     word-wrap: break-word;
+    text-transform: uppercase;
+    font-weight: 300;
+    display: inline-block;
+  }
+
+  &__last-name {
+    font-weight: 600;
+    max-width: 100%;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: clip;
+    vertical-align: bottom;   
   }
 
   &__description {
-    background: mediumpurple;
+      color: #000;
+  }
+
+  &__about {
+    background: #fff;
+    margin-top: 2px;
+    padding: 25px;
   }
 }

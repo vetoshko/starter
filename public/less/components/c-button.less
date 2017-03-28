@@ -1,15 +1,36 @@
 .c-button {
-    border-radius: 20px;
-    padding: 10px 20px;
+    padding: 10px 50px;
     display: inline-block;
     text-decoration: none;
     cursor: pointer;
+    color: #fff;
+    line-height: normal;
+    transform: skewX(-20deg);
+    background: @orange-color;
+    font-size: 24px;
 
-    &_main {
-        position: absolute;
-        bottom: 30px;
-        left: 50px;
-        background: #fff;
-        color: #7e860e;
+    &__text {
+        display: inline-block;
+        transform: skewX(20deg);
     }
+
+
+    // &_main {
+    //     position: absolute;
+    //     bottom: 30px;
+    //     left: 50px;
+    //     background: #fff;
+    //     color: #7e860e;
+    //     box-shadow: 0 4px #20a931;
+    // }
+
+    // &_purple {
+    //     background-color: #7a32b8;
+    //     box-shadow: 0 4px #55178a;
+    // }
+
+    // &_lilac {
+    //     background-color: #6257e1;
+	//     box-shadow: 0 4px #362ca9; 
+    // }
 }
