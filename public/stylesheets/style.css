@@ -1,4 +1,9 @@
 @charset "UTF-8";
+.m-vertical-center {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
 /* http://meyerweb.com/eric/tools/css/reset/ 
    v2.0 | 20110126
    License: none (public domain)
@@ -971,6 +976,7 @@ body::-webkit-scrollbar {
 .c-cards-holder {
   width: 100%;
   margin: auto;
+  margin-top: 125px;
 }
 .c-cards-holder:before,
 .c-cards-holder:after {
@@ -995,15 +1001,17 @@ body::-webkit-scrollbar {
   height: 100vh !important;
   background: #00bcf2;
   overflow: hidden;
+  position: relative;
 }
 .c-section__box {
   margin: auto;
   width: 100%;
-  max-width: 1174px;
+  max-width: 1180px;
   height: 100vh;
   overflow-y: scroll;
   -ms-overflow-style: none;
   position: relative;
+  padding: 0 10px;
 }
 .c-section__box::-webkit-scrollbar {
   display: none;
@@ -1011,15 +1019,102 @@ body::-webkit-scrollbar {
 .prevent-scroll .c-section__box {
   overflow: hidden;
 }
-.c-section_pink {
-  background: #e38fa5;
-  background: linear-gradient(to right, #e38fa5, #b6598b);
+.c-section:after,
+.c-section:before {
+  content: '';
+  display: block;
+  position: absolute;
 }
-.c-section_blue {
-  background: #01bed1;
+.c-section_main {
+  background: #e08842;
 }
-.c-section_purple {
-  background: #7a31b8;
+.c-section_main:after {
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 85%;
+  background: url('../storage/main.png') no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+}
+.c-section_about {
+  background: #01bacd;
+}
+.c-section_about:after {
+  top: 0;
+  left: calc(45% + 350px);
+  width: 100%;
+  height: 80%;
+  background: url('../storage/about-right.png') no-repeat;
+  background-size: contain;
+  background-position: left top;
+}
+.c-section_about:before {
+  top: 0;
+  right: calc(45% + 350px);
+  width: 100%;
+  height: 80%;
+  background: url('../storage/about-left.png') no-repeat;
+  background-size: contain;
+  background-position: right top;
+}
+.c-section_how-to-participate {
+  background: #aebc1f;
+}
+.c-section_how-to-participate:after {
+  bottom: 0;
+  left: 55%;
+  width: 100%;
+  height: 90%;
+  background: url('../storage/girl-right.png') no-repeat;
+  background-size: contain;
+  background-position: left bottom;
+}
+.c-section_gifts {
+  background: #00b1c4;
+}
+.c-section_gifts:after {
+  bottom: 10%;
+  right: 55%;
+  width: 100%;
+  height: 90%;
+  background: url('../storage/girl-left.png') no-repeat;
+  background-size: contain;
+  background-position: right center;
+}
+.c-section_stars {
+  background: #e08842;
+}
+.c-section_stars .c-section__box {
+  z-index: 1;
+}
+.c-section_stars:after {
+  top: -315px;
+  left: 40%;
+  width: 65%;
+  height: 85%;
+  background: url('../storage/stars.png') no-repeat;
+  background-size: cover;
+  background-position: left top;
+}
+.c-section_dreamers {
+  background: #00b1c4;
+}
+.c-section_dreamers .c-section__box {
+  z-index: 1;
+}
+.c-section_dreamers:after {
+  top: 0;
+  left: 50%;
+  width: 65%;
+  height: 85%;
+  background: url('../storage/great.png') no-repeat;
+  background-size: cover;
+  background-position: left top;
+}
+.c-section_condition {
+  background: #e08842;
 }
 /* Slider */
 .slick-slider {
@@ -1250,19 +1345,33 @@ body::-webkit-scrollbar {
 .c-button__text {
   display: inline-block;
   transform: skewX(20deg);
+  padding-left: 8px;
+}
+.c-button_main {
+  position: absolute;
+  bottom: 30px;
+  left: 50px;
 }
 .c-info {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+  width: 50%;
 }
 .c-info_centered {
   text-align: center;
+  width: auto;
   max-width: 670px;
   left: 50%;
   transform: translate(-50%, -50%);
+  padding-left: 0;
+}
+.c-info_right {
+  right: 0;
 }
 .c-info p {
+  padding-left: 9px;
+  display: block;
   line-height: 30px;
 }
 .c-info p + p {
@@ -1317,6 +1426,12 @@ body::-webkit-scrollbar {
   position: relative;
   display: inline-block;
   top: 10px;
+}
+.c-headline ~ .c-headline {
+  margin: 30px auto 70px;
+}
+.c-headline_blue {
+  background: #00b1c4;
 }
 .hidden-footer .c-footer {
   display: none;
@@ -1475,34 +1590,35 @@ body::-webkit-scrollbar {
 .c-hashtag {
   text-transform: uppercase;
 }
-.c-bloggers-wrapper {
+.c-bloggers {
   margin: auto -12px;
 }
-.c-bloggers-wrapper__next {
+.c-bloggers__next {
   right: 0;
 }
-.c-bloggers-wrapper__next:before {
+.c-bloggers__next:before {
   transform: translate(-75%, -50%) rotate(45deg);
 }
-.c-bloggers-wrapper__prev {
+.c-bloggers__prev {
   left: 0;
 }
-.c-bloggers-wrapper__prev:before {
+.c-bloggers__prev:before {
   transform: translate(-25%, -50%) rotate(-135deg);
 }
-.c-bloggers-wrapper__arrow {
+.c-bloggers__arrow {
   width: 68px;
   height: 68px;
   border-radius: 50%;
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
 }
-.c-bloggers-wrapper__arrow:hover {
+.c-bloggers__arrow:hover {
   background-color: rgba(0, 0, 0, 0.7);
 }
-.c-bloggers-wrapper__arrow.slick-disabled {
+.c-bloggers__arrow.slick-disabled {
   display: none !important;
 }
-.c-bloggers-wrapper__arrow:before {
+.c-bloggers__arrow:before {
   content: '';
   display: block;
   width: 15px;
@@ -1513,21 +1629,21 @@ body::-webkit-scrollbar {
   top: 50%;
   left: 50%;
 }
-.c-bloggers-wrapper__dots {
+.c-bloggers__dots {
   padding-top: 70px;
   display: inline-block;
 }
-.c-bloggers-wrapper__dots li {
+.c-bloggers__dots li {
   vertical-align: middle;
   width: 12px;
   height: 12px;
   border: 2px solid #fff;
   border-radius: 50%;
 }
-.c-bloggers-wrapper__dots li button {
+.c-bloggers__dots li button {
   display: none;
 }
-.c-bloggers-wrapper__dots li.slick-active {
+.c-bloggers__dots li.slick-active {
   margin: auto 9px;
   width: 10px;
   height: 10px;
@@ -1535,7 +1651,7 @@ body::-webkit-scrollbar {
   background: #fff;
   border-radius: 50%;
 }
-.c-bloggers-wrapper__dots li.slick-active:after {
+.c-bloggers__dots li.slick-active:after {
   content: '';
   display: block;
   position: absolute;
@@ -1547,11 +1663,39 @@ body::-webkit-scrollbar {
   left: 50%;
   transform: translate(-50%, -50%);
 }
+.c-bloggers-wrapper {
+  margin-top: 47vh;
+  transform: translateY(-50%);
+}
 .c-link {
   display: inline-block;
   border-bottom: 1px solid;
   color: #fff;
   text-decoration: none;
+}
+.c-dreamers {
+  margin-top: 47vh;
+  transform: translateY(-50%);
+}
+.c-condition {
+  padding-left: 30px;
+}
+.c-condition + .c-condition {
+  margin-top: 50px;
+}
+.c-condition__header {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 24px;
+  padding-bottom: 30px;
+}
+.c-condition__header:before {
+  position: absolute;
+  content: attr(data-number);
+  left: -30px;
+}
+.c-condition__text {
+  font-size: 16px;
 }
 .h-clearfix:before,
 .h-clearfix:after {

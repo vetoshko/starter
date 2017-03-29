@@ -1,5 +1,5 @@
 .c-headline{
-    background: @orange-color;
+    background: @orange-interface-color;
     display: inline-block;
     transform: skewX(-20deg);
     font-size: 50px;
@@ -15,4 +15,13 @@
         display: inline-block;
         top: 10px;
     }
+
+    & ~ & {
+        margin: 30px auto 70px;
+
+    }
+}
+
+.c-headline_blue {
+    background: @blue-color;
 }

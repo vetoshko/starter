@@ -1,0 +1,27 @@
+.c-condition {
+    padding-left: 30px;
+
+    & + & {
+        margin-top: 50px;
+    }
+
+    
+
+    &__header {
+        position:  relative;
+        text-transform: uppercase;
+        font-size: 24px;
+        padding-bottom: 30px;
+
+        &:before {
+            position: absolute;
+            content: attr(data-number);
+            left: -30px;
+        }
+    }
+
+    &__text {
+        font-size: 16px;
+    }
+
+}

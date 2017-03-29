@@ -2,17 +2,19 @@
   width: 100vw;
   height: 100vh !important;
   background: #00bcf2;
-  //border: 1px solid darkred;
+  // padding: 60px 0;
   overflow: hidden;
+  position: relative;
 
   &__box {
     margin: auto;
     width: 100%;
-    max-width: 1174px;
+    max-width: 1180px;
     height: 100vh;
     overflow-y: scroll;
     -ms-overflow-style: none;
     position: relative;
+    padding: 0 10px;
 
     &::-webkit-scrollbar {
       display: none;
@@ -23,16 +25,115 @@
     }
   }
 
-  &_pink {
-    background: @light-pink-color;
-    background: linear-gradient(to right, @light-pink-color, @dark-pink-color);
+   &:after,
+   &:before {
+      content: '';
+      display: block;
+      position: absolute;
+   }
+
+   &_main {
+     background: @orange-color;
+
+     &:after {
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 85%;
+        background: url('../storage/main.png') no-repeat;
+        background-size: cover;
+        background-position: center bottom;
+      }
+   }
+
+   &_about {
+      background: @light-blue-color;
+      &:after {
+        top: 0;
+        left: ~"calc(45% + 350px)";
+        width: 100%;
+        height: 80%;
+        background: url('../storage/about-right.png') no-repeat;
+        background-size: contain;
+        background-position: left top;
+      }
+      &:before {
+        top: 0;
+        right: ~"calc(45% + 350px)";
+        width: 100%;
+        height: 80%;
+        background: url('../storage/about-left.png') no-repeat;
+        background-size: contain;
+        background-position: right top;
+      }
+   }
+
+  &_how-to-participate {
+    background: @green-color;
+
+    &:after {
+      bottom: 0;
+      left: 55%;
+      width: 100%;
+      height: 90%;
+      background: url('../storage/girl-right.png') no-repeat;
+      background-size: contain;
+      background-position: left bottom;
+    }
   }
 
-  &_blue {
+  &_gifts {
     background: @blue-color;
+
+    &:after {
+      bottom: 10%;
+      right: 55%;
+      width: 100%;
+      height: 90%;
+      background: url('../storage/girl-left.png') no-repeat;
+      background-size: contain;
+      background-position: right center;
+    }
   }
 
-  &_purple {
-    background: @purple-color;
+  &_stars {
+    background: @orange-color;
+
+    .c-section__box {
+      z-index: 1;
+    }
+
+    &:after {
+      top: -315px;
+      left: 40%;
+      width: 65%;
+      height: 85%;
+      background: url('../storage/stars.png') no-repeat;
+      background-size: cover;
+      background-position: left top;
+    }
+  }
+
+  &_dreamers {
+    background: @blue-color;
+
+    .c-section__box {
+      z-index: 1;
+    }
+
+    &:after {
+      top: 0;
+      left: 50%;
+      width: 65%;
+      height: 85%;
+      background: url('../storage/great.png') no-repeat;
+      background-size: cover;
+      background-position: left top;
+    }
+  }
+
+  &_condition {
+    background: @orange-color;
   }
 }

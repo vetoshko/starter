@@ -2,15 +2,23 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
+    width: 50%;
 
     &_centered {
         text-align: center;
+        width: auto;
         max-width: 670px;
         left: 50%;
         transform: translate(-50%, -50%);
+        padding-left: 0;
+    }
+    &_right {
+        right: 0;
     }
 
     p {
+        padding-left: 9px;        
+        display: block;
         line-height: 30px;
     }
 

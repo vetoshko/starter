@@ -1,4 +1,4 @@
-.c-bloggers-wrapper {
+.c-bloggers {
     margin: auto -12px;
 
     &__next {
@@ -20,6 +20,7 @@
         height: 68px;
         border-radius: 50%;
         background-color: rgba(0, 0, 0, .5);
+        z-index: 2;
 
         &:hover {
             background-color: rgba(0, 0, 0, .7);
@@ -80,4 +81,10 @@
             }
         }
     }
+}
+
+
+.c-bloggers-wrapper {
+    margin-top: 47vh;
+    transform: translateY(-50%);
 }

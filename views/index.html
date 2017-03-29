@@ -1,7 +1,7 @@
 {% extends layout %} {% block content %}
 <div class="c-header" style="height: 100px; background: greenyellow;"></div>
 <div class="c-section-container">
-    <section class="c-section">
+    <section class="c-section c-section_main">
         <div class="c-section__box">
             <div class="c-section__content">
                 <ul class="c-menu">
@@ -12,11 +12,10 @@
                     <li class="c-menu__item">Женщины-изобретатели</li>
                     <li class="c-menu__item">Правила участия</li>
                 </ul>
-                <a href="#" class="c-button"><span class="c-button__text">Как участвовать?</span></a>
             </div>
         </div>
     </section>
-    <section class="c-section">
+    <section class="c-section c-section_about">
         <div class="c-section__box">
             <div class="c-section__content">
                 <div class="c-info c-info_centered">
@@ -41,55 +40,76 @@
             </div>
         </div>
     </section>
-    <section class="c-section c-section_pink">
+    <section class="c-section c-section_how-to-participate">
         <div class="c-section__box">
             <div class="c-section__content">
                 <div class="c-info">
-                    <div class="c-info__text">
-                        <div class="c-headline"> Как участвовать?</div>
-                        Все, что нужно – это написать небольшойпост о своей идее и опубликоватьего в социальной сети (ВК, Instagram или Twitter)с хэштэгом
-                        <span class="c-hashtag">#мечтатьневредно</span>
-                        <div class="c-info__links">
-                            <a href="#" class="c-button">
-                                <span class="c-button__text">Какой приз?</span>
-                            </a> 
-                            <a href="#" class="c-link">Подробные правила</a>
-                        </div>
+                    <div class="c-headline c-info__header">
+                        <span class="c-headline__text">Как участвовать?</span>
                     </div>
+                    <p>
+                        Напиши о&#160;своей идее небольшой пост.
+                    </p>
+                    <p>
+                        Поставь хэштэг <span class="c-hashtag">#МечтатьНеВредно</span> и опубликуй пост в&#160;соцсети: ВК, Instagram или Twitter.
+                        Будет здорово, если приложишь фото или видео ;)
+                    </p>
+                    <p>
+                        Обязательное условие конкурса&#160;&#8212; сделать свойпрофиль открытым!
+                        Пусть о&#160;твоей идее узнают все!
+                    </p>
+                    <p>
+                        Подробные правила конкурса <a href="#" class="c-link">читай тут</a>
+                    </p>
+                    <a href="#" class="c-button c-info__button">
+                        <span class="c-button__text">Какой приз?</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
-    <section class="c-section c-section_blue">
+    <section class="c-section c-section_gifts">
         <div class="c-section__box">
             <div class="c-section__content">
-                <div class="c-info c-info_rtl">
-                    <div class="c-info__text">
-                        <div class="c-headline">Какой приз?</div>
-                        У тебя есть шанс выиграть один из трехпланшетов, фотосессию для разворотажурнала ElleGirl, и главный приз –реализацию своей идеи! Дерзай!
-                        <div class="c-info__links">
-                            <a href="#" class="c-button">
-                                <span class="c-button__text">Принять участие!</span>
-                            </a> 
-                        </div>
+                <div class="c-info c-info_right">
+                    <div class="c-headline c-info__header">
+                        <span class="c-headline__text">Какой приз?</span>
                     </div>
+                    <p>
+                        Автору самой блестящей идеи&#160;&#8212; фотосессия в&#160;журнале ELLE Girl
+                        и&#160;планшет-трансформер Lenovo Yoga book.
+                    </p>
+                    <p>
+                        Двум финалистам: планшет-трансформерA sus Transformer Mini T102
+                        и&#160;планшет-трансформер Acer Aspire&#160;R3.
+                    </p>
+                    <p>
+                        Делись фантазиями&#160;&#8212; получай отличные подарки!
+                    </p>
+                    <a href="#" class="c-button c-info__button">
+                        <span class="c-button__text">Участвовать!</span>
+                    </a>
                 </div>
             </div>
         </div>
     </section>
-    <section class="c-section c-section_purple">
+    <section class="c-section c-section_stars">
         <div class="c-section__box">
             <div class="c-section__content">
-                <div class="c-headline"> О чем мечтают звезды?</div>
+                <div class="c-headline c-headline_blue">
+                    <span class="c-headline__text">О чем мечтают звезды?</span>
+                </div>
                 <div class="c-bloggers-wrapper">
-                    {% set bloggers = [ { name: "Катя Клэп", image: "blogger-1.png" } ] %} {% for blogger in bloggers|loop(12) %}
-                    <div class="c-blogger">
-                        <div class="c-blogger__image" style="background-image: url({{ blogger.image|img_asset }})"></div>
-                        <div class="c-blogger__name">
-                            {{ blogger.name }}
+                    <div class="c-bloggers">
+                        {% set bloggers = [ { name: "Катя Клэп", image: "blogger-1.png" } ] %} {% for blogger in bloggers|loop(12) %}
+                        <div class="c-blogger">
+                            <div class="c-blogger__image" style="background-image: url({{ blogger.image|img_asset }})"></div>
+                            <div class="c-blogger__name">
+                                {{ blogger.name }}
+                            </div>
                         </div>
+                        {% endfor %}
                     </div>
-                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -97,7 +117,9 @@
     <section class="c-section">
         <div class="c-section__box">
             <div class="c-section__content">
-                <div class="c-headline">О чем мечтают участницы?</div>
+                <div class="c-headline">
+                    <span class="c-headline__text">О чем мечтают участницы?</span>
+                </div>
                 <div class="c-cards-holder">
                     <div class="c-card__sizer"></div>
                     <div class="c-card__gutter"></div>
@@ -106,6 +128,53 @@
             </div>
         </div>
     </section>
-    </div>
-    <div class="c-footer" style="height: 100px; background: bisque;"></div>
-    {% endblock %}
+    <section class="c-section c-section_dreamers">
+        <div class="c-section__box">
+            <div class="c-section__content">
+                <div class="c-headline">
+                    <span class="c-headline__text">Великие мечтательницы</span>
+                </div>
+                <div class="c-dreamers">
+                    {% set dreamers = [ { name: "Диана", lastname: "Коверн", work: "Физик", image: "dreamer-1.png" } ] %}
+                    {% for dreamer in dreamers|loop(10) %}
+                        <div class='c-card'>
+                            <div class='c-card__image' style='background-image: url({{ dreamer.image|cdn }});'>
+                                <div class='c-card__image_embedded'></div>
+                                <div class="c-card__info">
+                                    <div class='c-card__name'>{{dreamer.name}} 
+                                        <span class="c-card__last-name">{{dreamer.lastname}}</span>
+                                    </div>
+                                    <div class="c-card__info-work">{{dreamer.work}}</div>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="c-section c-section_condition">
+        <div class="c-section__box">
+            <div class="c-section__content">
+                <div class="c-headline c-headline_blue">
+                    <span class="c-headline__text">Условия конкурса</span>
+                </div><br>
+                <div class="c-headline c-headline_blue">
+                    <span class="c-headline__text">&#171;Мечтать не вредно&#187;</span>
+                </div>
+            </div>
+                {% set conditions = [ {
+                    theme: "Предмет соглашения", 
+                    text: "Настоящее соглашение (далее – “Правила”) регламентирует взаимоотношения между организаторомКонкурса «МЕЧТАТЬ НЕ ВРЕДНО» (далее - «Конкурс») ООО «Майкрософт Рус», юридическим лицом, созданнымв соответствии с законодательством Российской Федерации, с местом нахождения по адресу: Москва,ул. Крылатская, д.17 (далее – «Организатор»), с одной стороны, и участниками Конкурса с другой." 
+                } ] %}
+                {% for condition in conditions|loop(5) %}
+                    <div class="c-condition">
+                        <div class="c-condition__header" data-number={{loop.index}}> {{condition.theme + "."}} </div>
+                        <div class="c-condition__text">{{condition.text}}</div>
+                    </div>
+                {% endfor %}
+        </div>
+    </section>
+</div>
+<div class="c-footer" style="height: 100px; background: bisque;"></div>
+{% endblock %}
