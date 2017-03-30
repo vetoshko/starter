@@ -141,7 +141,7 @@
                             <div class='c-card__image' style='background-image: url({{ dreamer.image|cdn }});'>
                                 <div class='c-card__image_embedded'></div>
                                 <div class="c-card__info">
-                                    <div class='c-card__name'>{{dreamer.name}} 
+                                    <div class='c-card__name'>{{dreamer.name}}
                                         <span class="c-card__last-name">{{dreamer.lastname}}</span>
                                     </div>
                                     <div class="c-card__info-work">{{dreamer.work}}</div>
@@ -162,17 +162,17 @@
                 <div class="c-headline c-headline_blue">
                     <span class="c-headline__text">&#171;Мечтать не вредно&#187;</span>
                 </div>
-            </div>
                 {% set conditions = [ {
-                    theme: "Предмет соглашения", 
-                    text: "Настоящее соглашение (далее – “Правила”) регламентирует взаимоотношения между организаторомКонкурса «МЕЧТАТЬ НЕ ВРЕДНО» (далее - «Конкурс») ООО «Майкрософт Рус», юридическим лицом, созданнымв соответствии с законодательством Российской Федерации, с местом нахождения по адресу: Москва,ул. Крылатская, д.17 (далее – «Организатор»), с одной стороны, и участниками Конкурса с другой." 
+                theme: "Предмет соглашения",
+                text: "Настоящее соглашение (далее – “Правила”) регламентирует взаимоотношения между организаторомКонкурса «МЕЧТАТЬ НЕ ВРЕДНО» (далее - «Конкурс») ООО «Майкрософт Рус», юридическим лицом, созданнымв соответствии с законодательством Российской Федерации, с местом нахождения по адресу: Москва,ул. Крылатская, д.17 (далее – «Организатор»), с одной стороны, и участниками Конкурса с другой."
                 } ] %}
                 {% for condition in conditions|loop(5) %}
-                    <div class="c-condition">
-                        <div class="c-condition__header" data-number={{loop.index}}> {{condition.theme + "."}} </div>
-                        <div class="c-condition__text">{{condition.text}}</div>
-                    </div>
+                <div class="c-condition">
+                    <div class="c-condition__header" data-number={{loop.index}}> {{condition.theme + "."}} </div>
+                    <div class="c-condition__text">{{condition.text}}</div>
+                </div>
                 {% endfor %}
+            </div>
         </div>
     </section>
 </div>
