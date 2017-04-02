@@ -1,17 +1,16 @@
 .c-section {
   width: 100vw;
-  height: 100vh !important;
+  //min-height: 100vh;
   background: #00bcf2;
-  // padding: 60px 0;
-  overflow: hidden;
+  //overflow: hidden;
   position: relative;
 
   &__box {
     margin: auto;
     width: 100%;
     max-width: 1180px;
-    height: 100vh;
-    overflow-y: scroll;
+    //height: 100vh;
+    //overflow-y: scroll;
     -ms-overflow-style: none;
     position: relative;
     padding: 0 10px;
@@ -113,6 +112,10 @@
       background-size: cover;
       background-position: left top;
     }
+  }
+
+  &_girls {
+    overflow: visible;
   }
 
   &_dreamers {

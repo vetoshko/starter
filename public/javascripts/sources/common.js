@@ -45,175 +45,16 @@ $(function () {
 
     const visibleSymbols = 85;
     // $('body').addClass('hidden-footer');
-    let isAnimated = true;
-    $('html, body').animate({
-        scrollTop: $('.c-header').height()
-    }, 500, () => {
-        isAnimated = false;
-    });
 
-    // $('.c-section-container').slick(slickConfig);
+    $('.c-section-container').fullpage({
+        scrollOverflow: true,
+        navigation: true
+    });
     $('.c-bloggers').slick(bloggerConfig);
     getCards();
     $('#more-cards').click(getCards);
     $('.c-dreamers').slick(dreamersConfig);
 
-    let sections = $('.c-section-container').find('.c-section');
-    let currentSection;
-    if ($(window).scrollTop() > 0) {
-        currentSection = 0;
-    } else {
-        currentSection = -1;
-    }
-
-    $(window).on('mousewheel DOMMouseScroll MozMousePixelScroll', (event) => {
-        let isScrolledUp = parseInt(event.originalEvent.wheelDelta || -event.originalEvent.detail) >= 0;
-        if (isScrolledUp) {
-            if (sections.eq(currentSection).find('.c-section__content').position().top == 0) {
-                event.preventDefault();
-                if (currentSection > 0 && currentSection <= sections.length) {
-                    if (!isAnimated) {
-                        isAnimated = true;
-                        $('html, body').animate({
-                            scrollTop: sections.eq(currentSection - 1).offset().top
-                        }, 500, () => {
-                            isAnimated = false;
-                        });
-                        currentSection--;
-                    }
-                } else {
-                    if (!isAnimated) {
-                        isAnimated = true;
-                        $('html, body').animate({
-                            scrollTop: $('.c-section-container').prev().offset().top
-                        }, 500, () => {
-                            isAnimated = false;
-                        });
-                        currentSection--;
-                    }
-                }
-            }
-        } else {
-            let section = sections.eq(currentSection);
-            let content = section.find('.c-section__content');
-
-            if (content.position().top <= section.height() - content.height()) {
-                event.preventDefault();
-                if (currentSection < sections.length - 1) {
-                    if (!isAnimated) {
-                        isAnimated = true;
-                        $('html, body').animate({
-                            scrollTop: sections.eq(currentSection + 1).offset().top
-                        }, 500, () => {
-                            isAnimated = false;
-                        });
-                        currentSection++;
-                    }
-                } else {
-                    if (currentSection == sections.length - 1) {
-                        if (!isAnimated) {
-                            isAnimated = true;
-                            console.log($('.c-section-container').next().offset().top);
-                            $('html, body').animate({
-                                scrollTop: $('.c-section-container').next().offset().top
-                            }, 500, () => {
-                                isAnimated = false;
-                            });
-                            currentSection++;
-                        }
-                    }
-                }
-            } else {
-                if (currentSection == -1) {
-                    if (!isAnimated) {
-                        isAnimated = true;
-                        $('html, body').animate({
-                            scrollTop: sections.eq(0).offset().top
-                        }, 500, () => {
-                            isAnimated = false;
-                        });
-                        currentSection++;
-                    }
-                }
-            }
-        }
-    });
-
-
-// $(window).on('mousewheel DOMMouseScroll MozMousePixelScroll', (event) => {
-//     let container = $('.c-section-container');
-//     let currentSlide = $('.c-section.slick-active');
-//     let currentContent = currentSlide.find('.c-section__content');
-//     let isScrolledUp = parseInt(event.originalEvent.wheelDelta || -event.originalEvent.detail) >= 0;
-//     let heightDelta = Math.floor(currentContent.height() - currentSlide.height());
-//     let topOffset = currentSlide.offset().top - $(document).scrollTop();
-
-//     if (isScrolledUp) {
-//         console.log('scrolled up');
-//         if (currentSlide.index() > 0) {
-//             console.log('not 1 slide');
-//             console.log(currentContent.offset().top);
-//             console.log($('.c-header').height());
-//             if (currentContent.offset().top == $('.c-header').height()) {
-//                 event.preventDefault();
-//                 let currentSlideIdx = container.slick('slickCurrentSlide');
-//                 container.slick('slickGoTo', currentSlideIdx - 1);
-//             }
-//             if (currentSlide.index() == $('.c-section').length - 1) {
-//                 console.log('last slide');
-//                 if (topOffset == $('.c-footer').height() * -1) {
-//                     console.log('hide footer');
-//                     $('body').animate({
-//                         scrollTop: $(document).scrollTop() - $('.c-footer').height()
-//                     }, 500);
-//                 }
-//             }
-//         } else {
-//             console.log('1 slide');
-//             if (currentSlide.find('.c-section__box').scrollTop() <= 0) {
-//                     event.preventDefault();
-//                     $('body').animate({
-//                         scrollTop: 0
-//                     }, 500);
-//                 }
-//         }
-//     } else {
-//         console.log('scrolled down');
-//         console.log(topOffset);
-//         if (topOffset > 0) {
-//             event.preventDefault();
-//             $('body').animate({
-//                 scrollTop: $('.c-header').height()
-//             }, 500);
-//             return;
-//         }
-//         if (heightDelta <= currentSlide.find('.c-section__box').scrollTop() || heightDelta < 0) {
-//             if (currentSlide.index() < $('.c-section').length - 1) {
-//                 let currentSlideIdx = container.slick('slickCurrentSlide');
-//                 container.slick('slickGoTo', currentSlideIdx + 1);
-//             } else {
-//                 console.log('footer in da house');
-//                 event.preventDefault();
-//                 $('body').animate({
-//                     scrollTop: $('.c-footer').offset().top + $('.c-footer').height()
-//                 }, 500);
-//             }
-//         } else {
-//             if (currentSlide.index() == $('.c-section').length - 1) {
-//                 console.log($('.c-footer').offset().top - $(window).scrollTop());
-//                 if (heightDelta - 1 <= currentSlide.find('.c-section__box').scrollTop()) {
-//                     if (currentSlide.offset().top == $('.c-header').height()) {
-//                         event.preventDefault();
-//                         $('body').animate({
-//                             scrollTop: $(document).scrollTop() + $('.c-footer').height()
-//                         }, 500);
-//                     }
-//                 }
-//             };
-//         }
-//     }
-//     setBorders($('.c-section.slick-active'));
-// });
 
 function getCards() {
     $.ajax({
@@ -244,28 +85,6 @@ function reduceText(string) {
         string = string.substring(0, visibleSymbols) + ' ...';
     }
     return string;
-}
-
-function isHeaderVisible(currentSlide, topOffset) {
-    return currentSlide.index() == 0 && topOffset == $('.c-header').height();
-}
-
-function isFooterVisible(currentSlide, topOffset) {
-    return currentSlide.index() == $('.c-section').length - 1 && (-1 * topOffset) == $('.c-footer').height();
-}
-
-function setBorders(currentSlide) {
-    let body = $('body');
-    if (currentSlide.index() > 0) {
-        // body.addClass('hidden-header');
-        body.addClass('hidden-footer');
-        if (currentSlide.index() == $('.c-section').length - 1) {
-            body.removeClass('hidden-footer');
-        }
-    } else {
-        body.addClass('hidden-footer');
-        // body.removeClass('hidden-header');
-    }
 }
 
 function assignId(cards, lastIndex) {
