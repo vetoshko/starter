@@ -44,11 +44,12 @@ $(function () {
     
     let dreamersConfig = {
         dots: false,
-        centerMode: false,
+        centerMode: true,
         arrows: true,
-        infinite: false,
+        infinite: true,
         speed: 500,
         slidesToShow: 5,
+        variableWidth: true,
         prevArrow: '<svg class="c-arrow c-arrow__prev"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-l"></use></svg>',
         nextArrow: '<svg class="c-arrow c-arrow__next"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-r"></use></svg>',
         responsive: [
@@ -84,7 +85,6 @@ $(function () {
     $('.c-bloggers').slick(bloggerConfig);
     $('#more-cards').click(getCards);
     $('.c-dreamers').slick(dreamersConfig);
-
 
     function getCards() {
         $.ajax({
@@ -146,7 +146,6 @@ $(function () {
 
         } else {
             if (isMasonryCreated) {
-                console.log('reload masonry');
                 cardsLoader.masonry('reloadItems');
             }
         }

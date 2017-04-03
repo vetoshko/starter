@@ -14,6 +14,10 @@
         position: relative;
         display: inline-block;
         top: 10px;
+
+        .screen-sm-max({
+          font-size: 22px;
+        });
     }
 
     & ~ & {
@@ -24,4 +28,15 @@
 
 .c-headline_blue {
     background: @blue-color;
+}
+
+.c-headline_header {
+    font-size: 90px;
+    background: rgba(8, 130, 195, .7);
+    transform: skewX(-20deg) translateX(-50%);
+    line-height: .7;
+
+    .c-headline__text {
+        text-shadow: 0 4px rgba(209,94,3,.47);        
+    }
 }

@@ -15,6 +15,12 @@
     margin: 50px auto 65px;
   }
 
+  &__header {
+    position: absolute;
+    left: 50%;
+    bottom: 120px;
+  }
+
   &__box {
     margin: auto;
     width: 100%;
@@ -127,6 +133,7 @@
   }
 
   &_dreamers {
+    padding-top: 60px;
     background: @blue-color;
 
     .c-section__box {
@@ -146,5 +153,19 @@
 
   &_condition {
     background: @orange-color;
+    padding: 60px;
+  }
+
+  &_end {
+    background: @blue-color;
+
+    .c-section__background {
+      bottom: 0;
+      left: -5%;
+      right: 0;
+      width: 110%;
+      height: 100%;
+      background-position: center;
+    }
   }
 }

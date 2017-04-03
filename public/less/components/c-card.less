@@ -3,12 +3,43 @@
   float: left;
   padding: 12px;
   box-sizing: border-box;
+
   .screen-sm-max({
       width: 50%;
   });
+
   .screen-xs({
     width: 100%;
   });
+
+  .c-dreamers & {
+    transition: transform ease-in .5s;
+    width: 300px;
+    transform: scale(.8);
+
+    .c-card__image {
+      position: relative;
+      font-size: 0;
+      background-position: center;
+
+      &:after {
+        display: none;
+      }
+    }
+
+    &.slick-center {
+      transform: scale(1);      
+      width: 300px;
+
+      &:hover {
+        color: red;
+      }
+
+      .c-card__info {
+        display: block;
+      }
+    }
+  }
   
   &__sizer {
     width: 25%;
@@ -71,5 +102,23 @@
     background: #fff;
     margin-top: 2px;
     padding: 25px;
+  }
+
+  &__info {
+    .c-card__name {
+      color: #fff;
+    }
+
+    position: absolute;
+    bottom: 0;
+    width: 100%; 
+    padding: 10px 15px;
+    color: #fff;
+    background: rgba(43, 43, 43, .7);
+    display: none;
+  }
+
+  &__work {
+    font-size: 14px;
   }
 }

@@ -3,15 +3,24 @@
     <div class="section c-header fp-auto-height" style="height: 100px; background: greenyellow;">header</div>
     <section class="section c-section c-section_main">
         <div class="c-section__background" style="background-image: url({{ 'main.png'|cdn }})"></div>
+        <div class="c-section__header c-headline c-headline_header">
+            <span class="c-headline__text">#мечтатьневредно</span>
+        </div>     
         <div class="c-section__box">
             <div class="c-section__content">
                 <ul class="c-menu">
-                    <li class="c-menu__item">Как участвовать?</li>
-                    <li class="c-menu__item">Какой приз?</li>
-                    <li class="c-menu__item">Участницы</li>
-                    <li class="c-menu__item">Интервью</li>
-                    <li class="c-menu__item">Женщины-изобретатели</li>
-                    <li class="c-menu__item">Правила участия</li>
+                    {% set menu = [
+                        'Об акции',
+                        'Как участвовать?',
+                        'Какой приз?',
+                        'О чем мечтают участницы?',
+                        'О чем мечтают звезды',
+                        'Великие мечтательницы',
+                        'Правила участия'
+                    ] %} 
+                    {% for item in menu %}
+                        <li class="c-menu__item">{{item}}</li>
+                    {% endfor %}
                 </ul>
             </div>
         </div>
@@ -157,7 +166,7 @@
                                     <div class='c-card__name'>{{dreamer.name}}
                                         <span class="c-card__last-name">{{dreamer.lastname}}</span>
                                     </div>
-                                    <div class="c-card__info-work">{{dreamer.work}}</div>
+                                    <div class="c-card__work">{{dreamer.work}}</div>
                                 </div>
                             </div>
                         </div>
@@ -187,6 +196,13 @@
                 {% endfor %}
             </div>
         </div>
+    </section>
+    <section class="section c-section c-section_end">
+        <div class="c-section__background" style="background-image: url({{ 'end.png'|cdn }})"></div>                        
+            <div class="c-section__box">
+                <div class="c-section__content">
+                </div>
+            </div>
     </section>
     <div class="section c-footer fp-auto-height" style="height: 100px; background: bisque;">footer</div>
 
