@@ -1,7 +1,8 @@
 {% extends layout %} {% block content %}
 <div class="c-section-container">
-    <div class="section c-header fp-auto-height" style="height: 100px; background: greenyellow;"></div>
+    <div class="section c-header fp-auto-height" style="height: 100px; background: greenyellow;">header</div>
     <section class="section c-section c-section_main">
+        <div class="c-section__background" style="background-image: url({{ 'main.png'|cdn }})"></div>
         <div class="c-section__box">
             <div class="c-section__content">
                 <ul class="c-menu">
@@ -16,6 +17,8 @@
         </div>
     </section>
     <section class="section c-section c-section_about">
+        <div class="c-section__background" style="background-image: url({{ 'about-right.png'|cdn }})"></div>
+        <div class="c-section__background" style="background-image: url({{ 'about-left.png'|cdn }})"></div>        
         <div class="c-section__box">
             <div class="c-section__content">
                 <div class="c-info c-info_centered">
@@ -41,6 +44,7 @@
         </div>
     </section>
     <section class="section c-section c-section_how-to-participate">
+        <div class="c-section__background" style="background-image: url({{ 'girl-right.png'|cdn }})"></div>        
         <div class="c-section__box">
             <div class="c-section__content">
                 <div class="c-info">
@@ -69,6 +73,7 @@
         </div>
     </section>
     <section class="section c-section c-section_gifts">
+        <div class="c-section__background" style="background-image: url({{ 'girl-left.png'|cdn }})"></div>        
         <div class="c-section__box">
             <div class="c-section__content">
                 <div class="c-info c-info_right">
@@ -94,12 +99,16 @@
         </div>
     </section>
     <section class="section c-section c-section_stars">
+        <div class="c-section__background" style="background-image: url({{ 'stars.png'|cdn }})"></div>                
         <div class="c-section__box">
             <div class="c-section__content">
-                <div class="c-headline c-headline_blue">
-                    <span class="c-headline__text">О чем мечтают звезды?</span>
-                </div>
                 <div class="c-bloggers-wrapper">
+                    <div class="c-headline c-headline_blue">
+                        <span class="c-headline__text">О чем мечтают звезды?</span>
+                    </div>
+                    <p class="c-section__description">
+                        Вдохновляйся идеями знаменитостей и&#160;блогеров и&#160;присоединяйся!
+                    </p>
                     <div class="c-bloggers">
                         {% set bloggers = [ { name: "Катя Клэп", image: "blogger-1.png" } ] %} {% for blogger in bloggers|loop(12) %}
                         <div class="c-blogger">
@@ -115,20 +124,24 @@
         </div>
     </section>
     <section class="section c-section c-section_girls">
+        <div class="c-section__background" style="background-image: url({{ 'participants.png'|cdn }})"></div>                        
         <div class="c-section__box">
             <div class="c-section__content">
                 <div class="c-headline">
                     <span class="c-headline__text">О чем мечтают участницы?</span>
                 </div>
+                <p class="c-section__description">
+                    Фантазируй и меняй мир к лучшему!
+                </p>
                 <div class="c-cards-holder">
                     <div class="c-card__sizer"></div>
-                    <div class="c-card__gutter"></div>
                     <div class="c-cards-holder__button" id="more-cards">Показать больше</div>
                 </div>
             </div>
         </div>
     </section>
     <section class="section c-section c-section_dreamers">
+        <div class="c-section__background" style="background-image: url({{ 'stars.png'|cdn }})"></div>                        
         <div class="c-section__box">
             <div class="c-section__content">
                 <div class="c-headline">
@@ -175,7 +188,7 @@
             </div>
         </div>
     </section>
-    <div class="section c-footer fp-auto-height" style="height: 100px; background: bisque;"></div>
+    <div class="section c-footer fp-auto-height" style="height: 100px; background: bisque;">footer</div>
 
 </div>
 {% endblock %}

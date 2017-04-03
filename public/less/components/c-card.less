@@ -3,14 +3,24 @@
   float: left;
   padding: 12px;
   box-sizing: border-box;
-
+  .screen-sm-max({
+      width: 50%;
+  });
+  .screen-xs({
+    width: 100%;
+  });
+  
   &__sizer {
     width: 25%;
+
+    .screen-sm-max({
+      width: 50%;
+    });
+
+    .screen-xs({
+      width: 100%;
+    });
   }
-  //
-  //&__gutter {
-  //  width: 4%;
-  //}
 
   &__image{
     position: relative;
@@ -37,6 +47,8 @@
     text-transform: uppercase;
     font-weight: 300;
     display: inline-block;
+    line-height: 22px;
+    font-size: 16px;
   }
 
   &__last-name {
@@ -50,7 +62,9 @@
   }
 
   &__description {
-      color: #000;
+      color: #4c4c4c;
+      font-size: 14px;
+      line-height: 18px;
   }
 
   &__about {

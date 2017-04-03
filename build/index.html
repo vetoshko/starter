@@ -12,24 +12,425 @@
   <meta name="HandheldFriendly" content="true">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
 
-  <link href="/static/stylesheets/style.css" rel="stylesheet" type="text/css">
+  <link href="stylesheets/style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
+  <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0" style="display:none;" xml:space="preserve">
+    <defs>
+      <symbol id="arrow-l" viewBox="0 0 512 512">
+        <path class="st0" d="M89.4,229.8h396.6c14.5,0,26.1,11.5,26.1,26.1c0,14.5-11.5,26.4-26.1,26.4H89.4l111.7,111.3
+                    c10.4,10.4,10.4,26.8,0,37.2c-10.4,10.4-26.8,10.4-37.2,0l-156-156C3,270,0,263.3,0,255.9c0-7.4,3-14.1,7.8-19l156-156
+                    c10.4-10.1,26.8-10.1,37.2,0c10.4,10.4,10.4,26.8,0,37.2L89.4,229.8z" />
+      </symbol>
+      <symbol id="arrow-r" viewBox="0 0 512 512">
+        <path class="st0" d="M310.9,118.1c-10.4-10.4-10.4-26.8,0-37.2c10.4-10.1,26.8-10.1,37.2,0l156,156c4.8,4.8,7.8,11.5,7.8,19
+                    c0,7.4-3,14.1-7.8,19l-156,156c-10.4,10.4-26.8,10.4-37.2,0c-10.4-10.4-10.4-26.8,0-37.2l111.7-111.3H26.1
+                    C11.6,282.3,0,270.4,0,255.9c0-14.5,11.5-26.1,26.1-26.1h396.6L310.9,118.1z" />
+      </symbol>
+    </defs>
+  </svg>
+  </svg>
 
-  <section class="l-section">
-    <div class="l-container">
-      <h1>Переменные</h1>
-      <ul>
-        <li>-- Инлайн ( на текущей странице ) => Заголовок страницы</li>
-        <li>-- Локальная ( для текущей странице ) => Описание страницы</li>
-        <li>-- Глобальная ( для всех страниц ) => Заголовок страницы</li>
-        <img src="https://path-to-blob/images/test.png" alt="">
-      </ul>
-    </div>
-  </section>
+  <div class="c-section-container">
+    <div class="section c-header fp-auto-height" style="height: 100px; background: greenyellow;">header</div>
+    <section class="section c-section c-section_main">
+      <div class="c-section__background" style="background-image: url(storage//main.png)"></div>
+      <div class="c-section__box">
+        <div class="c-section__content">
+          <ul class="c-menu">
+            <li class="c-menu__item">Как участвовать?</li>
+            <li class="c-menu__item">Какой приз?</li>
+            <li class="c-menu__item">Участницы</li>
+            <li class="c-menu__item">Интервью</li>
+            <li class="c-menu__item">Женщины-изобретатели</li>
+            <li class="c-menu__item">Правила участия</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+    <section class="section c-section c-section_about">
+      <div class="c-section__background" style="background-image: url(storage//about-right.png)"></div>
+      <div class="c-section__background" style="background-image: url(storage//about-left.png)"></div>
+      <div class="c-section__box">
+        <div class="c-section__content">
+          <div class="c-info c-info_centered">
+            <div class="c-headline c-info__header">
+              <span class="c-headline__text">Об акции</span>
+            </div>
+            <p>
+              Все в&#160;нашей жизни начинается с&#160;мечты. Самые крутые изобретения,без которых сегодня мы&#160;не&#160;можем представить свою жизнь, сначала были чьими-то фантазиями.
+            </p>
+            <p>
+              Наверняка ты&#160;не&#160;раз задумывалась о&#160;том, чтобы изменить этотмир к&#160;лучшему. В&#160;наш век технологий нет ничего невозможного! Поделись своей светлой идеей и&#160;получи возможность выиграть отличные призы и&#160;фотосессию в&#160;журнале
+              Elle Girl!
+            </p>
+            <a href="#" class="c-button c-info__button">
+              <span class="c-button__text">Как участвовать?</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section c-section c-section_how-to-participate">
+      <div class="c-section__background" style="background-image: url(storage//girl-right.png)"></div>
+      <div class="c-section__box">
+        <div class="c-section__content">
+          <div class="c-info">
+            <div class="c-headline c-info__header">
+              <span class="c-headline__text">Как участвовать?</span>
+            </div>
+            <p>
+              Напиши о&#160;своей идее небольшой пост.
+            </p>
+            <p>
+              Поставь хэштэг <span class="c-hashtag">#МечтатьНеВредно</span> и опубликуй пост в&#160;соцсети: ВК, Instagram или Twitter. Будет здорово, если приложишь фото или видео ;)
+            </p>
+            <p>
+              Обязательное условие конкурса&#160;&#8212; сделать свойпрофиль открытым! Пусть о&#160;твоей идее узнают все!
+            </p>
+            <p>
+              Подробные правила конкурса <a href="#" class="c-link">читай тут</a>
+            </p>
+            <a href="#" class="c-button c-info__button">
+              <span class="c-button__text">Какой приз?</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section c-section c-section_gifts">
+      <div class="c-section__background" style="background-image: url(storage//girl-left.png)"></div>
+      <div class="c-section__box">
+        <div class="c-section__content">
+          <div class="c-info c-info_right">
+            <div class="c-headline c-info__header">
+              <span class="c-headline__text">Какой приз?</span>
+            </div>
+            <p>
+              Автору самой блестящей идеи&#160;&#8212; фотосессия в&#160;журнале ELLE Girl и&#160;планшет-трансформер Lenovo Yoga book.
+            </p>
+            <p>
+              Двум финалистам: планшет-трансформерA sus Transformer Mini T102 и&#160;планшет-трансформер Acer Aspire&#160;R3.
+            </p>
+            <p>
+              Делись фантазиями&#160;&#8212; получай отличные подарки!
+            </p>
+            <a href="#" class="c-button c-info__button">
+              <span class="c-button__text">Участвовать!</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section c-section c-section_stars">
+      <div class="c-section__background" style="background-image: url(storage//stars.png)"></div>
+      <div class="c-section__box">
+        <div class="c-section__content">
+          <div class="c-bloggers-wrapper">
+            <div class="c-headline c-headline_blue">
+              <span class="c-headline__text">О чем мечтают звезды?</span>
+            </div>
+            <p class="c-section__description">
+              Вдохновляйся идеями знаменитостей и&#160;блогеров и&#160;присоединяйся!
+            </p>
+            <div class="c-bloggers">
 
-  <script src="/static/javascripts/common.js"></script>
+              <div class="c-blogger">
+                <div class="c-blogger__image" style="background-image: url(images/blogger-1.png)"></div>
+                <div class="c-blogger__name">
+                  Катя Клэп
+                </div>
+              </div>
+
+              <div class="c-blogger">
+                <div class="c-blogger__image" style="background-image: url(images/blogger-1.png)"></div>
+                <div class="c-blogger__name">
+                  Катя Клэп
+                </div>
+              </div>
+
+              <div class="c-blogger">
+                <div class="c-blogger__image" style="background-image: url(images/blogger-1.png)"></div>
+                <div class="c-blogger__name">
+                  Катя Клэп
+                </div>
+              </div>
+
+              <div class="c-blogger">
+                <div class="c-blogger__image" style="background-image: url(images/blogger-1.png)"></div>
+                <div class="c-blogger__name">
+                  Катя Клэп
+                </div>
+              </div>
+
+              <div class="c-blogger">
+                <div class="c-blogger__image" style="background-image: url(images/blogger-1.png)"></div>
+                <div class="c-blogger__name">
+                  Катя Клэп
+                </div>
+              </div>
+
+              <div class="c-blogger">
+                <div class="c-blogger__image" style="background-image: url(images/blogger-1.png)"></div>
+                <div class="c-blogger__name">
+                  Катя Клэп
+                </div>
+              </div>
+
+              <div class="c-blogger">
+                <div class="c-blogger__image" style="background-image: url(images/blogger-1.png)"></div>
+                <div class="c-blogger__name">
+                  Катя Клэп
+                </div>
+              </div>
+
+              <div class="c-blogger">
+                <div class="c-blogger__image" style="background-image: url(images/blogger-1.png)"></div>
+                <div class="c-blogger__name">
+                  Катя Клэп
+                </div>
+              </div>
+
+              <div class="c-blogger">
+                <div class="c-blogger__image" style="background-image: url(images/blogger-1.png)"></div>
+                <div class="c-blogger__name">
+                  Катя Клэп
+                </div>
+              </div>
+
+              <div class="c-blogger">
+                <div class="c-blogger__image" style="background-image: url(images/blogger-1.png)"></div>
+                <div class="c-blogger__name">
+                  Катя Клэп
+                </div>
+              </div>
+
+              <div class="c-blogger">
+                <div class="c-blogger__image" style="background-image: url(images/blogger-1.png)"></div>
+                <div class="c-blogger__name">
+                  Катя Клэп
+                </div>
+              </div>
+
+              <div class="c-blogger">
+                <div class="c-blogger__image" style="background-image: url(images/blogger-1.png)"></div>
+                <div class="c-blogger__name">
+                  Катя Клэп
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section c-section c-section_girls">
+      <div class="c-section__background" style="background-image: url(storage//participants.png)"></div>
+      <div class="c-section__box">
+        <div class="c-section__content">
+          <div class="c-headline">
+            <span class="c-headline__text">О чем мечтают участницы?</span>
+          </div>
+          <p class="c-section__description">
+            Фантазируй и меняй мир к лучшему!
+          </p>
+          <div class="c-cards-holder">
+            <div class="c-card__sizer"></div>
+            <div class="c-cards-holder__button" id="more-cards">Показать больше</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section c-section c-section_dreamers">
+      <div class="c-section__background" style="background-image: url(storage//stars.png)"></div>
+      <div class="c-section__box">
+        <div class="c-section__content">
+          <div class="c-headline">
+            <span class="c-headline__text">Великие мечтательницы</span>
+          </div>
+          <div class="c-dreamers">
+
+
+            <div class='c-card'>
+              <div class='c-card__image' style='background-image: url(storage//dreamer-1.png);'>
+                <div class='c-card__image_embedded'></div>
+                <div class="c-card__info">
+                  <div class='c-card__name'>Диана
+                    <span class="c-card__last-name">Коверн</span>
+                  </div>
+                  <div class="c-card__info-work">Физик</div>
+                </div>
+              </div>
+            </div>
+
+            <div class='c-card'>
+              <div class='c-card__image' style='background-image: url(storage//dreamer-1.png);'>
+                <div class='c-card__image_embedded'></div>
+                <div class="c-card__info">
+                  <div class='c-card__name'>Диана
+                    <span class="c-card__last-name">Коверн</span>
+                  </div>
+                  <div class="c-card__info-work">Физик</div>
+                </div>
+              </div>
+            </div>
+
+            <div class='c-card'>
+              <div class='c-card__image' style='background-image: url(storage//dreamer-1.png);'>
+                <div class='c-card__image_embedded'></div>
+                <div class="c-card__info">
+                  <div class='c-card__name'>Диана
+                    <span class="c-card__last-name">Коверн</span>
+                  </div>
+                  <div class="c-card__info-work">Физик</div>
+                </div>
+              </div>
+            </div>
+
+            <div class='c-card'>
+              <div class='c-card__image' style='background-image: url(storage//dreamer-1.png);'>
+                <div class='c-card__image_embedded'></div>
+                <div class="c-card__info">
+                  <div class='c-card__name'>Диана
+                    <span class="c-card__last-name">Коверн</span>
+                  </div>
+                  <div class="c-card__info-work">Физик</div>
+                </div>
+              </div>
+            </div>
+
+            <div class='c-card'>
+              <div class='c-card__image' style='background-image: url(storage//dreamer-1.png);'>
+                <div class='c-card__image_embedded'></div>
+                <div class="c-card__info">
+                  <div class='c-card__name'>Диана
+                    <span class="c-card__last-name">Коверн</span>
+                  </div>
+                  <div class="c-card__info-work">Физик</div>
+                </div>
+              </div>
+            </div>
+
+            <div class='c-card'>
+              <div class='c-card__image' style='background-image: url(storage//dreamer-1.png);'>
+                <div class='c-card__image_embedded'></div>
+                <div class="c-card__info">
+                  <div class='c-card__name'>Диана
+                    <span class="c-card__last-name">Коверн</span>
+                  </div>
+                  <div class="c-card__info-work">Физик</div>
+                </div>
+              </div>
+            </div>
+
+            <div class='c-card'>
+              <div class='c-card__image' style='background-image: url(storage//dreamer-1.png);'>
+                <div class='c-card__image_embedded'></div>
+                <div class="c-card__info">
+                  <div class='c-card__name'>Диана
+                    <span class="c-card__last-name">Коверн</span>
+                  </div>
+                  <div class="c-card__info-work">Физик</div>
+                </div>
+              </div>
+            </div>
+
+            <div class='c-card'>
+              <div class='c-card__image' style='background-image: url(storage//dreamer-1.png);'>
+                <div class='c-card__image_embedded'></div>
+                <div class="c-card__info">
+                  <div class='c-card__name'>Диана
+                    <span class="c-card__last-name">Коверн</span>
+                  </div>
+                  <div class="c-card__info-work">Физик</div>
+                </div>
+              </div>
+            </div>
+
+            <div class='c-card'>
+              <div class='c-card__image' style='background-image: url(storage//dreamer-1.png);'>
+                <div class='c-card__image_embedded'></div>
+                <div class="c-card__info">
+                  <div class='c-card__name'>Диана
+                    <span class="c-card__last-name">Коверн</span>
+                  </div>
+                  <div class="c-card__info-work">Физик</div>
+                </div>
+              </div>
+            </div>
+
+            <div class='c-card'>
+              <div class='c-card__image' style='background-image: url(storage//dreamer-1.png);'>
+                <div class='c-card__image_embedded'></div>
+                <div class="c-card__info">
+                  <div class='c-card__name'>Диана
+                    <span class="c-card__last-name">Коверн</span>
+                  </div>
+                  <div class="c-card__info-work">Физик</div>
+                </div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="section c-section c-section_condition">
+      <div class="c-section__box">
+        <div class="c-section__content">
+          <div class="c-headline c-headline_blue">
+            <span class="c-headline__text">Условия конкурса</span>
+          </div>
+          <br>
+          <div class="c-headline c-headline_blue">
+            <span class="c-headline__text">&#171;Мечтать не вредно&#187;</span>
+          </div>
+
+
+          <div class="c-condition">
+            <div class="c-condition__header" data-number=1>Предмет соглашения.</div>
+            <div class="c-condition__text">Настоящее соглашение (далее – “Правила”) регламентирует взаимоотношения между организаторомКонкурса «МЕЧТАТЬ НЕ ВРЕДНО» (далее - «Конкурс») ООО «Майкрософт Рус», юридическим лицом, созданнымв соответствии с законодательством Российской Федерации,
+              с местом нахождения по адресу: Москва,ул. Крылатская, д.17 (далее – «Организатор»), с одной стороны, и участниками Конкурса с другой.</div>
+          </div>
+
+          <div class="c-condition">
+            <div class="c-condition__header" data-number=2>Предмет соглашения.</div>
+            <div class="c-condition__text">Настоящее соглашение (далее – “Правила”) регламентирует взаимоотношения между организаторомКонкурса «МЕЧТАТЬ НЕ ВРЕДНО» (далее - «Конкурс») ООО «Майкрософт Рус», юридическим лицом, созданнымв соответствии с законодательством Российской Федерации,
+              с местом нахождения по адресу: Москва,ул. Крылатская, д.17 (далее – «Организатор»), с одной стороны, и участниками Конкурса с другой.</div>
+          </div>
+
+          <div class="c-condition">
+            <div class="c-condition__header" data-number=3>Предмет соглашения.</div>
+            <div class="c-condition__text">Настоящее соглашение (далее – “Правила”) регламентирует взаимоотношения между организаторомКонкурса «МЕЧТАТЬ НЕ ВРЕДНО» (далее - «Конкурс») ООО «Майкрософт Рус», юридическим лицом, созданнымв соответствии с законодательством Российской Федерации,
+              с местом нахождения по адресу: Москва,ул. Крылатская, д.17 (далее – «Организатор»), с одной стороны, и участниками Конкурса с другой.</div>
+          </div>
+
+          <div class="c-condition">
+            <div class="c-condition__header" data-number=4>Предмет соглашения.</div>
+            <div class="c-condition__text">Настоящее соглашение (далее – “Правила”) регламентирует взаимоотношения между организаторомКонкурса «МЕЧТАТЬ НЕ ВРЕДНО» (далее - «Конкурс») ООО «Майкрософт Рус», юридическим лицом, созданнымв соответствии с законодательством Российской Федерации,
+              с местом нахождения по адресу: Москва,ул. Крылатская, д.17 (далее – «Организатор»), с одной стороны, и участниками Конкурса с другой.</div>
+          </div>
+
+          <div class="c-condition">
+            <div class="c-condition__header" data-number=5>Предмет соглашения.</div>
+            <div class="c-condition__text">Настоящее соглашение (далее – “Правила”) регламентирует взаимоотношения между организаторомКонкурса «МЕЧТАТЬ НЕ ВРЕДНО» (далее - «Конкурс») ООО «Майкрософт Рус», юридическим лицом, созданнымв соответствии с законодательством Российской Федерации,
+              с местом нахождения по адресу: Москва,ул. Крылатская, д.17 (далее – «Организатор»), с одной стороны, и участниками Конкурса с другой.</div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+    <div class="section c-footer fp-auto-height" style="height: 100px; background: bisque;">footer</div>
+
+  </div>
+
+  <script src="javascripts/jquery-3.2.0.min.js"></script>
+  <script src="javascripts/common.js"></script>
+  <script src="javascripts/masonry.pkgd.min.js"></script>
+  <script src="javascripts/slick.min.js"></script>
+  <script src="javascripts/scrolloverflow.min.js"></script>
+  <script src="javascripts/jquery.fullpage.min.js"></script>
 </body>
 
 </html>
