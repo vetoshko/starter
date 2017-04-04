@@ -34,9 +34,21 @@
       &:hover {
         color: red;
       }
+      &:hover .c-card__info{
+        transform: translate(0, -100%);
 
+        .c-card__work{
+          opacity: 0;
+        }
+        .c-card__history{
+          transform: translate(0, -20px);
+          transition-duration: 1s;
+        }
+      }
       .c-card__info {
-        display: block;
+        transform: translate(0, -60px);
+        transition-duration: 1s;
+
       }
     }
   }
@@ -57,6 +69,8 @@
     position: relative;
     font-size: 0;
     background-position: center;
+    overflow: hidden;
+    background-size: cover;
 
     &:after {
       font-size: 10px;
@@ -108,17 +122,22 @@
     .c-card__name {
       color: #fff;
     }
-
+    will-change: transform;
     position: absolute;
-    bottom: 0;
     width: 100%; 
+    height: 100%;
     padding: 10px 15px;
     color: #fff;
     background: rgba(43, 43, 43, .7);
-    display: none;
+    display: block;
   }
 
   &__work {
     font-size: 14px;
+    
+  }
+  &__history{
+    font-size: 14px;
+    margin-top: 10px;
   }
 }

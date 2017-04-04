@@ -53,7 +53,7 @@
     </div>
 </div>
 <div class="c-section-container">
-    <div data-anchor="header" class="section c-header fp-auto-height" style="height: 100px; background: greenyellow;">header</div>
+     <div data-anchor="header" class="section c-header fp-auto-height">{% include "blocks/ms_header.html" %}</div>
     <section data-anchor="main" class="section c-section c-section_main">
         <div class="c-section__background" style="background-image: url({{ 'main.png'|cdn }})"></div>
         <div class="c-section__header c-headline c-headline_header">
@@ -222,8 +222,8 @@
                     <span class="c-headline__text">Великие мечтательницы</span>
                 </div>
                 <div class="c-dreamers">
-                    {% set dreamers = [ { name: "Диана", lastname: "Коверн", work: "Физик", image: "dreamer-1.png" } ] %}
-                    {% for dreamer in dreamers|loop(10) %}
+                    {%- for dreamer in dreamers %}
+                    
                         <div class='c-card'>
                             <div class='c-card__image' style='background-image: url({{ dreamer.image|cdn }});'>
                                 <div class='c-card__image_embedded'></div>
@@ -232,6 +232,7 @@
                                         <span class="c-card__last-name">{{dreamer.lastname}}</span>
                                     </div>
                                     <div class="c-card__work">{{dreamer.work}}</div>
+                                    <div class="c-card__history">{{dreamer.text}}</div>
                                 </div>
                             </div>
                         </div>
@@ -356,6 +357,6 @@
                 </div>
             </div>
     </section>
-    <div data-anchor="footer" class="section c-footer fp-auto-height" style="height: 100px; background: bisque;">footer</div>
+    <div data-anchor="footer" class="section c-footer fp-auto-height">{% include "blocks/ms_footer.html" %}</div>
 </div>
 {% endblock %}
