@@ -1622,6 +1622,7 @@ body::-webkit-scrollbar {
 .c-blogger__image {
   padding-top: 100%;
   background-position: center;
+  background-size: cover;
 }
 .c-blogger__name {
   text-transform: uppercase;

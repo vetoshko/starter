@@ -184,9 +184,15 @@
                         Вдохновляйся идеями знаменитостей и&#160;блогеров! Присоединяйся!
                     </p>
                     <div class="c-bloggers">
-                        {% set bloggers = [ { name: "Катя Клэп", image: "blogger-1.png" } ] %} {% for blogger in bloggers|loop(12) %}
+                        {% set bloggers = [
+                            { name: "Имя Блогера", image: "star-1.jpeg" },
+                            { name: "Имя Блогера", image: "star-2.jpeg" },
+                            { name: "Имя Блогера", image: "star-3.jpeg" },
+                            { name: "Имя Блогера", image: "star-4.jpg" }
+                        ] %}
+                        {% for blogger in bloggers %}
                         <div class="c-blogger">
-                            <div class="c-blogger__image" style="background-image: url({{ blogger.image|img_asset }})"></div>
+                            <div class="c-blogger__image" style="background-image: url({{ blogger.image|cdn }})"></div>
                             <div class="c-blogger__name">
                                 {{ blogger.name }}
                             </div>
