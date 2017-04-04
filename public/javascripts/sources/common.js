@@ -48,6 +48,7 @@ $(function () {
         infinite: true,
         speed: 500,
         slidesToShow: 5,
+        focusOnSelect: true,
         variableWidth: true,
         prevArrow: '<svg class="c-arrow c-arrow__prev"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-l"></use></svg>',
         nextArrow: '<svg class="c-arrow c-arrow__next"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-r"></use></svg>',
@@ -98,7 +99,7 @@ $(function () {
 
     function getCards() {
         $.ajax({
-            url: 'http://13.74.168.238/results/msgirlstest?count=' + cardsrequestCount + '&page=' + (cardsPagesCount - 1),
+            url: '//admin.msmechta.ru/results/msgirlstest?count=' + cardsrequestCount + '&page=' + (cardsPagesCount - 1),
             type: 'GET'
         }).done((cards) => {
             cardsPagesCount++;
