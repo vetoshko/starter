@@ -21,6 +21,17 @@
     bottom: 120px;
   }
 
+  &__thesis {
+    margin-top: 50px;
+    font-size: 30px;
+    line-height: 45px;
+    font-weight: 500;
+
+    .screen-sm-max({
+        font-size: 22px;
+    });
+  }
+
   &__box {
     margin: auto;
     width: 100%;
@@ -37,6 +48,10 @@
     .prevent-scroll & {
       overflow: hidden;
     }
+
+    .screen-sm-max({
+        padding: 60px 10px;
+    });
   }
 
    &_main {
@@ -118,6 +133,12 @@
       height: 85%;
       background-position: 0 -315px;
     }
+
+    .screen-sm-max({
+      .c-section__box {
+        padding: 0 10px;
+      }
+    });
   }
 
   &_girls {
@@ -140,24 +161,34 @@
       z-index: 1;
     }
 
-    &:after {
+    .c-section__background {
       top: 0;
-      left: 50%;
-      width: 65%;
+      left: 40%;
+      width: 100%;
       height: 85%;
-      background: url('../storage/great.png') no-repeat;
-      background-size: cover;
-      background-position: left top;
+      background-position: 0 0;
     }
   }
 
   &_condition {
     background: @orange-color;
-    padding: 60px;
+    padding: 60px 0;
   }
 
   &_end {
     background: @blue-color;
+    padding-top: 60px;
+
+    .c-section__box {
+      text-align: center;
+    }
+
+    .c-section__content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
 
     .c-section__background {
       bottom: 0;
@@ -167,5 +198,17 @@
       height: 100%;
       background-position: center;
     }
+
+    .c-button {
+      margin-bottom: 130px;
+
+       .screen-sm-max({
+         margin-bottom: 50px;
+       });
+    }
   }
+
+  .screen-sm-max({
+    padding: 0;
+  });
 }

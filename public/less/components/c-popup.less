@@ -1,0 +1,33 @@
+.c-popup {
+    display: none;
+    color: #343434;
+
+    &__text {
+        max-width: 380px;
+        font-size: 22px;
+        line-height: 36px;
+    }
+
+    &__thesis {
+        color: #fff;
+        background: @blue-color;
+        display: inline-block;
+        transform: skewX(-20deg);
+        font-size: 32px;
+        line-height: 43px;
+        text-transform: uppercase;
+        font-family: @headers-font;
+        font-weight: 600;
+        padding: 0 5px;
+
+        .screen-sm-max({
+            color: @blue-color;
+            background: none;
+            transform: none;
+        });
+    }
+
+    &__social {
+        margin: 50px auto;
+    }
+}

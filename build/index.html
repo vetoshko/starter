@@ -33,23 +33,50 @@
   </svg>
 
   <div class="c-section-container">
-    <div class="section c-header fp-auto-height" style="height: 100px; background: greenyellow;">header</div>
-    <section class="section c-section c-section_main">
+    <div data-anchor="header" class="section c-header fp-auto-height" style="height: 100px; background: greenyellow;">header</div>
+    <section data-anchor="main" class="section c-section c-section_main">
       <div class="c-section__background" style="background-image: url(storage//main.png)"></div>
+      <div class="c-section__header c-headline c-headline_header">
+        <span class="c-headline__text">#мечтатьневредно</span>
+      </div>
       <div class="c-section__box">
         <div class="c-section__content">
-          <ul class="c-menu">
-            <li class="c-menu__item">Как участвовать?</li>
-            <li class="c-menu__item">Какой приз?</li>
-            <li class="c-menu__item">Участницы</li>
-            <li class="c-menu__item">Интервью</li>
-            <li class="c-menu__item">Женщины-изобретатели</li>
-            <li class="c-menu__item">Правила участия</li>
+          <ul class="c-menu" id="menu">
+
+
+            <li class="c-menu__item" data-menuanchor="about">
+              <a href="#about">Об акции</a>
+            </li>
+
+            <li class="c-menu__item" data-menuanchor="participate">
+              <a href="#participate">Как участвовать?</a>
+            </li>
+
+            <li class="c-menu__item" data-menuanchor="gifts">
+              <a href="#gifts">Какой приз?</a>
+            </li>
+
+            <li class="c-menu__item" data-menuanchor="stars">
+              <a href="#stars">О чем мечтают участницы?</a>
+            </li>
+
+            <li class="c-menu__item" data-menuanchor="girls">
+              <a href="#girls">О чем мечтают звезды</a>
+            </li>
+
+            <li class="c-menu__item" data-menuanchor="dreamers">
+              <a href="#dreamers">Великие мечтательницы</a>
+            </li>
+
+            <li class="c-menu__item" data-menuanchor="rules">
+              <a href="#rules">Правила участия</a>
+            </li>
+
           </ul>
         </div>
       </div>
     </section>
-    <section class="section c-section c-section_about">
+    <section data-anchor="about" class="section c-section c-section_about">
       <div class="c-section__background" style="background-image: url(storage//about-right.png)"></div>
       <div class="c-section__background" style="background-image: url(storage//about-left.png)"></div>
       <div class="c-section__box">
@@ -65,14 +92,16 @@
               Наверняка ты&#160;не&#160;раз задумывалась о&#160;том, чтобы изменить этотмир к&#160;лучшему. В&#160;наш век технологий нет ничего невозможного! Поделись своей светлой идеей и&#160;получи возможность выиграть отличные призы и&#160;фотосессию в&#160;журнале
               Elle Girl!
             </p>
-            <a href="#" class="c-button c-info__button">
-              <span class="c-button__text">Как участвовать?</span>
+            <a href="#participate" class="c-button c-info__button">
+              <div class="c-button__text">
+                Как участвовать?
+              </div>
             </a>
           </div>
         </div>
       </div>
     </section>
-    <section class="section c-section c-section_how-to-participate">
+    <section data-anchor="participate" class="section c-section c-section_how-to-participate">
       <div class="c-section__background" style="background-image: url(storage//girl-right.png)"></div>
       <div class="c-section__box">
         <div class="c-section__content">
@@ -80,6 +109,9 @@
             <div class="c-headline c-info__header">
               <span class="c-headline__text">Как участвовать?</span>
             </div>
+            <p>
+              Помечтай на&#160;тему: &#171;Как&#160;бы я&#160;изменила мир к&#160;лучшему с&#160;помощью технологий?&#187;
+            </p>
             <p>
               Напиши о&#160;своей идее небольшой пост.
             </p>
@@ -90,16 +122,16 @@
               Обязательное условие конкурса&#160;&#8212; сделать свойпрофиль открытым! Пусть о&#160;твоей идее узнают все!
             </p>
             <p>
-              Подробные правила конкурса <a href="#" class="c-link">читай тут</a>
+              Подробные правила конкурса <a href="#rules" class="c-link">читай тут</a>
             </p>
-            <a href="#" class="c-button c-info__button">
+            <a href="#gifts" class="c-button c-info__button">
               <span class="c-button__text">Какой приз?</span>
             </a>
           </div>
         </div>
       </div>
     </section>
-    <section class="section c-section c-section_gifts">
+    <section data-anchor="gifts" class="section c-section c-section_gifts">
       <div class="c-section__background" style="background-image: url(storage//girl-left.png)"></div>
       <div class="c-section__box">
         <div class="c-section__content">
@@ -116,14 +148,28 @@
             <p>
               Делись фантазиями&#160;&#8212; получай отличные подарки!
             </p>
-            <a href="#" class="c-button c-info__button">
+            <a href="#" data-featherlight="#participate-popup" class="c-button c-info__button">
               <span class="c-button__text">Участвовать!</span>
             </a>
+            <div id="participate-popup" class="c-popup">
+              <p class="c-popup__text">
+                Перейди в&#160;любую социальную сеть и&#160;опубликуй свой пост с&#160;хэштэгом
+                <span class="c-hashtag">#МечтатьНеВредно</span> (в&#160;настройках профиль должен быть открытым).
+              </p>
+              <div class="c-popup__social">
+                <i class="c-social" style="background-image: url(storage//instagram.png)"></i>
+                <i class="c-social" style="background-image: url(storage//twitter.png)"></i>
+                <i class="c-social" style="background-image: url(storage//vk.png)"></i>
+              </div>
+              <p class="c-popup__thesis">
+                Меняй мир к&#160;лучшему&#160;&#8212; тебе это по&#160;силам!
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
-    <section class="section c-section c-section_stars">
+    <section data-anchor="stars" class="section c-section c-section_stars">
       <div class="c-section__background" style="background-image: url(storage//stars.png)"></div>
       <div class="c-section__box">
         <div class="c-section__content">
@@ -132,7 +178,7 @@
               <span class="c-headline__text">О чем мечтают звезды?</span>
             </div>
             <p class="c-section__description">
-              Вдохновляйся идеями знаменитостей и&#160;блогеров и&#160;присоединяйся!
+              Вдохновляйся идеями знаменитостей и&#160;блогеров! Присоединяйся!
             </p>
             <div class="c-bloggers">
 
@@ -225,7 +271,7 @@
         </div>
       </div>
     </section>
-    <section class="section c-section c-section_girls">
+    <section data-anchor="girls" class="section c-section c-section_girls">
       <div class="c-section__background" style="background-image: url(storage//participants.png)"></div>
       <div class="c-section__box">
         <div class="c-section__content">
@@ -242,8 +288,8 @@
         </div>
       </div>
     </section>
-    <section class="section c-section c-section_dreamers">
-      <div class="c-section__background" style="background-image: url(storage//stars.png)"></div>
+    <section data-anchor="dreamers" class="section c-section c-section_dreamers">
+      <div class="c-section__background" style="background-image: url(storage//dreamers.png)"></div>
       <div class="c-section__box">
         <div class="c-section__content">
           <div class="c-headline">
@@ -259,7 +305,7 @@
                   <div class='c-card__name'>Диана
                     <span class="c-card__last-name">Коверн</span>
                   </div>
-                  <div class="c-card__info-work">Физик</div>
+                  <div class="c-card__work">Физик</div>
                 </div>
               </div>
             </div>
@@ -271,7 +317,7 @@
                   <div class='c-card__name'>Диана
                     <span class="c-card__last-name">Коверн</span>
                   </div>
-                  <div class="c-card__info-work">Физик</div>
+                  <div class="c-card__work">Физик</div>
                 </div>
               </div>
             </div>
@@ -283,7 +329,7 @@
                   <div class='c-card__name'>Диана
                     <span class="c-card__last-name">Коверн</span>
                   </div>
-                  <div class="c-card__info-work">Физик</div>
+                  <div class="c-card__work">Физик</div>
                 </div>
               </div>
             </div>
@@ -295,7 +341,7 @@
                   <div class='c-card__name'>Диана
                     <span class="c-card__last-name">Коверн</span>
                   </div>
-                  <div class="c-card__info-work">Физик</div>
+                  <div class="c-card__work">Физик</div>
                 </div>
               </div>
             </div>
@@ -307,7 +353,7 @@
                   <div class='c-card__name'>Диана
                     <span class="c-card__last-name">Коверн</span>
                   </div>
-                  <div class="c-card__info-work">Физик</div>
+                  <div class="c-card__work">Физик</div>
                 </div>
               </div>
             </div>
@@ -319,7 +365,7 @@
                   <div class='c-card__name'>Диана
                     <span class="c-card__last-name">Коверн</span>
                   </div>
-                  <div class="c-card__info-work">Физик</div>
+                  <div class="c-card__work">Физик</div>
                 </div>
               </div>
             </div>
@@ -331,7 +377,7 @@
                   <div class='c-card__name'>Диана
                     <span class="c-card__last-name">Коверн</span>
                   </div>
-                  <div class="c-card__info-work">Физик</div>
+                  <div class="c-card__work">Физик</div>
                 </div>
               </div>
             </div>
@@ -343,7 +389,7 @@
                   <div class='c-card__name'>Диана
                     <span class="c-card__last-name">Коверн</span>
                   </div>
-                  <div class="c-card__info-work">Физик</div>
+                  <div class="c-card__work">Физик</div>
                 </div>
               </div>
             </div>
@@ -355,7 +401,7 @@
                   <div class='c-card__name'>Диана
                     <span class="c-card__last-name">Коверн</span>
                   </div>
-                  <div class="c-card__info-work">Физик</div>
+                  <div class="c-card__work">Физик</div>
                 </div>
               </div>
             </div>
@@ -367,7 +413,7 @@
                   <div class='c-card__name'>Диана
                     <span class="c-card__last-name">Коверн</span>
                   </div>
-                  <div class="c-card__info-work">Физик</div>
+                  <div class="c-card__work">Физик</div>
                 </div>
               </div>
             </div>
@@ -376,7 +422,7 @@
         </div>
       </div>
     </section>
-    <section class="section c-section c-section_condition">
+    <section data-anchor="rules" class="section c-section c-section_condition">
       <div class="c-section__box">
         <div class="c-section__content">
           <div class="c-headline c-headline_blue">
@@ -421,8 +467,26 @@
         </div>
       </div>
     </section>
-    <div class="section c-footer fp-auto-height" style="height: 100px; background: bisque;">footer</div>
-
+    <section data-anchor="end" class="section c-section c-section_end">
+      <div class="c-section__background" style="background-image: url(storage//end.png)"></div>
+      <div class="c-section__box">
+        <div class="c-section__content">
+          <div class="c-section__footer c-headline c-headline_footer">
+            <span class="c-headline__text">#мечтатьневредно</span>
+          </div>
+          <div class="c-section__thesis">
+            Поделись своей мечтой в&#160;социальной сети (ВК, Instagram или Twitter). Меняй мир к&#160;лучшему, тебе это по&#160;силам!
+          </div>
+          <a href="#" data-featherlight="#participate-popup" class="c-button c-info__button">
+            <span class="c-button__text">Участвовать!</span>
+          </a>
+          <p>
+            У&#160;тебя есть вопрос? Напиши нам: <a class="c-link" href="mailto:mail@msmechta.ru">mail@msmechta.ru</a>
+          </p>
+        </div>
+      </div>
+    </section>
+    <div data-anchor="footer" class="section c-footer fp-auto-height" style="height: 100px; background: bisque;">footer</div>
   </div>
 
   <script src="javascripts/jquery-3.2.0.min.js"></script>
@@ -431,6 +495,7 @@
   <script src="javascripts/slick.min.js"></script>
   <script src="javascripts/scrolloverflow.min.js"></script>
   <script src="javascripts/jquery.fullpage.min.js"></script>
+  <script src="javascripts/featherlight.js"></script>
 </body>
 
 </html>

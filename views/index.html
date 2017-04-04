@@ -1,31 +1,54 @@
 {% extends layout %} {% block content %}
 <div class="c-section-container">
-    <div class="section c-header fp-auto-height" style="height: 100px; background: greenyellow;">header</div>
-    <section class="section c-section c-section_main">
+    <div data-anchor="header" class="section c-header fp-auto-height" style="height: 100px; background: greenyellow;">header</div>
+    <section data-anchor="main" class="section c-section c-section_main">
         <div class="c-section__background" style="background-image: url({{ 'main.png'|cdn }})"></div>
         <div class="c-section__header c-headline c-headline_header">
             <span class="c-headline__text">#мечтатьневредно</span>
         </div>     
         <div class="c-section__box">
             <div class="c-section__content">
-                <ul class="c-menu">
+                <ul class="c-menu" id="menu">
                     {% set menu = [
-                        'Об акции',
-                        'Как участвовать?',
-                        'Какой приз?',
-                        'О чем мечтают участницы?',
-                        'О чем мечтают звезды',
-                        'Великие мечтательницы',
-                        'Правила участия'
+                        {
+                            name: 'Об акции',
+                            link: 'about'
+                        },
+                        {
+                            name: 'Как участвовать?',
+                            link: 'participate'
+                        },
+                        {
+                            name: 'Какой приз?',
+                            link: 'gifts'
+                        },
+                        {
+                            name: 'О чем мечтают участницы?',
+                            link: 'stars'
+                        },
+                        {
+                            name: 'О чем мечтают звезды',
+                            link: 'girls'
+                        },
+                        {
+                            name: 'Великие мечтательницы',
+                            link: 'dreamers'
+                        },
+                        {
+                            name: 'Правила участия',
+                            link: 'rules'
+                        }
                     ] %} 
                     {% for item in menu %}
-                        <li class="c-menu__item">{{item}}</li>
+                        <li class="c-menu__item" data-menuanchor="{{item.link}}">
+                            <a href="{{'#' + item.link}}">{{item.name}}</a>
+                        </li>
                     {% endfor %}
                 </ul>
             </div>
         </div>
     </section>
-    <section class="section c-section c-section_about">
+    <section data-anchor="about" class="section c-section c-section_about">
         <div class="c-section__background" style="background-image: url({{ 'about-right.png'|cdn }})"></div>
         <div class="c-section__background" style="background-image: url({{ 'about-left.png'|cdn }})"></div>        
         <div class="c-section__box">
@@ -45,14 +68,16 @@
                         Поделись своей светлой идеей и&#160;получи возможность выиграть
                         отличные призы и&#160;фотосессию в&#160;журнале Elle Girl!
                     </p>
-                     <a href="#" class="c-button c-info__button">
-                         <span class="c-button__text">Как участвовать?</span>
+                     <a href="#participate" class="c-button c-info__button">
+                        <div class="c-button__text">
+                             Как участвовать?
+                        </div>
                     </a>
                 </div>
             </div>
         </div>
     </section>
-    <section class="section c-section c-section_how-to-participate">
+    <section data-anchor="participate" class="section c-section c-section_how-to-participate">
         <div class="c-section__background" style="background-image: url({{ 'girl-right.png'|cdn }})"></div>        
         <div class="c-section__box">
             <div class="c-section__content">
@@ -60,6 +85,9 @@
                     <div class="c-headline c-info__header">
                         <span class="c-headline__text">Как участвовать?</span>
                     </div>
+                    <p>
+                        Помечтай на&#160;тему: &#171;Как&#160;бы я&#160;изменила мир к&#160;лучшему с&#160;помощью технологий?&#187;
+                    </p>
                     <p>
                         Напиши о&#160;своей идее небольшой пост.
                     </p>
@@ -72,16 +100,16 @@
                         Пусть о&#160;твоей идее узнают все!
                     </p>
                     <p>
-                        Подробные правила конкурса <a href="#" class="c-link">читай тут</a>
+                        Подробные правила конкурса <a href="#rules" class="c-link">читай тут</a>
                     </p>
-                    <a href="#" class="c-button c-info__button">
+                    <a href="#gifts" class="c-button c-info__button">
                         <span class="c-button__text">Какой приз?</span>
                     </a>
                 </div>
             </div>
         </div>
     </section>
-    <section class="section c-section c-section_gifts">
+    <section data-anchor="gifts" class="section c-section c-section_gifts">
         <div class="c-section__background" style="background-image: url({{ 'girl-left.png'|cdn }})"></div>        
         <div class="c-section__box">
             <div class="c-section__content">
@@ -100,14 +128,28 @@
                     <p>
                         Делись фантазиями&#160;&#8212; получай отличные подарки!
                     </p>
-                    <a href="#" class="c-button c-info__button">
+                    <a href="#" data-featherlight="#participate-popup" class="c-button c-info__button">
                         <span class="c-button__text">Участвовать!</span>
                     </a>
+                    <div id="participate-popup" class="c-popup">
+                        <p class="c-popup__text">
+                            Перейди в&#160;любую социальную сеть и&#160;опубликуй свой пост с&#160;хэштэгом
+                            <span class="c-hashtag">#МечтатьНеВредно</span> (в&#160;настройках профиль должен быть открытым).
+                        </p>
+                        <div class="c-popup__social">
+                            <i class="c-social" style="background-image: url({{ 'instagram.png'|cdn }})"></i>
+                            <i class="c-social" style="background-image: url({{ 'twitter.png'|cdn }})"></i>
+                            <i class="c-social" style="background-image: url({{ 'vk.png'|cdn }})"></i>
+                        </div>
+                        <p class="c-popup__thesis">
+                            Меняй мир к&#160;лучшему&#160;&#8212; тебе это по&#160;силам!
+                        </p>
+                    </div>                    
                 </div>
             </div>
         </div>
     </section>
-    <section class="section c-section c-section_stars">
+    <section data-anchor="stars" class="section c-section c-section_stars">
         <div class="c-section__background" style="background-image: url({{ 'stars.png'|cdn }})"></div>                
         <div class="c-section__box">
             <div class="c-section__content">
@@ -116,7 +158,7 @@
                         <span class="c-headline__text">О чем мечтают звезды?</span>
                     </div>
                     <p class="c-section__description">
-                        Вдохновляйся идеями знаменитостей и&#160;блогеров и&#160;присоединяйся!
+                        Вдохновляйся идеями знаменитостей и&#160;блогеров! Присоединяйся!
                     </p>
                     <div class="c-bloggers">
                         {% set bloggers = [ { name: "Катя Клэп", image: "blogger-1.png" } ] %} {% for blogger in bloggers|loop(12) %}
@@ -132,7 +174,7 @@
             </div>
         </div>
     </section>
-    <section class="section c-section c-section_girls">
+    <section data-anchor="girls" class="section c-section c-section_girls">
         <div class="c-section__background" style="background-image: url({{ 'participants.png'|cdn }})"></div>                        
         <div class="c-section__box">
             <div class="c-section__content">
@@ -149,8 +191,8 @@
             </div>
         </div>
     </section>
-    <section class="section c-section c-section_dreamers">
-        <div class="c-section__background" style="background-image: url({{ 'stars.png'|cdn }})"></div>                        
+    <section data-anchor="dreamers" class="section c-section c-section_dreamers">
+        <div class="c-section__background" style="background-image: url({{ 'dreamers.png'|cdn }})"></div>                        
         <div class="c-section__box">
             <div class="c-section__content">
                 <div class="c-headline">
@@ -175,7 +217,7 @@
             </div>
         </div>
     </section>
-    <section class="section c-section c-section_condition">
+    <section data-anchor="rules" class="section c-section c-section_condition">
         <div class="c-section__box">
             <div class="c-section__content">
                 <div class="c-headline c-headline_blue">
@@ -197,14 +239,25 @@
             </div>
         </div>
     </section>
-    <section class="section c-section c-section_end">
+    <section data-anchor="end" class="section c-section c-section_end">
         <div class="c-section__background" style="background-image: url({{ 'end.png'|cdn }})"></div>                        
             <div class="c-section__box">
-                <div class="c-section__content">
+                <div class="c-section__content">                
+                    <div class="c-section__footer c-headline c-headline_footer">
+                        <span class="c-headline__text">#мечтатьневредно</span>
+                    </div> 
+                    <div class="c-section__thesis">
+                        Поделись своей мечтой в&#160;социальной сети (ВК, Instagram или Twitter). Меняй мир к&#160;лучшему, тебе это по&#160;силам!
+                    </div>
+                     <a href="#" data-featherlight="#participate-popup" class="c-button c-info__button">
+                         <span class="c-button__text">Участвовать!</span>
+                    </a>
+                    <p>
+                        У&#160;тебя есть вопрос? Напиши нам: <a class="c-link" href="mailto:mail@msmechta.ru">mail@msmechta.ru</a>
+                    </p>
                 </div>
             </div>
     </section>
-    <div class="section c-footer fp-auto-height" style="height: 100px; background: bisque;">footer</div>
-
+    <div data-anchor="footer" class="section c-footer fp-auto-height" style="height: 100px; background: bisque;">footer</div>
 </div>
 {% endblock %}
