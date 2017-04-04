@@ -1086,11 +1086,20 @@ body::-webkit-scrollbar {
   position: relative;
   box-sizing: border-box;
 }
+.c-section__mouse {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 47px;
+  background-size: cover;
+}
 .c-section__background {
   display: block;
   position: absolute;
-  background-repeat: no-repeat;
   background-size: cover;
+  background-repeat: no-repeat;
 }
 .c-section__description {
   margin: 50px auto 65px;
@@ -1224,7 +1233,7 @@ body::-webkit-scrollbar {
   left: 40%;
   width: 65%;
   height: 650px;
-  background-position: 0 -100px;
+  background-position: 0 100%;
 }
 .c-section_dreamers {
   padding-top: 60px;
@@ -1238,15 +1247,17 @@ body::-webkit-scrollbar {
   left: 40%;
   width: 100%;
   height: 85%;
-  background-position: 0 0;
+  background-position: 0 100%;
 }
 .c-section_condition {
   background: #e08842;
   padding: 60px 0;
 }
 .c-section_condition .c-section__content {
-  padding-bottom: 120px;
+  margin-bottom: 60px;
   height: 80vh;
+  overflow: hidden;
+  position: relative;
 }
 .c-section_end {
   background: #00b1c4;
@@ -1965,6 +1976,12 @@ body::-webkit-scrollbar {
 }
 .c-condition__text {
   font-size: 16px;
+}
+.c-condition__button {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 0;
 }
 /*!
  * fullPage 2.9.4

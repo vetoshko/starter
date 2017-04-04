@@ -46,6 +46,7 @@ $(function () {
         centerMode: true,
         arrows: true,
         infinite: true,
+        draggable: true,
         speed: 500,
         slidesToShow: 5,
         variableWidth: true,
@@ -144,6 +145,12 @@ $(function () {
     })
     $('.c-modal').click(() => {
         $('.c-modal').removeClass('active');
+    })
+
+    $('.c-condition__button').click(() => {
+        $(this).parent().attr('style', 'overflow: visible; height: auto !important');
+        $.fn.fullpage.reBuild();
+        $(this).css('display', 'none');
     })
 
     function reduceText(string) {
