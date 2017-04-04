@@ -4,7 +4,7 @@
   justify-content: space-between;
   padding-top: 20px;
 
-  .screen-md-max({
+  .screen-sm-max({
     display: none;
   });
 
@@ -12,9 +12,42 @@
     list-style: none;
     padding: 0 10px;
     font-size: 16px;
+
+    .screen-sm-max({
+      width: 100%;
+      display: inline-block;
+      font-size: 30px;
+      text-align: center;
+      padding: 30px 0;
+    });
+
+    .screen-xs({
+      width: 100%;
+      display: inline-block;
+      font-size: 20px;
+      text-align: center;
+      padding: 20px 0;
+    });
+
     a {
       text-decoration: none;
       color: #fff;      
     }
   }
+}
+
+.c-menu-fixed {
+  display: none; 
+
+  .screen-sm-max({
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, .7);
+    z-index: 5;
+    padding-top: 30px;
+  });
+
 }

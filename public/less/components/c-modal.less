@@ -1,0 +1,60 @@
+.c-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 0;
+    background: rgba(0, 0, 0, .7);
+    z-index: 20;
+    overflow: hidden;
+    color: #4c4c4c;    
+
+    &__block {
+        transition: all 1s;
+        height: 100%;
+        width: 380px;
+        position: absolute;
+        left: 100%;
+        transform: none;
+        background: #fff;
+        padding: 55px 60px;
+
+        .active & {
+            transform: translate(-100%, 0);
+        }
+
+        .screen-xs({
+          width: 100%;  
+        });
+    }
+    &__content {
+        overflow: auto;
+        min-height: 100%;
+    }
+
+    &__image {
+        margin: 25px auto 30px;
+        width: 100%;
+    }
+
+    &__name {
+        font-weight: 600;
+        max-width: 100%;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: clip;
+        text-transform: uppercase;
+    }
+
+    &__full-description {
+        font-size: 16px;
+        line-height: 24px;
+    }
+
+    &.active {
+        display: block;
+        bottom: 0;
+        right: 0;
+        height: 100%;
+    }
+}

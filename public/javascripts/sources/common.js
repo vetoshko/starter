@@ -41,7 +41,6 @@ $(function () {
             }
         ]
     };
-    
     let dreamersConfig = {
         dots: false,
         centerMode: true,
@@ -75,6 +74,17 @@ $(function () {
     let cardsPagesCount = 1;
 
     const visibleSymbols = 85;
+    const cardsrequestCount = 8;
+
+    let isOpen = false;
+
+    $('.js-menu-button').on('click', function() {
+        $('html').toggleClass('t-open-menu');
+        $('.c-menu-fixed').fadeToggle(200, function() {
+        isOpen = !isOpen;
+        $('.c-menu-fixed').trigger('toggle', isOpen);
+        });
+    });
 
     $('.c-section-container').fullpage({
         scrollOverflow: true,
@@ -87,20 +97,25 @@ $(function () {
     $('.c-dreamers').slick(dreamersConfig);
 
     function getCards() {
+        console.log('http://13.74.168.238/results/msgirlstest?count=' + cardsrequestCount + '&page=' + (cardsPagesCount - 1));
         $.ajax({
-            url: 'http://127.0.0.1:3000/cards',
+            url: 'http://13.74.168.238/results/msgirlstest?count=' + cardsrequestCount + '&page=' + (cardsPagesCount - 1),
             type: 'GET'
         }).done((cards) => {
             cardsPagesCount++;
-            cards = assignId(cards, cardsArray.length);
+            cards = assignId(cards.posts, cardsArray.length);
             cardsArray = cardsArray.concat(cards);
             if (cards.length > 0) {
                 cardsLoader = $('.c-cards-holder').masonry(masonryConfig);
                 isMasonryCreated = true;
                 let newCards = cards.map((card) => {
-                    return createCard(card);
+                    let newCard = createCard(card);
+                    return newCard;
                 });
                 cardsLoader.append(newCards).masonry('appended', newCards).masonry('reloadItems');
+                newCards.forEach((card) => {
+                    $(card).click(clickHandler);
+                })
                 $.fn.fullpage.reBuild();
             } else {
                 if (isMasonryCreated) {
@@ -110,6 +125,27 @@ $(function () {
             }
         })
     }
+
+    function clickHandler() {
+        let id = $(this).attr('id');
+        for (var index = 0; index < cardsArray.length; index++) {
+            if (cardsArray[index].id == id) {
+                let currentCard = cardsArray[index];
+                let fullBlock = $('.c-modal__content');
+                fullBlock.find('.c-modal__name').html(currentCard.name);
+                fullBlock.find('.c-modal__image').attr('src', currentCard.image);
+                fullBlock.find('.c-modal__full-description').html(currentCard.text);
+                $('.c-modal').addClass('active');
+            }
+        }
+    }
+
+    $('.c-modal__block').click((event) => {
+        event.stopPropagation();
+    })
+    $('.c-modal').click(() => {
+        $('.c-modal').removeClass('active');
+    })
 
     function reduceText(string) {
         if (string.length > visibleSymbols) {
@@ -130,12 +166,12 @@ $(function () {
         return $(
             `<div class='c-card' id='${card.id}'>` +
             `<div class='c-card__image'` +
-            `style='background-image: url(${card.img});'>` +
+            `style='background-image: url(${card.image});'>` +
             `<div class='c-card__image_embedded'` +
             `style='padding-top: ${heightCoefficient ? 100 * heightCoefficient + '%' : '100%'};'></div></div>` +
             `<div class='c-card__about'>` +
-            `<div class='c-card__name'>${card.name} <span class="c-card__last-name">${card.lastName}</span></div>` +
-            `<div class="c-card__description">${reduceText(card.description)}</div></div></div>`
+            `<div class='c-card__name'>${card.name}</span></div>` +
+            `<div class="c-card__description">${reduceText(card.text)}</div></div></div>`
         ).get(0);
     };
 

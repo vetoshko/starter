@@ -1,0 +1,59 @@
+.c-menu-icon {
+  display: none;
+  position: fixed;
+  left: 20px;
+  top: 20px;
+  background: transparent;
+  border: 0;
+  box-sizing: border-box;
+  cursor: pointer;
+  color: inherit;
+  z-index: 10;
+
+  .screen-sm-max({
+    display: block;
+  });
+
+  &__holder {
+    position: relative;
+    width: 20px;
+    height: 17px;
+  }
+
+  &__line {
+    height: 2px;
+    width: 100%;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    margin-top: -0.5px;
+    transition: transform .2s, background .2s;
+
+    .t-open-menu &{
+      background: #fff;
+    }
+
+    &_top {
+      transform: translate3d(0, -8px, 0);
+    }
+
+    &_middle {
+      transform: translate3d(0, 0, 0);
+    }
+    
+    &_bottom {
+      transform: translate3d(0, 8px, 0);
+    }
+  }
+  .t-open-menu &__line_top {
+    transform: translate3d(0, 0, 0) rotate(45deg);
+  }
+  .t-open-menu &__line_middle {
+    transform: translate3d(0, 0, 0) scale(0.1, 1);
+  }
+  .t-open-menu &__line_bottom {
+    transform: translate3d(0, 0, 0) rotate(-45deg);
+  }  
+}

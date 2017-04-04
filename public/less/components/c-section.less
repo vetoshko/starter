@@ -65,6 +65,14 @@
         height: 85%;
         background-position: center top;
       }
+      .screen-sm-max({
+        .c-section__content {
+          height: 100%;
+        }
+        .c-section__box {
+          padding: 0;
+        }
+      });
    }
 
    &_about {
@@ -144,6 +152,10 @@
   &_girls {
     background: @green-color;
 
+    .c-section__content {
+      padding-top: 60px;
+    }
+
     .c-section__background {
         top: 0;
         left: 40%;
@@ -173,6 +185,10 @@
   &_condition {
     background: @orange-color;
     padding: 60px 0;
+
+    .c-section__content {
+      padding-bottom: 120px;
+    }
   }
 
   &_end {
@@ -184,10 +200,13 @@
     }
 
     .c-section__content {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
+      margin-top: 40vh;
+      .screen-sm-max({
+         margin-top: 20vh;
+       });
+       .screen-xs({
+         margin-top: 0;
+       });
     }
 
     .c-section__background {

@@ -1,4 +1,57 @@
 {% extends layout %} {% block content %}
+{% set menu = [
+    {
+        name: 'Об акции',
+        link: 'about'
+    },
+    {
+        name: 'Как участвовать?',
+        link: 'participate'
+    },
+    {
+        name: 'Какой приз?',
+        link: 'gifts'
+    },
+    {
+        name: 'О чем мечтают участницы?',
+        link: 'stars'
+    },
+    {
+        name: 'О чем мечтают звезды',
+        link: 'girls'
+    },
+    {
+        name: 'Великие мечтательницы',
+        link: 'dreamers'
+    },
+    {
+        name: 'Правила участия',
+        link: 'rules'
+    }
+] %} 
+<div class="c-menu-icon js-menu-button">
+    <div class="c-menu-icon__holder">
+        <div class="c-menu-icon__line c-menu-icon__line_top"></div>
+        <div class="c-menu-icon__line c-menu-icon__line_middle"></div>
+        <div class="c-menu-icon__line c-menu-icon__line_bottom"></div>
+    </div>
+</div>
+<ul class="c-menu-fixed" id="menu">
+    {% for item in menu %}
+        <li class="c-menu__item" data-menuanchor="{{item.link}}">
+            <a href="{{'#' + item.link}}">{{item.name}}</a>
+        </li>
+    {% endfor %}
+</ul>
+<div class="c-modal">
+    <div class="c-modal__block">
+        <div class="c-modal__content">
+            <div class='c-modal__name'>Лена ИвановаПетроваИванова</div>
+            <img class='c-modal__image'></img>
+            <div class="c-modal__full-description">edaaeaed</div>
+        </div>
+    </div>
+</div>
 <div class="c-section-container">
     <div data-anchor="header" class="section c-header fp-auto-height" style="height: 100px; background: greenyellow;">header</div>
     <section data-anchor="main" class="section c-section c-section_main">
@@ -9,36 +62,6 @@
         <div class="c-section__box">
             <div class="c-section__content">
                 <ul class="c-menu" id="menu">
-                    {% set menu = [
-                        {
-                            name: 'Об акции',
-                            link: 'about'
-                        },
-                        {
-                            name: 'Как участвовать?',
-                            link: 'participate'
-                        },
-                        {
-                            name: 'Какой приз?',
-                            link: 'gifts'
-                        },
-                        {
-                            name: 'О чем мечтают участницы?',
-                            link: 'stars'
-                        },
-                        {
-                            name: 'О чем мечтают звезды',
-                            link: 'girls'
-                        },
-                        {
-                            name: 'Великие мечтательницы',
-                            link: 'dreamers'
-                        },
-                        {
-                            name: 'Правила участия',
-                            link: 'rules'
-                        }
-                    ] %} 
                     {% for item in menu %}
                         <li class="c-menu__item" data-menuanchor="{{item.link}}">
                             <a href="{{'#' + item.link}}">{{item.name}}</a>
