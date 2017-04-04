@@ -199,8 +199,8 @@
                     <span class="c-headline__text">Великие мечтательницы</span>
                 </div>
                 <div class="c-dreamers">
-                    {% set dreamers = [ { name: "Диана", lastname: "Коверн", work: "Физик", image: "dreamer-1.png" } ] %}
-                    {% for dreamer in dreamers|loop(10) %}
+                    {%- for dreamer in dreamers %}
+                    
                         <div class='c-card'>
                             <div class='c-card__image' style='background-image: url({{ dreamer.image|cdn }});'>
                                 <div class='c-card__image_embedded'></div>
@@ -209,6 +209,7 @@
                                         <span class="c-card__last-name">{{dreamer.lastname}}</span>
                                     </div>
                                     <div class="c-card__work">{{dreamer.work}}</div>
+                                    <div class="c-card__history">{{dreamer.text}}</div>
                                 </div>
                             </div>
                         </div>
