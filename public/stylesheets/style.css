@@ -1228,6 +1228,7 @@ body::-webkit-scrollbar {
 }
 .c-section_condition .c-section__content {
   padding-bottom: 120px;
+  height: 80vh;
 }
 .c-section_end {
   background: #00b1c4;

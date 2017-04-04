@@ -97,7 +97,6 @@ $(function () {
     $('.c-dreamers').slick(dreamersConfig);
 
     function getCards() {
-        console.log('http://13.74.168.238/results/msgirlstest?count=' + cardsrequestCount + '&page=' + (cardsPagesCount - 1));
         $.ajax({
             url: 'http://13.74.168.238/results/msgirlstest?count=' + cardsrequestCount + '&page=' + (cardsPagesCount - 1),
             type: 'GET'
@@ -164,7 +163,7 @@ $(function () {
     function createCard(card) {
         let heightCoefficient = card.imgHeight / card.imgWidth;
         return $(
-            `<div class='c-card' id='${card.id}'>` +
+            `<div class='c-card ${card.providerType}' id='${card.id}'>` +
             `<div class='c-card__image'` +
             `style='background-image: url(${card.image});'>` +
             `<div class='c-card__image_embedded'` +
