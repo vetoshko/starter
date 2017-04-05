@@ -1118,7 +1118,7 @@ body::-webkit-scrollbar {
 .c-section__header {
   position: absolute;
   left: 50%;
-  bottom: 45%;
+  bottom: 120px;
   transition: all 1s;
 }
 .c-section__thesis {
@@ -1731,7 +1731,7 @@ body::-webkit-scrollbar {
 .c-headline_header {
   font-size: 90px;
   background: rgba(8, 130, 195, 0.7);
-  transform: skewX(-20deg) translate(-50%, -50%);
+  transform: skewX(-20deg) translateX(-50%);
   line-height: .7;
 }
 @media (max-width: 991px) {
