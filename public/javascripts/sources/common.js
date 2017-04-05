@@ -1,4 +1,4 @@
-$(function () {
+$(function() {
     let isMasonryCreated = false;
     let cardsLoader;
     let cardsArray = [];
@@ -18,8 +18,7 @@ $(function () {
         prevArrow: '<svg class="c-arrow c-arrow__prev"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-l"></use></svg>',
         nextArrow: '<svg class="c-arrow c-arrow__next"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-r"></use></svg>',
         dotsClass: 'slick-dots c-bloggers__dots',
-        responsive: [
-            {
+        responsive: [{
                 breakpoint: 992,
                 settings: {
                     slidesToShow: 3,
@@ -53,8 +52,7 @@ $(function () {
         variableWidth: true,
         prevArrow: '<svg class="c-arrow c-arrow__prev"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-l"></use></svg>',
         nextArrow: '<svg class="c-arrow c-arrow__next"><use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#arrow-r"></use></svg>',
-        responsive: [
-            {
+        responsive: [{
                 breakpoint: 992,
                 settings: {
                     slidesToShow: 3
@@ -83,22 +81,22 @@ $(function () {
         createImgNode($(this), src);
     })
 
-    function createImgNode (element, src) {
+    function createImgNode(element, src) {
         var img = document.createElement("img");
         img.src = src;
-        img.onload = function () {
-            element.attr('style', 'background-image: url(' + src +');');
+        img.onload = function() {
+            element.attr('style', 'background-image: url(' + src + ');');
             element.addClass('visible');
             $('.c-section__header').attr('style', 'bottom: 120px');
         }
 
     }
 
-    $('.js-menu-button').on('click', function() {
+    $('.js-menu-button, .c-menu-fixed .c-menu__item').on('click', function() {
         $('html').toggleClass('t-open-menu');
         $('.c-menu-fixed').fadeToggle(200, function() {
-        isOpen = !isOpen;
-        $('.c-menu-fixed').trigger('toggle', isOpen);
+            isOpen = !isOpen;
+            $('.c-menu-fixed').trigger('toggle', isOpen);
         });
     });
 
@@ -122,15 +120,16 @@ $(function () {
         $('#condition').show();
 
         $.fn.fullpage.reBuild();
-        
+
     }
+
     function hideCondition() {
         $('.c-section_condition .c-section__content').css("height", "80vh");
         $('#more-condition').show();
         $('#condition').hide();
 
         $.fn.fullpage.reBuild();
-        
+
     }
 
     $('.c-modal__block').click((event) => {
@@ -138,11 +137,11 @@ $(function () {
     })
     $('.c-modal').click(() => {
         if ($(window).width() > 767) {
-            $('.c-modal').removeClass('active');
+            $('body').removeClass('active');
         }
     })
     $('.c-modal__close').click(() => {
-        $('.c-modal').removeClass('active');
+        $('body').removeClass('active');
     })
 
     function getCards() {
@@ -166,7 +165,7 @@ $(function () {
                 })
                 $.fn.fullpage.reBuild();
                 if (cards.length < cardsrequestCount) {
-                    $('#more-cards').hide();     
+                    $('#more-cards').hide();
                 }
             } else {
                 if (isMasonryCreated) {
@@ -187,7 +186,7 @@ $(function () {
                 fullBlock.find('.c-modal__name').html(currentCard.name);
                 fullBlock.find('.c-modal__image').attr('src', currentCard.image);
                 fullBlock.find('.c-modal__full-description').html(currentCard.text);
-                $('.c-modal').addClass('active');
+                $('body').addClass('active');
             }
         }
     }

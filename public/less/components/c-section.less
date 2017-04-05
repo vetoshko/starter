@@ -21,6 +21,10 @@
       background-repeat: no-repeat;
       background-size: cover;
       background-repeat: no-repeat;
+
+      .screen-xs({
+        display: none;
+    });
   }
 
   &__description {
@@ -77,6 +81,9 @@
         width: 110%;
         height: 85%;
         background-position: center top;
+        .screen-xs({
+            display: block;
+        });
       }
       .screen-sm-max({
         .c-section__content {
