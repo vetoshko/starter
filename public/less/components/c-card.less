@@ -51,7 +51,9 @@
       .c-card__info {
         transform: translate(0, -60px);
         transition-duration: 1s;
-
+      }
+      .c-card__image_embeddeds{
+        background: none;
       }
     }
   }
@@ -84,9 +86,11 @@
     }
   }
 
-  &__image_embedded {
+  &__image_embeddeds {
     padding-top: 100%;
+    background: linear-gradient(45deg, rgba(200, 107, 93, 0.5) 20%,  rgba(0, 169, 186, 0.5) 100%);
   }
+
 
   &__name {
     max-width: 100%;
@@ -113,6 +117,7 @@
       color: #4c4c4c;
       font-size: 14px;
       line-height: 18px;
+      word-wrap: break-word;
   }
 
   &__about {

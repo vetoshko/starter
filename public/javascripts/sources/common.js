@@ -95,8 +95,27 @@ $(function () {
     getCards();
     $('.c-bloggers').slick(bloggerConfig);
     $('#more-cards').click(getCards);
+    $('#more-condition').click(getCondition);
+    $('#condition').click(hideCondition);
     $('.c-dreamers').slick(dreamersConfig);
+    $('#condition').hide();
 
+    function getCondition() {
+        $('.c-section_condition .c-section__content').css("height", "auto");
+        $('#more-condition').hide();
+        $('#condition').show();
+
+        $.fn.fullpage.reBuild();
+        
+    }
+    function hideCondition() {
+        $('.c-section_condition .c-section__content').css("height", "80vh");
+        $('#more-condition').show();
+        $('#condition').hide();
+
+        $.fn.fullpage.reBuild();
+        
+    }
     function getCards() {
         $.ajax({
             url: '//admin.msmechta.ru/results/msgirlstest?count=' + cardsrequestCount + '&page=' + (cardsPagesCount - 1),
@@ -125,6 +144,7 @@ $(function () {
             }
         })
     }
+
 
     function clickHandler() {
         let id = $(this).attr('id');

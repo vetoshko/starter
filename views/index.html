@@ -192,7 +192,7 @@
                         ] %}
                         {% for blogger in bloggers %}
                         <div class="c-blogger">
-                            <div class="c-blogger__image" style="background-image: url({{ blogger.image|cdn }})"></div>
+                            <div  class="c-blogger__image" style="background-image: url({{ blogger.image|cdn }})"></div>
                             <div class="c-blogger__name">
                                 {{ blogger.name }}
                             </div>
@@ -232,7 +232,7 @@
                     
                         <div class='c-card'>
                             <div class='c-card__image' style='background-image: url({{ dreamer.image|cdn }});'>
-                                <div class='c-card__image_embedded'></div>
+                                <div class='c-card__image_embeddeds'></div>
                                 <div class="c-card__info">
                                     <div class='c-card__name'>{{dreamer.name}}
                                         <span class="c-card__last-name">{{dreamer.lastname}}</span>
@@ -335,6 +335,7 @@
 Правила Конкурса регулируются законодательством Российской Федерации. Все споры будут решаться сторонами путем переговоров, в&#160;случае если спор не&#160;может быть решен во&#160;внесудебном порядке, спор должен решаться соответствующим судом по&#160;месту нахождения Организатора. 
 В&#160;случае возникновения вопросов Участник Конкурса может обратиться к&#160;Организатору, написав электронное письмо на&#160;адрес электронной почты mail@msmechta.ru."
                  } ] %}
+                 
                 {% for condition in conditions %}
                 <div class="c-condition">
                     <div class="c-condition__header" data-number={{loop.index}}> {{condition.theme + "."}} </div>
@@ -343,6 +344,8 @@
                 {% endfor %}
             </div>
         </div>
+        <div class="c-condition__button" id="condition">Показать меньше</div>
+        <div class="c-condition__button c-condition__button-more" id="more-condition">Показать больше</div>
     </section>
     <section data-anchor="end" class="section c-section c-section_end">
         <div class="c-section__background" style="background-image: url({{ 'dreamers.png'|cdn }})"></div>                        
