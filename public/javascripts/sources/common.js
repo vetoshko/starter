@@ -46,6 +46,7 @@ $(function () {
         centerMode: true,
         arrows: true,
         infinite: true,
+        draggable: true,
         speed: 500,
         slidesToShow: 5,
         focusOnSelect: true,
@@ -73,11 +74,25 @@ $(function () {
         ]
     }
     let cardsPagesCount = 1;
-
     const visibleSymbols = 85;
     const cardsrequestCount = 8;
-
     let isOpen = false;
+
+    $('.lazy').each(function() {
+        let src = $(this).attr('data-lazy');
+        createImgNode($(this), src);
+    })
+
+    function createImgNode (element, src) {
+        var img = document.createElement("img");
+        img.src = src;
+        img.onload = function () {
+            element.attr('style', 'background-image: url(' + src +');');
+            element.addClass('visible');
+            $('.c-section__header').attr('style', 'bottom: 120px');
+        }
+
+    }
 
     $('.js-menu-button').on('click', function() {
         $('html').toggleClass('t-open-menu');
@@ -100,6 +115,7 @@ $(function () {
     $('.c-dreamers').slick(dreamersConfig);
     $('#condition').hide();
 
+
     function getCondition() {
         $('.c-section_condition .c-section__content').css("height", "auto");
         $('#more-condition').hide();
@@ -116,6 +132,19 @@ $(function () {
         $.fn.fullpage.reBuild();
         
     }
+
+    $('.c-modal__block').click((event) => {
+        event.stopPropagation();
+    })
+    $('.c-modal').click(() => {
+        if ($(window).width() > 767) {
+            $('.c-modal').removeClass('active');
+        }
+    })
+    $('.c-modal__close').click(() => {
+        $('.c-modal').removeClass('active');
+    })
+
     function getCards() {
         $.ajax({
             url: '//admin.msmechta.ru/results/msgirlstest?count=' + cardsrequestCount + '&page=' + (cardsPagesCount - 1),
@@ -136,6 +165,9 @@ $(function () {
                     $(card).click(clickHandler);
                 })
                 $.fn.fullpage.reBuild();
+                if (cards.length < cardsrequestCount) {
+                    $('#more-cards').hide();     
+                }
             } else {
                 if (isMasonryCreated) {
                     cardsLoader.masonry('destroy');
@@ -159,13 +191,6 @@ $(function () {
             }
         }
     }
-
-    $('.c-modal__block').click((event) => {
-        event.stopPropagation();
-    })
-    $('.c-modal').click(() => {
-        $('.c-modal').removeClass('active');
-    })
 
     function reduceText(string) {
         if (string.length > visibleSymbols) {

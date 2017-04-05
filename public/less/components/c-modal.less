@@ -6,7 +6,19 @@
     background: rgba(0, 0, 0, .7);
     z-index: 20;
     overflow: hidden;
-    color: #4c4c4c;    
+    color: #4c4c4c;
+
+    &__close {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        font-size: 24px;
+        display: none;
+        .screen-xs({
+            display: block;
+        });
+
+    }    
 
     &__block {
         transition: all 1s;

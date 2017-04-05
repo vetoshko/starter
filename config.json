@@ -15,7 +15,7 @@
 		{
 			"name": "index",
 			"route": "/",
-			"pageData": ["index", "dreamers"],
+			"pageData": ["index", "dreamers", "rules", "blogers"],
 			"pageVars": {
 				"title": "Заголовок страницы",
 				"description": "Описание страницы"

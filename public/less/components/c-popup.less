@@ -6,6 +6,7 @@
         max-width: 380px;
         font-size: 22px;
         line-height: 36px;
+        z-index: 2;
     }
 
     &__thesis {
@@ -19,6 +20,7 @@
         font-family: @headers-font;
         font-weight: 600;
         padding: 0 5px;
+        z-index: 2;        
 
         .screen-sm-max({
             color: @blue-color;
@@ -29,5 +31,23 @@
 
     &__social {
         margin: 50px auto;
+        z-index: 2;
+        
+    }
+
+    &__image {
+        width: 50%;
+        height: 100%;
+        position: absolute;
+        z-index: 0;
+        bottom: 0;
+        right: 0;  
+        background-position: 0 0;  
+        background-size: contain;
+        background-repeat: no-repeat;   
+
+         .screen-sm-max({
+            display: none;
+        }); 
     }
 }
