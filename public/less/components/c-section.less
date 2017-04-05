@@ -3,6 +3,7 @@
   background: #00bcf2;
   position: relative;
   box-sizing: border-box;
+  min-height: 100vh;
 
   &__mouse {
     position: absolute;
@@ -29,7 +30,8 @@
   &__header {
     position: absolute;
     left: 50%;
-    bottom: 120px;
+    bottom: 45%;
+    transition: all 1s;
   }
 
   &__thesis {
@@ -86,6 +88,25 @@
       });
    }
 
+   &_about, 
+   &_how-to-participate,
+   &_gifts {
+     .c-section__box {
+        font-size: 0;
+        &:after {
+          content: '';
+          vertical-align: middle;
+          display: inline-block;
+          height: 100vh;
+        }
+      }
+
+      .c-section__content {
+        display: inline-block;
+        vertical-align: middle;
+      }
+   }
+
    &_about {
       background: @light-blue-color;
 
@@ -104,6 +125,10 @@
           height: 80%;
           background-position: left top;
         }
+      }
+
+      .c-section__box {
+        text-align: center;
       }
    }
 
@@ -131,15 +156,9 @@
         background-position: right center;
       }
 
-    &:after {
-      bottom: 10%;
-      right: 55%;
-      width: 100%;
-      height: 90%;
-      background: url('../storage/girl-left.png') no-repeat;
-      background-size: contain;
-      background-position: right center;
-    }
+      .c-section__content {
+        text-align: right;
+      }
   }
 
   &_stars {

@@ -74,11 +74,25 @@ $(function () {
         ]
     }
     let cardsPagesCount = 1;
-
     const visibleSymbols = 85;
     const cardsrequestCount = 8;
-
     let isOpen = false;
+
+    $('.lazy').each(function() {
+        let src = $(this).attr('data-lazy');
+        createImgNode($(this), src);
+    })
+
+    function createImgNode (element, src) {
+        var img = document.createElement("img");
+        img.src = src;
+        img.onload = function () {
+            element.attr('style', 'background-image: url(' + src +');');
+            element.addClass('visible');
+            $('.c-section__header').attr('style', 'bottom: 120px');
+        }
+
+    }
 
     $('.js-menu-button').on('click', function() {
         $('html').toggleClass('t-open-menu');
@@ -97,6 +111,18 @@ $(function () {
     $('.c-bloggers').slick(bloggerConfig);
     $('#more-cards').click(getCards);
     $('.c-dreamers').slick(dreamersConfig);
+
+    $('.c-modal__block').click((event) => {
+        event.stopPropagation();
+    })
+    $('.c-modal').click(() => {
+        if ($(window).width() > 767) {
+            $('.c-modal').removeClass('active');
+        }
+    })
+    $('.c-modal__close').click(() => {
+        $('.c-modal').removeClass('active');
+    })
 
     function getCards() {
         $.ajax({
@@ -143,19 +169,6 @@ $(function () {
             }
         }
     }
-
-    $('.c-modal__block').click((event) => {
-        event.stopPropagation();
-    })
-    $('.c-modal').click(() => {
-        $('.c-modal').removeClass('active');
-    })
-
-    $('.c-condition__button').click(() => {
-        $(this).parent().attr('style', 'overflow: visible; height: auto !important');
-        $.fn.fullpage.reBuild();
-        $(this).css('display', 'none');
-    })
 
     function reduceText(string) {
         if (string.length > visibleSymbols) {

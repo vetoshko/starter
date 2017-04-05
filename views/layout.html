@@ -18,18 +18,16 @@
 
 <body>
     <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="0" height="0" style="display:none;" xml:space="preserve">
-        <defs>
-            <symbol id="arrow-l" viewBox="0 0 512 512">
-                <path class="st0" d="M89.4,229.8h396.6c14.5,0,26.1,11.5,26.1,26.1c0,14.5-11.5,26.4-26.1,26.4H89.4l111.7,111.3
-                    c10.4,10.4,10.4,26.8,0,37.2c-10.4,10.4-26.8,10.4-37.2,0l-156-156C3,270,0,263.3,0,255.9c0-7.4,3-14.1,7.8-19l156-156
-                    c10.4-10.1,26.8-10.1,37.2,0c10.4,10.4,10.4,26.8,0,37.2L89.4,229.8z"/>
-            </symbol>
-            <symbol id="arrow-r" viewBox="0 0 512 512">
-                <path class="st0" d="M310.9,118.1c-10.4-10.4-10.4-26.8,0-37.2c10.4-10.1,26.8-10.1,37.2,0l156,156c4.8,4.8,7.8,11.5,7.8,19
-                    c0,7.4-3,14.1-7.8,19l-156,156c-10.4,10.4-26.8,10.4-37.2,0c-10.4-10.4-10.4-26.8,0-37.2l111.7-111.3H26.1
-                    C11.6,282.3,0,270.4,0,255.9c0-14.5,11.5-26.1,26.1-26.1h396.6L310.9,118.1z"/>
-            </symbol>
-        </defs>
+        <symbol id="arrow-l" viewBox="0 0 512 512">
+            <path class="st0" d="M89.4,229.8h396.6c14.5,0,26.1,11.5,26.1,26.1c0,14.5-11.5,26.4-26.1,26.4H89.4l111.7,111.3
+                c10.4,10.4,10.4,26.8,0,37.2c-10.4,10.4-26.8,10.4-37.2,0l-156-156C3,270,0,263.3,0,255.9c0-7.4,3-14.1,7.8-19l156-156
+                c10.4-10.1,26.8-10.1,37.2,0c10.4,10.4,10.4,26.8,0,37.2L89.4,229.8z"/>
+        </symbol>
+        <symbol id="arrow-r" viewBox="0 0 512 512">
+            <path class="st0" d="M310.9,118.1c-10.4-10.4-10.4-26.8,0-37.2c10.4-10.1,26.8-10.1,37.2,0l156,156c4.8,4.8,7.8,11.5,7.8,19
+                c0,7.4-3,14.1-7.8,19l-156,156c-10.4,10.4-26.8,10.4-37.2,0c-10.4-10.4-10.4-26.8,0-37.2l111.7-111.3H26.1
+                C11.6,282.3,0,270.4,0,255.9c0-14.5,11.5-26.1,26.1-26.1h396.6L310.9,118.1z"/>
+        </symbol>
     </svg>
 </svg>
     {% block content %} {% endblock content %} {%- if not isExport and _env == 'development'%} {% include "blocks/__add_component.html" %}
@@ -37,12 +35,12 @@
     <script src="//localhost:35729/livereload.js"></script>
     {%- endif %}
     <script src="{{ 'jquery-3.2.0.min.js'|js_asset }}"></script>
-    <script src="{{ 'common.js'|js_asset }}"></script>
     <script src="{{ 'ms_js.js'|js_asset }}"></script>
+    <script src="{{ 'common.js'|js_asset }}"></script>
+    <script src="{{ 'scrolloverflow.min.js'|js_asset }}"></script>
+    <script src="{{ 'jquery.fullpage.min.js'|js_asset }}"></script>    
     <script src="{{ 'masonry.pkgd.min.js'|js_asset }}"></script>
     <script src="{{ 'slick.min.js'|js_asset }}"></script>
-    <script src="{{ 'scrolloverflow.min.js'|js_asset }}"></script>
-    <script src="{{ 'jquery.fullpage.min.js'|js_asset }}"></script>
     <script src="{{ 'featherlight.js'|js_asset }}"></script>
 </body>
 

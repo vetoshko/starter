@@ -45,6 +45,7 @@
 </ul>
 <div class="c-modal">
     <div class="c-modal__block">
+        <div class="c-modal__close">&#10006;</div>
         <div class="c-modal__content">
             <div class='c-modal__name'></div>
             <img class='c-modal__image'></img>
@@ -55,7 +56,7 @@
 <div class="c-section-container">
      <div data-anchor="header" class="section c-header fp-auto-height">{% include "blocks/ms_header.html" %}</div>
     <section data-anchor="main" class="section c-section c-section_main">
-        <div class="c-section__background" style="background-image: url({{ 'main.png'|cdn }})"></div>
+        <div class="c-section__background lazy" data-lazy="{{ 'main.png'|cdn }}"></div>
         <div class="c-section__mouse" style="background-image: url({{ 'mouse.png'|cdn }})">
         </div>
         <div class="c-section__header c-headline c-headline_header">
@@ -103,7 +104,7 @@
         </div>
     </section>
     <section data-anchor="participate" class="section c-section c-section_how-to-participate">
-        <div class="c-section__background" style="background-image: url({{ 'girl-right.png'|cdn }})"></div>        
+        <div class="c-section__background lazy" data-lazy="{{ 'girl-right.png'|cdn }}"></div>        
         <div class="c-section__box">
             <div class="c-section__content">
                 <div class="c-info">
@@ -135,7 +136,7 @@
         </div>
     </section>
     <section data-anchor="gifts" class="section c-section c-section_gifts">
-        <div class="c-section__background" style="background-image: url({{ 'girl-left.png'|cdn }})"></div>        
+        <div class="c-section__background lazy" data-lazy="{{ 'girl-left.png'|cdn }}"></div>        
         <div class="c-section__box">
             <div class="c-section__content">
                 <div class="c-info c-info_right">
@@ -256,9 +257,11 @@
                 {% for rule in rules %}
                 <div class="c-condition">
                     <div class="c-condition__header" data-number={{loop.index}}> {{rule.theme + "."}} </div>
-                    {% for b in rule.blocks %}
-                    <div class="c-condition__text">{{b}}</div>
-                    {% endfor %}
+                    <ul>
+                        {% for b in rule.blocks %}
+                        <li div class="c-condition__text">{{b}}</li>
+                        {% endfor %}
+                    </ul>
                 </div>
                 {% endfor %}
                 <div class="c-condition__button">Показать еще</div>
