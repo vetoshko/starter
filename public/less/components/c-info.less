@@ -20,14 +20,24 @@
         padding-left: 9px;        
         display: block;
         line-height: 30px;
+        .screen-sm-max({
+            padding: 0;
+            font-size: 18px;
+        });
     }
 
     p + p {
         padding-top: 40px;
+        .screen-sm-max({
+            padding-top: 20px;
+        });
     }
 
     &__header {
         margin-bottom: 60px;
+        .screen-sm-max({
+            margin-bottom: 30px;
+        });
     }
 
     &__button {

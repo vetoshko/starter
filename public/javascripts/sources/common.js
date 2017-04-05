@@ -36,7 +36,8 @@ $(function () {
                 breakpoint: 480,
                 settings: {
                     slidesToShow: 1,
-                    slidesToScroll: 1
+                    slidesToScroll: 1,
+                    arrows: false
                 }
             }
         ]
@@ -68,7 +69,9 @@ $(function () {
             }, {
                 breakpoint: 480,
                 settings: {
-                    slidesToShow: 1
+                    slidesToShow: 1,
+                    
+
                 }
             }
         ]
