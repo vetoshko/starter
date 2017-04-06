@@ -7,6 +7,10 @@
         font-size: 22px;
         line-height: 36px;
         z-index: 2;
+
+        .screen-xs({
+            font-size: 18px;
+        });
     }
 
     &__thesis {
@@ -22,7 +26,8 @@
         padding: 0 5px;
         z-index: 2;        
 
-        .screen-sm-max({
+        .screen-xs({
+            font-size: 20px;
             color: @blue-color;
             background: none;
             transform: none;
@@ -32,7 +37,10 @@
     &__social {
         margin: 50px auto;
         z-index: 2;
-        
+
+        .screen-xs({
+            margin: 25px auto;
+        });        
     }
 
     &__image {
@@ -50,4 +58,10 @@
             display: none;
         }); 
     }
+}
+
+.featherlight .featherlight-close-icon {
+    .screen-xs({
+        font-size: 20px;
+    }); 
 }

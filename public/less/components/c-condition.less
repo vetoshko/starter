@@ -22,26 +22,44 @@
 
     &__text {
         font-size: 16px;
-        list-style: disc;
+        // list-style: disc;
+        font-weight: 200;
 
         & + & {
             margin-top: 10px;
         }
     }
     &__button {
-        white-space: nowrap;
         cursor: pointer;
         position: absolute;
         bottom: 20px;
         left: 50%;
         transform: translate(-50%, 0);
-        background: #ffa500;
-        padding: 10px 15px;
-        z-index: 10;
+        background: rgba(0, 0, 0, 0.4);
+        padding: 15px; 
+        z-index: 10;      
+        text-align: center;
+        text-transform: uppercase;
+        font-size: 16px;
+        border-radius: 50%;
+        font-weight: 300;
 
+        & > p{
+          transform: translate(0, -50%); 
+          margin-top: 50%;
+        }
         &-more{
-            // bottom: -50px;
+            bottom: 70px;
+            .screen-xs({
+        bottom: 20px;
+    });
+        }
+        &_bold{
+            font-weight: 600;
         }
       }
 
+}
+.subpoint{
+    margin-left: 20px;
 }

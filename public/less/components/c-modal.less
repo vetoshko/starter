@@ -28,11 +28,11 @@
         left: 100%;
         transform: none;
         background: #fff;
-        padding: 55px 60px;
+        padding: 55px 40px;
 
         .active & {
             transform: translate(-100%, 0);
-            // overflow-y: scroll;
+            overflow-y: scroll;
         }
 
         .screen-xs({
@@ -55,7 +55,7 @@
         display: inline-block;
         white-space: nowrap;
         overflow: hidden;
-        text-overflow: clip;
+        text-overflow: ellipsis;
         text-transform: uppercase;
     }
 
@@ -63,11 +63,11 @@
         font-size: 16px;
         line-height: 24px;
     }
+}
 
-    &.active {
-        display: block;
-        bottom: 0;
-        right: 0;
-        height: 100%;
-    }
+.active .c-modal{
+    display: block;
+    bottom: 0;
+    right: 0;
+    height: 100%;
 }

@@ -21,10 +21,21 @@
       background-repeat: no-repeat;
       background-size: cover;
       background-repeat: no-repeat;
+
+      .screen-xs({
+        display: none;
+    });
   }
 
   &__description {
-    margin: 50px auto 65px;
+    margin: 40px auto 40px;
+    .screen-sm-max({
+        padding-left: 9px;
+        margin: 20px auto 20px;
+        font-size: 18px;
+        font-weight: 200;
+      
+    });
   }
 
   &__header {
@@ -42,6 +53,7 @@
 
     .screen-sm-max({
         font-size: 22px;
+        line-height: 35px;
     });
   }
 
@@ -63,7 +75,7 @@
     }
 
     .screen-sm-max({
-        padding: 0px 10px;
+        padding: 30px 10px;
     });
   }
 
@@ -77,6 +89,9 @@
         width: 110%;
         height: 85%;
         background-position: center top;
+        .screen-xs({
+            display: block;
+        });
       }
       .screen-sm-max({
         .c-section__content {
@@ -113,7 +128,7 @@
 
       .c-section__background {
         top: 0;
-        right: ~"calc(45% + 350px)";
+        right: ~"calc(50% + 350px)";
         width: 100%;
         height: 80%;
         background-position: right top;
@@ -121,7 +136,7 @@
 
         &:first-child {
           top: 0;
-          left: ~"calc(45% + 350px)";
+          left: ~"calc(50% + 350px)";
           width: 100%;
           height: 80%;
           background-position: left top;
@@ -174,7 +189,7 @@
 
     .screen-sm-max({
       .c-section__box {
-        padding: 0 10px;
+        padding: 30px 10px;
       }
     });
   }
@@ -184,6 +199,12 @@
 
     .c-section__content {
       padding-top: 60px;
+      .screen-sm-max({
+        padding-top: 0px;
+    });
+      .screen-lg-min({
+        padding-top: 90px;
+    });
     }
 
     .c-section__background {
@@ -202,6 +223,9 @@
     .c-section__box {
       z-index: 1;
     }
+    .screen-lg-min({
+        padding-top: 90px;
+    });
 
     .c-section__background {
       top: 0;
@@ -210,16 +234,23 @@
       height: 85%;
       background-position: 0 100%;
     }
+    .c-section__content {
+      margin-top: 20%;
+      .screen-lg-max({
+        margin-top: 0;
+      });
+    }
   }
 
   &_condition {
     background: @orange-color;
     padding: 60px 0;
+    padding-bottom: 0;
 
     .c-section__content {
 
       padding-bottom: 120px;
-      height: 80vh;
+      height: 90vh;
       overflow: hidden;
 
     }
@@ -230,18 +261,22 @@
     background: @blue-color;
     padding-top: 60px;
 
+
     .c-section__box {
       text-align: center;
     }
 
     .c-section__content {
-      margin-top: 40vh;
+      // margin-top: 40vh;
       .screen-sm-max({
          margin-top: 20vh;
        });
        .screen-xs({
          margin-top: 0;
        });
+       .screen-lg-min({
+        margin-top: 10%;
+    });
     }
 
     .c-section__background {

@@ -118,8 +118,8 @@
                         Напиши о&#160;своей идее небольшой пост.
                     </p>
                     <p>
-                        Поставь хэштэг <span class="c-hashtag">#МечтатьНеВредно</span> и опубликуй пост в&#160;соцсети: ВК, Instagram или Twitter.
-                        Будет здорово, если приложишь фото или видео ;)
+                        Поставь хэштэг <span class="c-hashtag c-hashtag_xs">#МечтатьНеВредно</span> и опубликуй пост в&#160;соцсети: ВК, Instagram или Twitter.
+                        Будет здорово, если приложишь фото или видео
                     </p>
                     <p>
                         Обязательное условие конкурса&#160;&#8212; сделать свой профиль открытым!
@@ -160,7 +160,7 @@
                     <div id="participate-popup" class="c-popup">
                         <div class="c-popup__image" style="background-image: url({{ 'popup-girl.png'|cdn }})"></div>                        
                         <p class="c-popup__text">
-                            Перейди в&#160;любую социальную сеть и&#160;опубликуй свой пост с&#160;хэштэгом
+                            Перейди в&#160;социальную сеть (ВК, Instagram или&#160;Twitter)&#160;и&#160;опубликуй свой пост с&#160;хэштэгом
                             <span class="c-hashtag">#МечтатьНеВредно</span> (в&#160;настройках профиль должен быть открытым).
                         </p>
                         <div class="c-popup__social">
@@ -213,7 +213,8 @@
                 </p>
                 <div class="c-cards-holder">
                     <div class="c-card__sizer"></div>
-                    <div class="c-cards-holder__button" id="more-cards">Показать больше</div>
+                    <!-- <div class="c-cards-holder__button" id="more-cards">Показать больше</div> -->
+                    <div class="c-condition__button c-condition__button-more" id="more-cards"><p>Показать<br><span class="c-condition__button_bold">больше</span></p></div>
                 </div>
             </div>
         </div>
@@ -254,11 +255,11 @@
                 <div class="c-headline c-headline_blue">
                     <span class="c-headline__text">&#171;Мечтать не вредно&#187;</span>
                 </div>
-
+               
                 {% for rule in rules %}
 
                 <div class="c-condition">
-                    <div class="c-condition__header" data-number={{loop.index}}> {{rule.theme + "."}} </div>
+                    <div class="c-condition__header" data-number={{loop.index}}.>{{rule.theme}} </div>
                     <ul>
                         {% for b in rule.blocks %}
                         <li div class="c-condition__text">{{b}}</li>
@@ -269,8 +270,8 @@
                 
             </div>
         </div>
-        <div class="c-condition__button" id="condition">Показать меньше</div>
-        <div class="c-condition__button c-condition__button-more" id="more-condition">Показать больше</div>
+        <div class="c-condition__button" id="condition"><p>Показать<br><span class="c-condition__button_bold">меньше</span></p></div>
+        <div class="c-condition__button c-condition__button-more" id="more-condition"><p>Показать<br><span class="c-condition__button_bold">больше</span></p></div>
     </section>
     <section data-anchor="end" class="section c-section c-section_end">
         <div class="c-section__background" style="background-image: url({{ 'dreamers.png'|cdn }})"></div>                        
