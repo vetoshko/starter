@@ -84,8 +84,27 @@
       position: absolute;
       bottom: 20px;
       right: 20px;
+      height: 40px;
+      width: 40px;
+      display: block;
+      // background-image: url('@{storage}social.png');
+    }
+
+    &_embedded {
+      padding-top: 100%;
+
+
+    }
+
+    &--vertical &_embedded{
+      padding-top: 150%;
+    }
+
+    &--horizontal &_embedded{
+      padding-top: 60%;
     }
   }
+  
 
   &__image_embeddeds {
     padding-top: 100%;
@@ -150,3 +169,8 @@
     margin-top: 10px;
   }
 }
+
+  .c-card__image_embedded{
+    width: 100%;
+    height: auto;
+  }

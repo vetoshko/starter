@@ -48,8 +48,22 @@
         <div class="c-modal__close">&#10006;</div>
         <div class="c-modal__content">
             <div class='c-modal__name'></div>
-            <img class='c-modal__image'></img>
+            <div class='c-modal__pic'>
+                <img class='c-modal__image'></img>
+            </div>
             <div class="c-modal__full-description"></div>
+            <!-- <div class="c-modal__button">
+                <a href="" class="c-modal__arrow c-modal__arrow_left">
+                    <div class="c-button__text">
+                        Как участвовать?
+                    </div>
+                </a>
+                 <a href="#participate" class="c-modal__arrow c-modal__arrow_right">
+                    <div class="c-button__text">
+                        Как участвовать?
+                    </div>
+                </a>
+            </div> -->
         </div>
     </div>
 </div>
@@ -259,7 +273,7 @@
                 {% for rule in rules %}
 
                 <div class="c-condition">
-                    <div class="c-condition__header" data-number={{loop.index}}.>{{rule.theme}} </div>
+                    <div class="c-condition__header" data-number={{loop.index}}.> {{rule.theme}} </div>
                     <ul>
                         {% for b in rule.blocks %}
                         <li div class="c-condition__text">{{b}}</li>

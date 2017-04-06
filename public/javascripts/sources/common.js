@@ -164,10 +164,25 @@ $(function() {
             if (cards.length > 0) {
                 cardsLoader = $('.c-cards-holder').masonry(masonryConfig);
                 isMasonryCreated = true;
+
+                let counter = 0, appendTimeout;
+
+
+
                 let newCards = cards.map((card) => {
                     let newCard = createCard(card);
+                   
                     return newCard;
                 });
+
+
+               /* appendTimeout = setTimeout(() => {
+                    if(counter === cards.length) {
+
+                    }
+                }, 100)
+*/
+
                 cardsLoader.append(newCards).masonry('appended', newCards).masonry('reloadItems');
                 
                 $.fn.fullpage.reBuild();
@@ -219,12 +234,29 @@ $(function() {
 
     function createCard(card) {
         let heightCoefficient = card.imgHeight / card.imgWidth;
+
+        let img = new Image();
+        img.src = card.image;
+        let width = img.naturalWidth ? img.naturalWidth : 100;
+        let height = img.naturalHeight ? img.naturalHeight : 100;
+        let dim = width/height;
+
+        if (dim < .9) {
+            card.modifer = 'vertical'
+        } else if(dim >= 1.15) {
+            card.modifer = 'horizontal'
+        }  else {
+            card.modifer = 'square'
+        }
+        
+       
+
         return $(
-            `<div class='c-card ${card.providerType}' id='${card.id}'>` +
-            `<div class='c-card__image'` +
+            `<div class='c-card ${card.providerType}' id='${card.id}' data-modifer='${card.modifer}'>` +
+            `<div class='c-card__image c-card__image--${card.modifer}'` +
             `style='background-image: url(${card.image});'>` +
-            `<div class='c-card__image_embedded'` +
-            `style='padding-top: ${heightCoefficient ? 100 * heightCoefficient + '%' : '100%'};'></div></div>` +
+            `<div class='c-social__post c-social--${card.providerType}'></div>` +
+            `<div class='c-card__image_embedded'></div></div>` +
             `<div class='c-card__about'>` +
             `<div class='c-card__name'>${card.name}</span></div>` +
             `<div class="c-card__description">${reduceText(card.text)}</div></div></div>`
