@@ -19,12 +19,39 @@
     }    
     &__button{
         width: 100%;
+        margin-top: 40px;
+    }
+    &__arrow{
+        padding: 10px 20px;
+        display: inline-block;
+        text-decoration: none;
+        cursor: pointer;
+        color: #fff;
+        line-height: normal;
+        transform: skewX(-20deg);
+        background: @orange-interface-color;
+        font-size: 18px;
+        text-decoration: none;
         position: absolute;
-        height: 10%;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: white;
+        width: 35%;
+        text-align: center;
+        white-space: nowrap;
+        margin-top: 40px;
+        display: none;
+        .screen-xs({
+          display: none;  
+        });
+
+        &_left{
+            left: 10%;
+        }
+        &_right{
+            right: 10%;
+        }
+
+        &:hover{
+            background: @orange-interface-color - #111;
+        }
     }
 
     
@@ -48,6 +75,9 @@
             overflow: visible;
             
             border-left: 5px solid @green-color;
+            .screen-xs({
+                border: none;  
+            });
         }
 
         .screen-xs({
@@ -65,11 +95,19 @@
         width: 100%;
         overflow: hidden;
         text-align: right;
+        .screen-xs({
+            position: relative;
+            right: 0;
+        });
     }
     &__image {
         // margin: 25px auto 30px;
         // width: 100%;
         height: 100%;
+        .screen-xs({
+            width: 100%;
+            height: auto;
+        });
     }
 
     &__name {
